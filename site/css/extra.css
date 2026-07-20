@@ -1,0 +1,67 @@
+/* Anchura para rejillas (por ejemplo, el panel central de la página */
+/*.md-grid {
+    max-width: initial;
+}
+*/
+
+/* Mostrar footer en impresión */
+@media print {
+   /* Reset de colores del footer */   
+  .md-footer,
+  .md-footer__inner,
+  .md-footer__copyright,
+  .md-footer *:not(.md-footer__copyright) {    
+    background-color: white !important;
+    color: #555 !important;
+  }
+
+  .md-footer {
+    display: block !important;
+    color: #000 !important;
+    border-top: 1px solid #ccc;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+/*    position: fixed;
+    bottom: 0;
+    width: 100%; */
+  }
+
+    
+  .md-footer-copyright {
+    text-align: center;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.img-left {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.img-float-left {
+  float: left;         /* Mueve la imagen a la izquierda */
+  margin-right: 15px;  /* Espacio entre la imagen y el texto */
+  width: 20%;        /* Ajusta tamaño si quieres */
+}
+
+.img-task-logo {
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

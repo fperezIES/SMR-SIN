@@ -1,0 +1,147 @@
+# Aspectos a cambiar para cada sitio web:
+# - site_name
+# - site_url
+# - copyright
+# - cambiar fichero de logo "img/logo.png"
+# - nav con sus opciones (o omitirlo para mostrar navegación por orden alfabético)
+# - theme > palette con los colores que queramos
+
+site_name: Mi sitio de ejemplo
+site_url: https://fperezies.github.com/plantilla_mkdocs
+# Nota de copyright que se muestra en el footer del tema
+copyright: Copyright © 2021-2025 Nombre Apellido1 Apellido2 
+# Así se generan URL como archivos HTML. Necesario para rutas imágenes en reveal.
+use_directory_urls: false
+
+theme: 
+  name: material
+  custom_dir: 'overrides'
+#  locale: es # NO FUNCIONA. Definido en documentación de mkdocs
+  language: es
+#  language: en
+#  language: ca # Catalán / Valenciano
+  
+  # Logo de la barra de navegación superior (en subcarpeta "docs")
+  logo: "img/logo.png"
+  favicon: "img/logo.png"
+  palette:
+    # Aquí se configuran los temas claro y oscuro, respectivamente
+    - scheme: default
+      primary: "deep purple"
+      accent: "light blue"
+      toggle:
+        icon: material/weather-night
+#        icon: material/toggle-switch-off-outline
+        name: Dark Mode # Cambiar a modo noche
+    - scheme: slate 
+      primary: "deep purple"
+      accent: "light blue"
+      toggle:
+        icon: material/weather-sunny
+#        icon: material/toggle-switch
+        name: Light mode # Cambiar a modo día
+  # Tipo de letra de texto y código
+#  font:
+#    text: Exo 2
+#    code: Roboto Mono
+
+  # Características adicionales
+  features:
+    # Auto-ocultar barra de navegación al hacer scroll
+    # - header.autohide
+    # Mostrar botón para volver arriba cuando estemos haciendo scroll
+    - navigation.top
+    # Actualizar URL superior y enlace activo en menú izquierdo
+    - navigation.tracking
+    # Integra la navegación de documento en la barra de navegación
+    - toc.integrate
+    # Marca la página actual como activa en el menú de navegación
+    - toc.follow
+    # Incluir enlacesa en pie de página
+    #- navigation.footer
+    # Para permitir submenús enlazados con páginas
+    - navigation.indexes
+    # Permite añadir anotaciones en el código para, por ejemplo, resaltar líneas, o numerarlas
+    - content.code.annotate
+    # Añade un botón para marcar anuncios como "leídos"
+    - announce.dismiss  
+    # Permite copiar el contenido de los bloques de código
+    - content.code.copy
+
+markdown_extensions:
+  - footnotes
+  - markdown.extensions.md_in_html
+# Admonitions: Note, Warning, etc..
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+# captions https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/          
+# images https://squidfunk.github.io/mkdocs-material/reference/images/
+# captions https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+# Coloreado de código
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+# - pymdownx.superfences # Ya estaba incluido antes
+  
+#Permite poder enlazar a secciones dentro de un documento (permalinks).
+  - toc:
+      permalink: true
+#      separator: "_" # Carácter para sustituir los espacios del título      
+      toc_depth: 4 # Nivel de profundidad máximo en el índice del documento
+  # katex
+  - pymdownx.arithmatex:
+      generic: true
+
+
+# Ficheros que se muestran con serve pero no con build
+# Útiles para poder ver trabajos en curso in publicarlos.
+# https://www.mkdocs.org/user-guide/configuration/#draft_docs
+draft_docs: |
+  *draft.md
+  **/draft/
+  **/drafts/
+  **/*draft/
+  **/*drafts/
+  **/img/src/
+
+#exclude_docs: | 
+#  slides/
+#  Slides/
+
+extra_css:
+  - css/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+#extra_javascript:
+#  - 
+
+# Permite cambiar los nombres mostrados en la navegación generada automáticamente
+# Muy útils para cambiar los nombres asociados a las carpetas
+#use_directory_urls: true
+#nav_translations:
+#  UD02: "Título definido en mkdocs.yml"  
+#  Tasks: "Ejercicios obligatorios"
+
+
+#nav:  
+#  - 'Título tema 1': '/UD01/'
+
+
+#not_in_nav: |
+#  /private.md
+
+extra_javascript:
+  - js/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js

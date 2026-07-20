@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<!--
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+-->
+
+ <title>{{ page.title }}</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ 'reveal/dist/reveal.css' | url }}">
+<link rel="stylesheet" href="{{ 'reveal/dist/theme/white.css' | url }}" id="theme">
+<link rel="stylesheet" href="{{ 'reveal/plugin/highlight/monokai.css' | url }}">
+<!-- link rel="icon" type="image/x-icon" href="../images/logo.svg" -->
+</head>
+
+<body>   
+ <div class="reveal">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    {{ page.markdown }}
+                </textarea>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="{{ 'reveal/dist/reveal.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/zoom/zoom.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/markdown/markdown.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/highlight/highlight.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/notes/notes.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/math/math.js' | url }}"></script>
+
+    <script>
+        Reveal.initialize({
+                width: "80%",
+    //	    	width: 1280,
+    //		    height: 720,
+    //	    	margin: 0.05,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                hash: true,
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
+
+
+
+

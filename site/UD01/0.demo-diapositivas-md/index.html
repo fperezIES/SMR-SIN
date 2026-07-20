@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<!--
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+-->
+
+<title>Presentación</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../reveal/dist/reveal.css">
+<link rel="stylesheet" href="../../reveal/dist/theme/white.css" id="theme">
+<link rel="stylesheet" href="../../reveal/plugin/highlight/monokai.css">
+<!-- link rel="icon" type="image/x-icon" href="../images/logo.svg" -->
+</head>
+
+<body>   
+ <div class="reveal">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    <!-- https://xieby1.github.io/markdown_revealjs/README.html-->
+
+
+<!-- .slide: data-background="#000000" -->
+
+# Slide 1: Introduction
+
+- Point 1
+- Point 2
+
+---
+
+## Slide 2: Horizontal Slide
+
+- This is a new horizontal slide.
+
+---
+
+## Slide 3: Vertical Slides
+
+- This slide has vertical slides below.
+
+--
+
+### Slide 3.1: Vertical Slide 1
+
+- This is the first vertical slide under Slide 3.
+
+--
+
+### Slide 3.2: Vertical Slide 2
+
+- This is the second vertical slide under Slide 3.
+
+---
+
+## Slide with Image
+
+![Alt text](https://example.com/image.jpg)
+
+- Description of the image
+
+---
+
+## Slide with Code
+
+```python
+def hello_world():
+    print("Hello, World!")
+```
+
+---
+
+<!-- .slide: data-background="#5555BB" -->
+## Slide with background color
+
+---
+
+### Diapositiva con fragmentos
+
+* Este se muestra desde el principio
+* Este se muestra después <!-- .element: class="fragment" data-fragment-index="1" -->
+* Otro elemento que asciende  <!-- .element: class="fragment"  fade-up -->
+
+---
+
+### Diapositiva con videos
+
+[Datos y seguridad en Centros de Datos de Google](https://www.google.com/about/datacenters/data-security/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kd33UVZhnAA?si=OzwRvQ_EcCVhFmR7"" frameborder="0" allowfullscreen></iframe> 
+                </textarea>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="../../reveal/dist/reveal.js"></script>
+    <script src="../../reveal/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script src="../../reveal/plugin/notes/notes.js"></script>
+    <script src="../../reveal/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+                width: "80%",
+    //	    	width: 1280,
+    //		    height: 720,
+    //	    	margin: 0.05,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                hash: true,
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
+
+
+

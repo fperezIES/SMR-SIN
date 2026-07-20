@@ -1,0 +1,252 @@
+{
+  "main": {
+    "id": "87f46899089a5eea",
+    "type": "split",
+    "children": [
+      {
+        "id": "016ebc0e10457da8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "649df541afa3375b",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "3e62cc77547b5cc3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/UD6/Presentaciones/2.WLAN-LAN.slides.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2.WLAN-LAN.slides"
+            }
+          },
+          {
+            "id": "7d39856b01f1d3ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/UD1/1.introduccion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.introduccion"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "167dc7948cc6fdee",
+    "type": "split",
+    "children": [
+      {
+        "id": "c089dd3800e45efd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b537a6b4a849df4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "dc8780c6fe49796d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d8900ba5634473d2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9cf25bd7f2a03bb4",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ad0e41145408cb4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "826d9266d4a00a91",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/UD1/1.introduccion.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 1.introduccion"
+            }
+          },
+          {
+            "id": "46e912537ef2780d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/UD1/1.introduccion.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 1.introduccion"
+            }
+          },
+          {
+            "id": "044c3bc5c2dfa037",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c3f8c0c26c6f7288",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f3218d0affd11de1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/UD1/1.introduccion.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 1.introduccion"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7d39856b01f1d3ba",
+  "lastOpenFiles": [
+    "docs/UD1/2.amenazas.md",
+    "docs/UD1/3.auditorias.md",
+    "docs/UD1/4.incidentes.md",
+    "docs/UD1/5.cumplimiento.md",
+    "docs/UD1/1.introduccion.md",
+    "docs/UD2/2.almacenamiento.md",
+    "docs/UD2/3.backup.md",
+    "docs/UD2/borrado_recuperacion.md",
+    "docs/UD2/4.borradoyrecuperacion.md",
+    "docs/UD2/1.fisica_CPD.md",
+    "docs/UD3/2.c_simetrica.md",
+    "docs/UD4/Tareas/U04-P13_Actualizaciones_debian.md",
+    "docs/UD4/Tareas/U04-P05_Debian_LUKS.md",
+    "docs/UD4/Tareas/U04-P02_Bitlocker.md",
+    "docs/UD4/Tareas/t.wazuh.md",
+    "docs/UD4/Tareas/t.lynis.md",
+    "docs/UD4/Tareas/t.GVM.openVAS.md",
+    "docs/UD4/Presentaciones/4.monitorizacion.slides.md",
+    "docs/UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.md",
+    "docs/UD4/Presentaciones/2.malware.slides.md",
+    "docs/UD4/Presentaciones/1.seguridad_acceso.slides.md",
+    "docs/UD3/Presentaciones/1.introduccion.slides.md",
+    "docs/UD2/esquema.md",
+    "docs/drafts/Contenidos Gemini.md",
+    "docs/index.md",
+    "docs/UD6/Presentaciones/2.WLAN-LAN.slides.md",
+    "docs/UD1/drafts",
+    "docs/UD6/drafts",
+    "docs/UD6/Tareas/drafts",
+    "docs/UD3/Tareas/drafts",
+    "docs/UD2/Tareas/drafts",
+    "docs/UD1/Tareas/drafts"
+  ]
+}

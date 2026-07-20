@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  <title>{{ page.title }}</title>
+{% endblock %}
+
+{% block content %}
+<h2>{{ page.title }}</h2>
+<div class="presentation-container">
+    <div class="reveal reveal-embedded">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    {{ page.markdown }}
+                </textarea>
+            </section>
+        </div>
+    </div>
+</div>
+
+    <script src="{{ 'reveal/dist/reveal.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/zoom/zoom.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/markdown/markdown.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/highlight/highlight.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/notes/notes.js' | url }}"></script>
+    <script src="{{ 'reveal/plugin/math/math.js' | url }}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Inicializar Reveal.js en modo embebido
+        Reveal.initialize({
+                width: '100%',
+                height: 600,
+                embedded: true,
+                controls: true,
+                progress: true,
+                center: true,
+                hash: false, // Importante: desactivar para evitar conflictos
+               // keyboard: {
+               //     32: null, // Desactivar spacebar para no interferir con scroll
+               //  37: 'prev',
+               //  39: 'next'
+               // },
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+
+        });
+    });
+    </script>
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ 'reveal/dist/reveal.css' | url }}">
+    <link rel="stylesheet" href="{{ 'reveal/dist/theme/white.css' | url }}" id="theme">
+    <link rel="stylesheet" href="{{ 'reveal/plugin/highlight/monokai.css' | url }}">
+
+<style>
+/* Estilos para presentación embebida */
+.presentation-container {
+    margin: 2rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.reveal-embedded {
+    height: 600px !important;
+    width: 100% !important;
+}
+
+.reveal-embedded .slides {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.reveal-embedded .slides section {
+    padding: 20px;
+}
+
+/* Ajustar controles */
+.reveal .controls {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .presentation-container {
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+    
+    .reveal-embedded {
+        height: 400px !important;
+    }
+}
+
+</style>
+
+{% endblock %}
