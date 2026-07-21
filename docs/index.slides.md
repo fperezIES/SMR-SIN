@@ -1,74 +1,25 @@
 ---
 template: slides-md.html
-title: 
+title: Presentación del módulo
 icon: material/presentation
 ---
 
 
-
-
 <!-- .slide: data-background="#000000" -->
-# 2ºASIR: Seguridad y alta disponibilidad
+## 2ºSMR: Seguridad y alta disponibilidad
 
-## Curso 2024-2025
-
----
-
-## Seguridad y alta disponibilidad (SAD)
-
-- Módulo de 100 horas
-- 5 horas por semana
-- 20 semanas (**2 trimestres**)
-	- 3 semanas de exámenes + Extraordinaria
-
+### Curso 2026-2027
 
 ---
 
-## RD 659/2023 nueva LFP
+## Seguridad informática
 
-### Esto no os aplica... aún
-
---
-
-### LFP: Nuevos módulos en 1º (2024-2025)
-
-- Proyecto Intermodular
-- Inglés profesional
-- Itinerario personal para la empleabilidad I (Sustituye a FOL)
-
---
-
-### LFP: Nuevos módulos en 2º
-
-
-- Proyecto Intermodular	
-- Digitalización aplicada al sistema productivo GS
-- Sostenibilidad aplicada al sistema productivo
-- Itinerario personal para la empleabilidad II
-- Optativa
-
---
-
-## LFP: FCT Dual
-
-
-- Prácticas en empresa en 1º (100 horas) y 2º (400 horas)
-	- En semipresencial se acumulan las horas en 2º (500 horas)
-	
-- LOE: FCT 400 horas
-
---
-
-## RD 659/2023 nueva LFP III
-
-### Plan de transición:
-
-- Matrícula únicamente con módulos de primero: 
-	- Aplica nueva LFP	
-- Matrícula con módulos de segundo:
-	- Sigue con antigua LOE	
-	- Pendientes de primero también con antigua LOE	
-- **2 años de prórroga, en 2026-2027 será todo LFP**
+- Módulo de 133 horas
+	- 4 horas por semana
+	- 22 semanas (**2 trimestres**) => 22semanas x 4h/semana = 88 horas
+		- 2 semanas de exámenes + Extraordinaria
+		- 20 semanas de clase
+		- Resto de horas hasta 133: **Formación en empresa.**
 
 
 ---
@@ -212,11 +163,11 @@ icon: material/presentation
 
 ## Evaluación trimestral 
 
-|Tarea|Porcentaje|Requisito|
-|---|---|---|
-|Exámenes|70%|>=4|
-|Ejercicios obligatorios|30%|>=4|
-|Ejercicios opcionales|10% (extra)|   |
+| Tarea                   | Porcentaje  | Requisito |
+| ----------------------- | ----------- | --------- |
+| Exámenes                | 70%         | >=4       |
+| Ejercicios obligatorios | 30%         | >=4       |
+| Ejercicios opcionales   | 10% (extra) |           |
 
 --
 

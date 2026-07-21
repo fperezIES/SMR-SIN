@@ -1,44 +1,24 @@
 {
   "main": {
-    "id": "87f46899089a5eea",
+    "id": "dcf2cc3da73692e2",
     "type": "split",
     "children": [
       {
-        "id": "016ebc0e10457da8",
+        "id": "f393a33d672ac483",
         "type": "tabs",
         "children": [
           {
-            "id": "649df541afa3375b",
+            "id": "fa7008b08b4a61ce",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/index.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "index"
+              "title": "New tab"
             }
           },
           {
-            "id": "3e62cc77547b5cc3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/UD6/Presentaciones/2.WLAN-LAN.slides.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2.WLAN-LAN.slides"
-            }
-          },
-          {
-            "id": "7d39856b01f1d3ba",
+            "id": "429d642221435058",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -50,6 +30,34 @@
               "icon": "lucide-file",
               "title": "1.introduccion"
             }
+          },
+          {
+            "id": "de9dd2c793b70440",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/index.slides.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index.slides"
+            }
+          },
+          {
+            "id": "2c353f3394d03866",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "examenes/Preguntas cortas/Preguntas email.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Preguntas email"
+            }
           }
         ],
         "currentTab": 2
@@ -58,15 +66,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "167dc7948cc6fdee",
+    "id": "4750448f939f565a",
     "type": "split",
     "children": [
       {
-        "id": "c089dd3800e45efd",
+        "id": "86973bcea4a00a4d",
         "type": "tabs",
         "children": [
           {
-            "id": "6b537a6b4a849df4",
+            "id": "edc62fcc96457929",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -79,7 +87,7 @@
             }
           },
           {
-            "id": "dc8780c6fe49796d",
+            "id": "249b01d1eaa36287",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -96,7 +104,7 @@
             }
           },
           {
-            "id": "d8900ba5634473d2",
+            "id": "ccba3b68d6b99ffe",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -109,51 +117,51 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 281.5
   },
   "right": {
-    "id": "9cf25bd7f2a03bb4",
+    "id": "11af9f5bb7f78d1a",
     "type": "split",
     "children": [
       {
-        "id": "2ad0e41145408cb4",
+        "id": "8f2f887206f1fcd9",
         "type": "tabs",
         "children": [
           {
-            "id": "826d9266d4a00a91",
+            "id": "a6253b8d830c42e0",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/UD1/1.introduccion.md",
+                "file": "docs/UD01 DNS/1.Introduccion.md",
                 "collapseAll": true,
-                "extraContext": true,
+                "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.introduccion"
+              "title": "Backlinks for 1.Introduccion"
             }
           },
           {
-            "id": "46e912537ef2780d",
+            "id": "6f27d665f0eb98c6",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/UD1/1.introduccion.md",
+                "file": "docs/UD01/3.Work_in_progress_draft.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1.introduccion"
+              "title": "Outgoing links from 3.Work_in_progress_draft"
             }
           },
           {
-            "id": "044c3bc5c2dfa037",
+            "id": "e29cef650dd321bf",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -168,32 +176,28 @@
             }
           },
           {
-            "id": "c3f8c0c26c6f7288",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "f3218d0affd11de1",
+            "id": "6d72f0731b775584",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/UD1/1.introduccion.md",
+                "file": "docs/index.slides.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.introduccion"
+              "title": "Outline of index.slides"
+            }
+          },
+          {
+            "id": "5ea11a8c93b28e59",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -211,42 +215,57 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7d39856b01f1d3ba",
+  "active": "edc62fcc96457929",
   "lastOpenFiles": [
-    "docs/UD1/2.amenazas.md",
-    "docs/UD1/3.auditorias.md",
-    "docs/UD1/4.incidentes.md",
-    "docs/UD1/5.cumplimiento.md",
-    "docs/UD1/1.introduccion.md",
-    "docs/UD2/2.almacenamiento.md",
-    "docs/UD2/3.backup.md",
-    "docs/UD2/borrado_recuperacion.md",
-    "docs/UD2/4.borradoyrecuperacion.md",
-    "docs/UD2/1.fisica_CPD.md",
-    "docs/UD3/2.c_simetrica.md",
-    "docs/UD4/Tareas/U04-P13_Actualizaciones_debian.md",
-    "docs/UD4/Tareas/U04-P05_Debian_LUKS.md",
-    "docs/UD4/Tareas/U04-P02_Bitlocker.md",
-    "docs/UD4/Tareas/t.wazuh.md",
-    "docs/UD4/Tareas/t.lynis.md",
-    "docs/UD4/Tareas/t.GVM.openVAS.md",
-    "docs/UD4/Presentaciones/4.monitorizacion.slides.md",
-    "docs/UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.md",
-    "docs/UD4/Presentaciones/2.malware.slides.md",
-    "docs/UD4/Presentaciones/1.seguridad_acceso.slides.md",
-    "docs/UD3/Presentaciones/1.introduccion.slides.md",
-    "docs/UD2/esquema.md",
-    "docs/drafts/Contenidos Gemini.md",
+    "docs/slides/index.md",
     "docs/index.md",
-    "docs/UD6/Presentaciones/2.WLAN-LAN.slides.md",
-    "docs/UD1/drafts",
-    "docs/UD6/drafts",
-    "docs/UD6/Tareas/drafts",
-    "docs/UD3/Tareas/drafts",
-    "docs/UD2/Tareas/drafts",
-    "docs/UD1/Tareas/drafts"
+    "docs/UD1/1.introduccion.md",
+    "docs/drafts/Contenido-prog-IES.md",
+    "docs/drafts/Contenidos Gemini.md",
+    "docs/UD1/3.auditorias.md",
+    "docs/UD1/2.amenazas.md",
+    "docs/UD1/Presentaciones/2.amenazas.slides.md",
+    "docs/UD2/4.borradoyrecuperacion.md",
+    "docs/UD2/3.backup.md",
+    "docs/UD3/1.introduccion.md",
+    "docs/index.slides.md",
+    "docs/UD1/Presentaciones/1.introduccion.slides.md",
+    "docs/UD3/6.c_cuantica.md",
+    "docs/UD3/5.c_aplicaciones.md",
+    "docs/UD3/4.PKI.md",
+    "docs/UD3/3.c_asimetrica.md",
+    "docs/UD3/2.c_simetrica.md",
+    "docs/UD3/Presentaciones/2.c_simetrica.slides.md",
+    "docs/UD3/Presentaciones/1.introduccion.slides.md",
+    "docs/UD2/borrado_recuperacion.md",
+    "docs/UD2/2.almacenamiento.md",
+    "docs/UD1/equipos seguridad.md",
+    "docs/UD1/5.cumplimiento.md",
+    "docs/UD1/4.incidentes.md",
+    "docs/UD00/0.Historia-internet.md",
+    "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf.sb-6994c3fd-JqfpyS",
+    "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf",
+    "examenes/Ex_SRI_Ordinaria/SRI-2EV-UD0-UD2-V0-ES.pdf",
+    "examenes/Ex_SRI_2EV-UD04-UD07/Rubrica/SRI-ex-2ev-rubrica.csv",
+    "examenes/Ex_SRI_2EV-UD04-UD07/Rubrica",
+    "examenes/Ex_SRI_2EV-UD04-UD07/carpeta sin título",
+    "examenes/Ex_SRI_2EV-UD04-UD07/SRI-2EV-UD0-UD2-V0-ES.pdf",
+    "examenes/Ex_SRI_1EV-UD00-UD03/SRI-1EV-UD0-UD2-V0-ES.pdf",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/portada.jpg",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/logo.jpg",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/diapositiva.png",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/aleph0.png",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/fondo.png",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/aleph0-small.png",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/01",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/logo-vector-ministerio-de-educacion-y-formacion-profesional.jpg",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/layout_set_logo.png",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/LOGO CONS. INNOVACIÓ.jpg",
+    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/FEDER horizontal castellano.png"
   ]
 }

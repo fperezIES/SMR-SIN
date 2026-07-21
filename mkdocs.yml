@@ -6,10 +6,10 @@
 # - nav con sus opciones (o omitirlo para mostrar navegación por orden alfabético)
 # - theme > palette con los colores que queramos
 
-site_name: Mi sitio de ejemplo
-site_url: https://fperezies.github.com/plantilla_mkdocs
+site_name: 2SMR Seguridad Informática
+site_url: https://fperezies.github.com/SMR-SIN
 # Nota de copyright que se muestra en el footer del tema
-copyright: Copyright © 2021-2025 Nombre Apellido1 Apellido2 
+copyright: Copyright © 2026-2027 Francisco Pérez Rodríguez
 # Así se generan URL como archivos HTML. Necesario para rutas imágenes en reveal.
 use_directory_urls: false
 
