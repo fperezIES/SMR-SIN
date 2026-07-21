@@ -5,24 +5,48 @@ icon: material/presentation
 ---
 
 
-<!-- .slide: data-background="#000000" -->
-## 2ºSMR: Seguridad y alta disponibilidad
+<!-- .slide: data-background="#3d5a80" -->
+
+## 2ºSMR: Seguridad informática
 
 ### Curso 2026-2027
 
 ---
 
-## Seguridad informática
+<!-- .slide: data-background="#98c1d9" -->
 
-- Módulo de 133 horas
+## Duración y contenidos
+
+--
+
+## Módulo: Seguridad informática
+
+- Duración: **133** horas
 	- 4 horas por semana
-	- 22 semanas (**2 trimestres**) => 22semanas x 4h/semana = 88 horas
-		- 2 semanas de exámenes + Extraordinaria
-		- 20 semanas de clase
-		- Resto de horas hasta 133: **Formación en empresa.**
+	- **22 semanas** (**2 trimestres**) => 22semanas x 4h/semana = **88** horas
+		- 2 semanas de exámenes + Extraordinaria.
+		- 20 semanas de clase.
+	- Resto de horas hasta 133-88 = 45horas: **Formación en empresa.**
 
 
----
+--
+
+
+
+## Unidades didácticas
+
+- Primer trimestre:
+	- UD1 - Introducción a la seguridad informática (10h)
+	- UD2 - Seguridad pasiva (10h)
+	- UD3 - Criptografía (15h)
+	- UD4 - Fortificación hosts (15h)
+
+- Segundo Trimestre
+	- UD5 - Alta disponibilidad (15h)
+	- UD6 - Seguridad en redes (20h)
+	- UD 7 - Seguridad perimetral  (15h)
+
+--
 
 ## Contenidos principales I
 
@@ -39,20 +63,10 @@ icon: material/presentation
 
 ---
 
-## Unidades didácticas
+<!-- .slide: data-background="#98c1d9" -->
+## Metodología
 
-- Primer trimestre:
-	- UD1 - Introducción a la seguridad informática (10h)
-	- UD2 - Seguridad pasiva (10h)
-	- UD3 - Criptografía (15h)
-	- UD4 - Fortificación hosts (15h)
-
-- Segundo Trimestre
-	- UD5 - Alta disponibilidad (15h)
-	- UD6 - Seguridad en redes (20h)
-	- UD 7 - Seguridad perimetral  (15h)
-
----
+--
 
 ## Metodología
 
@@ -64,11 +78,36 @@ icon: material/presentation
 	-  Se publicarán soluciones de ejemplo
 	- Su contenido entre para el examen
 
----
+--
+## Ejercicios
 
-## Primer trimestre
+- Habrá ejercicios de clase que no habrá que entregar
+	- Se publicarán soluciones de ejemplo
+- Habrá varios ejercicios obligatorios por trimestre
+	- Habrá que entregarlos para aprobar el módulo
+	- Habrá que defenderlos presencialmente ante el profesor
+- Pueden haber ejercicios opcionales
+	- Pueden subir la nota hasta un punto.
 
 --
+
+## Exámenes
+
+- Evaluación **Continua**: Un examen por trimestre
+
+- Convocatorias oficiales:
+	- **Ordianaria**: al final del segundo trimestre
+	- **Extraordinaria**: en junio
+
+---
+
+<!-- .slide: data-background="#98c1d9" -->
+## Temporarilzación
+
+--
+## Primer trimestre
+
+
 
 * UD1 - Introducción a la seguridad informática 
 	* Introducción a la seguridad informática
@@ -111,7 +150,7 @@ icon: material/presentation
 
 ## Segundo trimestre
 
---
+
 
 * UD5 - Alta disponibilidad
 	* Redundancia Hardware
@@ -133,31 +172,10 @@ icon: material/presentation
 	- Firewall
 	- Proxy
 
----
-
-## Ejercicios
-
-- Habrá ejercicios de clase que no habrá que entregar
-	- Se publicarán soluciones de ejemplo
-- Habrá varios ejercicios obligatorios por trimestre
-	- Habrá que entregarlos para aprobar el módulo
-	- Habrá que defenderlos presencialmente ante el profesor
-- Pueden haber ejercicios opcionales
-	- Pueden subir la nota hasta un punto.
 
 ---
-
-## Exámenes
-
-- Evaluación **Continua**: Un examen por trimestre
-
-- Convocatorias oficiales:
-	- **Ordianaria**: al final del segundo trimestre
-	- **Extraordinaria**: en junio
-
----
-
-# Evaluación
+<!-- .slide: data-background="#98c1d9" -->
+## Evaluación
 
 --
 
@@ -173,18 +191,10 @@ icon: material/presentation
 
 ## Evaluación final
 
-|Tarea|Porcentaje|Requisito|
-|---|---|---|
-|1st trimester|50%|>=5|
-|2nd trimester|50%|>=5|
-
----
-
-## Tutorías presenciales obligatorias (semipresencial)
-
-- Por ley 10% de presencialidad obligatoria.
-- Se os convocará una tutoría presencial al final de cada trimestre.
-- Tendréis que defender las prácticas ante el profesor.
+| Tarea             | Porcentaje | Requisito |
+| ----------------- | ---------- | --------- |
+| Primer trimestre  | 50%        | >=5       |
+| Segundo trimestre | 50%        | >=5       |
 
 ---
 

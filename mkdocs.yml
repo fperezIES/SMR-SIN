@@ -27,14 +27,14 @@ theme:
   palette:
     # Aquí se configuran los temas claro y oscuro, respectivamente
     - scheme: default
-      primary: "deep purple"
+      primary: "light blue"
       accent: "light blue"
       toggle:
         icon: material/weather-night
 #        icon: material/toggle-switch-off-outline
         name: Dark Mode # Cambiar a modo noche
     - scheme: slate 
-      primary: "deep purple"
+      primary: "light blue"
       accent: "light blue"
       toggle:
         icon: material/weather-sunny
@@ -133,10 +133,15 @@ extra_css:
 # UD01: "UD01 - Introducción a la seguridad"  
 #  Tasks: "Ejercicios obligatorios"
 
+nav_translations:
+  UD1: "UD01 - Introducción a la seguridad"
 
-#nav:  
-#  - 'Título tema 1': '/UD01/'
 
+# nav:
+#   - Section:
+#     - UD01/index.md 
+#     - Page 1: UD01/page-1.md
+    
 
 #not_in_nav: |
 #  /private.md
