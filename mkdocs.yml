@@ -130,7 +130,7 @@ extra_css:
 # Muy útils para cambiar los nombres asociados a las carpetas
 #use_directory_urls: true
 #nav_translations:
-#  UD02: "Título definido en mkdocs.yml"  
+# UD01: "UD01 - Introducción a la seguridad"  
 #  Tasks: "Ejercicios obligatorios"
 
 
