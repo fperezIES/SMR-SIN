@@ -20,7 +20,10 @@ theme:
   language: es
 #  language: en
 #  language: ca # Catalán / Valenciano
-  
+  features:
+    - navigation.instant
+
+
   # Logo de la barra de navegación superior (en subcarpeta "docs")
   logo: "img/logo.png"
   favicon: "img/logo.png"
