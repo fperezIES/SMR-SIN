@@ -96,7 +96,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
 # - pymdownx.superfences # Ya estaba incluido antes
-  
+#Emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg  
 #Permite poder enlazar a secciones dentro de un documento (permalinks).
   - toc:
       permalink: true
@@ -136,8 +139,8 @@ extra_css:
 # UD01: "UD01 - Introducción a la seguridad"  
 #  Tasks: "Ejercicios obligatorios"
 
-nav_translations:
-  UD1: "UD01 - Introducción a la seguridad"
+#nav_translations:
+#  UD1: "UD01 - Introducción a la seguridad"
 
 
 # nav:

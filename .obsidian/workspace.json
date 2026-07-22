@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/UD1/2.amenazas.md",
+                "file": "docs/UD1/1.introduccion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2.amenazas"
+              "title": "1.introduccion"
             }
           },
           {
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/UD1/2.amenazas.md",
+                "file": "docs/UD1/1.introduccion.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2.amenazas"
+              "title": "Outline of 1.introduccion"
             }
           },
           {
@@ -207,34 +207,34 @@
   },
   "active": "429d642221435058",
   "lastOpenFiles": [
-    "docs/UD1/1.introduccion.md",
-    "docs/UD1/Tareas/4.1rssSeguridad.md",
-    "docs/UD1/4.incidentes.md",
+    "docs/UD1/2.vulnerabilidades.amenazas.exploits.md",
     "docs/UD1/3.auditorias.md",
-    "docs/UD1/2.amenazas.md",
+    "docs/UD1/5.cumplimiento.md",
+    "docs/UD1/4.incidentes.md",
+    "docs/UD1/1.introduccion.md",
+    "docs/index.slides.md",
+    "docs/UD00_draft/0.demo-diapositivas-embebidas-md.md",
+    "docs/UD00_draft/0.demo-diapositivas-md.md",
+    "docs/UD00_draft/1.Introduccion.md",
+    "docs/UD00_draft/2.Section with spaces.md",
+    "docs/UD00_draft/3.Work_in_progress_draft.md",
+    "docs/UD00_draft/4.Admonitions.md",
+    "docs/UD00_draft/5.Figure-captions.md",
+    "docs/UD00_draft/index.md",
+    "docs/incidentes/2020.solarwinds.md",
+    "docs/incidentes/2024.crowdstrike.md",
+    "docs/UD1/drafts/incidentes.md",
+    "docs/UD1/drafts/esquema.md",
+    "docs/UD1/equipos seguridad.md",
+    "docs/UD1/Tareas/4.1rssSeguridad.md",
     "docs/drafts/Contenidos Gemini.md",
     "docs/UD1/index.md",
-    "docs/index.slides.md",
     "docs/UD1/Presentaciones/1.introduccion.slides.md",
     "Untitled.base",
     "2026-07-21.md",
     "docs/img/logo2.png",
     "docs/slides/index.md",
     "docs/index.md",
-    "docs/drafts/Contenido-prog-IES.md",
-    "docs/UD1/Presentaciones/2.amenazas.slides.md",
-    "docs/UD2/4.borradoyrecuperacion.md",
-    "docs/UD2/3.backup.md",
-    "docs/UD3/1.introduccion.md",
-    "docs/UD3/6.c_cuantica.md",
-    "docs/UD3/5.c_aplicaciones.md",
-    "docs/UD3/4.PKI.md",
-    "docs/UD3/3.c_asimetrica.md",
-    "docs/UD3/2.c_simetrica.md",
-    "docs/UD3/Presentaciones/2.c_simetrica.slides.md",
-    "docs/UD3/Presentaciones/1.introduccion.slides.md",
-    "docs/UD2/borrado_recuperacion.md",
-    "docs/UD2/2.almacenamiento.md",
     "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf.sb-6994c3fd-JqfpyS",
     "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf",
     "examenes/Ex_SRI_Ordinaria/SRI-2EV-UD0-UD2-V0-ES.pdf",
