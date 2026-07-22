@@ -24,9 +24,7 @@ icon: material/presentation
 - Duración: **133** horas
 	- 4 horas por semana
 	- **22 semanas** (**2 trimestres**) => 22semanas x 4h/semana = **88** horas
-		- 2 semanas de exámenes + Extraordinaria.
-		- 20 semanas de clase.
-	- Resto de horas hasta 133-88 = 45horas: **Formación en empresa.**
+	- Resto 133-88 = 45 horas: **Formación en empresa.**
 
 
 --
@@ -48,7 +46,7 @@ icon: material/presentation
 
 --
 
-## Contenidos principales I
+## Contenidos principales
 
  - **Conceptos** relacionados con seguridad de la información.
  - Introducción a la **gestión de riesgos**.
@@ -93,11 +91,23 @@ icon: material/presentation
 
 ## Exámenes
 
-- Evaluación **Continua**: Un examen por trimestre
+- Evaluación **Continua**: Uno o varios exámenes por trimestre
 
 - Convocatorias oficiales:
 	- **Ordianaria**: al final del segundo trimestre
 	- **Extraordinaria**: en junio
+
+
+--
+
+## Exámenes y recuperaciones
+
+- Los exámenes trimestrales se recuperarán en la Convocatoria Ordinaria
+- Convocatoria **Ordinaria**: al final de segundo trimestre
+	- Se guardará la nota por trimestres.
+	- **Necesario aprobar para realizar FCT**
+- Convocatoria **Extraordinaria**: En Junio
+	- Entra todo el temario, no se guardan parciales	
 
 ---
 
@@ -196,14 +206,3 @@ icon: material/presentation
 | Primer trimestre  | 50%        | >=5       |
 | Segundo trimestre | 50%        | >=5       |
 
----
-
-## Exámenes y recuperaciones
-
-- Las semanas de exámenes no habrá clase
-- Los exámenes trimestrales se recuperarán en la Convocatoria Ordinaria
-- Convocatoria **Ordinaria**: al final de segundo trimestre
-	- Se guardará la nota por trimestres.
-	- **Necesario aprobar para realizar FCT**
-- Convocatoria **Extraordinaria**: En Junio
-	- Entra todo el temario, no se guardan parciales	
