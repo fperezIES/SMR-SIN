@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<!--
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+-->
+
+ <title>eguridad Perimetral (Firewalls)</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../reveal/dist/reveal.css">
+<link rel="stylesheet" href="../../reveal/dist/theme/white.css" id="theme">
+<link rel="stylesheet" href="../../reveal/plugin/highlight/monokai.css">
+<!-- link rel="icon" type="image/x-icon" href="../images/logo.svg" -->
+</head>
+
+<body>   
+ <div class="reveal">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    <!-- .slide: data-background="#2C3E50" -->
+## Seguridad Perimetral (Firewalls)
+
+---
+
+### Seguridad perimetral
+
+ **Seguridad perimetral**: conjunto de métodos y técnicas para proteger una red informática que se basan en el establecimiento de recursos de seguridad en el perímetro externo de la red
+
+* El perímetro de la red es la primera zona a proteger frente a ataques externos a la organización
+* No obstante, **muchos ataques provienen de usuarios internos** 
+
+
+---
+
+## Firewall
+
+
+--
+
+### Firewall
+
+ **Cortafuegos o firewall**: dispositivo **software o hardware** filtra el tráfico de red cumpliendo con las directrices definidas en la política de seguridad de la organización.
+
+* Todo el tráfico que entra o salga de la red pasa a través del cortafuegos. 
+	* Bloquea el tráfico que no cumple los criterios de seguridad especificados en la política.
+
+
+---
+
+## Tipos de firewalls
+
+--
+
+## Packet Filtering (Estáticos)
+
+- Filtran tráfico únicamente en función de la **capa de red** (IP, puertos, protocolo).
+- Son simples y rápidos, pero no analizan a fondo el contenido de los paquetes.
+
+--
+
+## Stateful
+
+- Mantienen información del estado de la conexión (handshake de TCP, sesiones activas).
+- Pueden identificar flujos de tráfico legítimos frente a paquetes anómalos.
+
+--
+
+## Application-Layer / Next-Generation
+
+- Inspeccionan el contenido de las sesiones (HTTP, FTP, DNS, etc.).
+- Incluyen funcionalidades avanzadas como filtrado de aplicaciones, detección de intrusiones integrada (IDS/IPS), control de contenidos (URL filtering).
+
+---
+
+## Configuración y políticas de filtrado
+
+--
+
+### Creación de reglas seguras
+
+1. Definir una **política por defecto de denegación** (deny all) y permitir solo los puertos y protocolos necesarios.
+2. Utilizar la lógica “**least privilege**”: otorgar el mínimo acceso requerido.
+
+--
+
+### Monitorización de registros
+
+1. Revisar los logs del firewall para detectar patrones sospechosos (escaneos de puertos, intentos de conexión repetidos).
+2. Utilizar herramientas de correlación (SIEM) para unir eventos de distintos dispositivos.
+
+--
+
+### Políticas de actualización y respaldo
+
+1. Mantener el firmware/software del firewall actualizado.
+2. Guardar copias de la configuración para restauraciones rápidas en caso de fallo.
+
+---
+
+## DMZ (Zona Desmilitarizada) 
+
+--
+
+### Concepto de DMZ
+
+- Es una subred, generalmente ubicada entre el firewall perimetral y la LAN interna, donde se colocan los servicios públicos (p.ej., servidor web, servidor de correo).
+- Objetivo: si un servicio público es comprometido, el atacante se “encuentra” en la DMZ, sin acceso directo a la red interna.
+
+--
+
+### Diseño de topologías seguras
+
+1. **Firewall perimetral** controla el tráfico desde Internet hacia la DMZ y desde la DMZ hacia la LAN interna.
+2. **Reglas más restrictivas** desde la DMZ a la LAN (p.ej., solo permitir tráfico SMTP hacia servidor de correo interno).
+3. Uso de VLANs o routers físicos separados para aislar aún más la DMZ.
+
+--
+
+### Aislamiento y buenas prácticas
+
+- Minimizar los servicios expuestos en la DMZ (reducir la superficie de ataque).
+- Monitorizar accesos a la DMZ mediante IDS/IPS (ver si hay actividad maliciosa constante).
+- Actualizar y “endurecer” (hardening) todos los sistemas ubicados en la DMZ.
+
+
+--
+
+## DMZ con dos firewalls
+
+
+![Firewall con tres zonas: interna, DMZ e internet](../img/dmz-firewall-2.png)<!-- .element width="80%" -->
+
+--
+
+## DMZ con un firewall
+
+
+![Firewall con tres zonas: interna, DMZ e internet](../img/06/dmz-firewall.jpg)<!-- .element width="80%" -->
+
+---
+
+## Escenarios comunes
+
+--
+
+### Servidor web en DMZ
+
+- Acceso a base de datos en la red interna:
+  - Establecer políticas de firewall que permitan solo el tráfico de base de datos desde el servidor web a un puerto concreto (p.ej., 3306 para MySQL).
+  - Bloquear cualquier otro puerto o protocolo.
+
+--
+
+### Servicio de correo (SMTP) en DMZ
+
+- Para entrada de correos externos:
+  - Filtrado del tráfico entrante a puertos SMTP/IMAP.
+  - Antispam y antivirus en la DMZ antes de reenviar correos a la LAN interna.
+
+---
+
+## Software firewall de código abierto
+
+--
+
+### Framework Netfilter
+
+- **Descripción**: Framework de filtrado de paquetes y manipulación de redes integrado en el kernel de **Linux**. Base de herramientas como **iptables** y **nftables**.
+- **Características**:
+  - Filtrado de paquetes.
+  - NAT y redirección de puertos.
+  - Seguimiento de conexiones.
+
+--
+
+### Framework Packet Filter (PF)
+
+- **Descripción**: Firewall y NAT integrado en sistemas **BSD** como OpenBSD, FreeBSD y NetBSD.
+- **Características**:
+  - Reglas avanzadas de filtrado.
+  - NAT y NAT inverso.
+  - Redundancia y alta disponibilidad.
+
+--
+
+### pfSense y OPNsense
+
+- **pfSense**:
+  - Basada en FreeBSD con interfaz web amigable.
+  - Soporta configuraciones avanzadas como VPN, balanceo de carga y alta disponibilidad.
+- **OPNsense**:
+  - Fork de pfSense con interfaz moderna.
+  - Actualizaciones frecuentes y soporte de plugins.
+
+--
+
+### Otros firewalls
+
+1. **Shorewall**: Front-end para iptables, diseñado para configuraciones avanzadas en Linux.
+2. **UFW**: Interfaz simplificada para iptables, ideal para configuraciones básicas.
+3. **Firewalld**: Firewall dinámico para sistemas Linux como RHEL y Fedora.
+
+---
+
+## Firewall comerciales
+
+--
+
+### Ejemplos destacados
+
+1. **Cisco Firepower**:
+   - Protección avanzada contra amenazas.
+   - Integración con Cisco SecureX.
+2. **Palo Alto Networks**:
+   - Seguridad basada en inteligencia artificial.
+   - Enfoque en Zero Trust.
+3. **Fortinet FortiGate**:
+   - Amplia gama de modelos.
+   - SD-WAN y antivirus integrado.
+
+--
+
+### Otros firewalls comerciales
+
+- **Sophos XG Firewall**: Análisis de tráfico en tiempo real y administración en la nube.
+- **Check Point NGFW**: Protección avanzada contra malware y segmentación basada en políticas.
+- **Juniper Networks SRX Series**: Escalabilidad y control de aplicaciones.
+
+
+                </textarea>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="../../reveal/dist/reveal.js"></script>
+    <script src="../../reveal/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script src="../../reveal/plugin/notes/notes.js"></script>
+    <script src="../../reveal/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+                width: "80%",
+    //	    	width: 1280,
+    //		    height: 720,
+    //	    	margin: 0.05,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                hash: true,
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
+
+
+

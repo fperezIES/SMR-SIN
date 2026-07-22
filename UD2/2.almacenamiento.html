@@ -1,0 +1,6166 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fperezies.github.com/SMR-SIN/UD2/2.almacenamiento.html">
+      
+      
+        <link rel="prev" href="1.fisica_CPD.html">
+      
+      
+        <link rel="next" href="3.backup.html">
+      
+      
+      <link rel="icon" href="../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Almacenamiento de la Información - 2SMR Seguridad Informática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#almacenamiento-de-la-informacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-header__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2SMR Seguridad Informática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Almacenamiento de la Información
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-nav__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2SMR Seguridad Informática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Presentación del módulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../UD1/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/1.introduccion.seguridad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/2.vulnerabilidades.amenazas.exploits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades, Amenazas y Exploits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/3.SGSI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGSI y Análisis de Riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/4.cumplimiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cumplimiento legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/2.amenazas.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/3.auditorias.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis y gestión de riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/4.incidentes.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Gestión de Incidentes de Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/5.cumplimiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cumplimiento Legal en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/1.1.analisis.riesgos.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis de riesgos en 5 minutos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/2.1.amenazas.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Identificación y Análisis de Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/2.2.rss.seguridad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Análisis de Incidentes de Ciberseguridad con RSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/3.1.familiaiso27000.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Familiarización con normas ISO/IEC 27000
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/4.1.Normativa.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"/></svg>
+  
+  <span class="md-ellipsis">
+    Caso Práctico: Soporte Informático y Normativa Legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.fisica_CPD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Física en Centros de Procesamiento de Datos (CPD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Almacenamiento de la Información
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2.almacenamiento.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Almacenamiento de la Información
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Almacenamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Almacenamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidades-fisicas-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidades Físicas de Almacenamiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuraciones-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuraciones RAID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#almacenamiento-en-red-centralizacion-del-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento en Red (Centralización del Almacenamiento)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#almacenamiento-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento en la Nube
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unidades-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidades de Almacenamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidades de Almacenamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-almacenamiento-fisico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Almacenamiento Físico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Almacenamiento Físico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discos-duros-hdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discos Duros (HDD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidades-de-estado-solido-ssd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidades de Estado Sólido (SSD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cintas-magneticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cintas Magnéticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacidad-multiplos-binarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacidad: Múltiplos Binarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fiabilidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fiabilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mtbf-mean-time-between-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      MTBF (Mean Time Between Failures)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afr-annualized-failure-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      AFR (Annualized Failure Rate)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Velocidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadisticas-smart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estadísticas SMART
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estadísticas SMART">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-smart-mas-significativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros SMART más significativos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-redundante-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento Redundante (RAID)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Almacenamiento Redundante (RAID)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-del-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas del RAID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niveles-de-raid-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Niveles de RAID Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Niveles de RAID Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raid-0-striping" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 0 (Striping)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-1-mirroring" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 1 (Mirroring)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-5-striping-con-paridad-distribuida" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 5 (Striping con Paridad Distribuida)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-6-striping-con-paridad-doble-distribuida" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 6 (Striping con Paridad Doble Distribuida)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-anidados" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID Anidados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAID Anidados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raid-10-raid-10-mirroring-y-striping" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 10 (RAID 1+0, Mirroring y Striping)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID 0+1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-anidado-raid-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID anidado: RAID 50
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconstruccion-en-caso-de-fallo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconstrucción en caso de fallo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reconstrucción en caso de fallo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiempo-de-reconstruccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiempo de reconstrucción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discos-de-reserva-spare-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discos de reserva (Spare Disks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conveniencia-de-las-configuraciones-raid-segun-el-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conveniencia de las configuraciones RAID según el uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-en-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento en Red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Almacenamiento en Red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nas-network-attached-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAS (Network Attached Storage)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAS (Network Attached Storage)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso Recomendado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologias-y-fabricantes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías y Fabricantes Principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#san-storage-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAN (Storage Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-recomendado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso Recomendado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnologias-y-fabricantes-principales_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías y Fabricantes Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergencia-de-san-y-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergencia de SAN y NAS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convergencia de SAN y NAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-la-convergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de la Convergencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fabricantes-y-soluciones-destacadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fabricantes y Soluciones Destacadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-en-la-nube_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento en la Nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Almacenamiento en la Nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-almacenamiento-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Almacenamiento en la Nube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafíos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principales-proveedores-y-tecnologias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principales Proveedores y Tecnologías
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tendencias-actuales-en-almacenamiento-empresarial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tendencias Actuales en Almacenamiento Empresarial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tendencias Actuales en Almacenamiento Empresarial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#almacenamiento-definido-por-software-sds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenamiento Definido por Software (SDS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infraestructura-hiperconvergente-hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infraestructura Hiperconvergente (HCI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvme-y-nvme-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVMe y NVMe-oF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inteligencia-artificial-y-machine-learning-en-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inteligencia Artificial y Machine Learning en Almacenamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-para-la-seleccion-de-soluciones-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones para la Selección de Soluciones de Almacenamiento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.backup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de Copias de Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.borradoyrecuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado Seguro de Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="borrado_recuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado recuperacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/1.fisica_CPD.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    bicación equipos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/2.almacenamiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Unidades de almacenamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/3.backup.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/4.borradoyrecuperacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Borrado y recuperación de información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/RAID_almalinux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Guía paso a paso para configurar RAID 5 y RAID 6 en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/RAID_windows11.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    RAID windows11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/SMART.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación del estado SMART de las unidades de disco
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/TrueNAS_RAID5.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/backup_duplicati.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Backup duplicati
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/backup_rsync.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad con rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/borrado_seguro.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica 5: Recuperación de Ficheros y Borrado Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/clonezilla.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Clonado de máquinas usando Clonezilla
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/especificaciones_fiabilidad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Investigación de Especificaciones de Fiabilidad de Discos Duros y Unidades SSD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/fiabilidadDiscosGoogle.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprensión de la Fiabilidad de los Discos Duros según el Estudio de Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/2.c_simetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/3.c_asimetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/4.PKI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infraestructura de Clave Pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/5.c_aplicaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones de la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/6.c_cuantica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Criptografía Cuántica y Post-Cuántica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/2.c_simetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/3.c_asimetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/4.PKI.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Infraestructura de clave pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.gpg.asimetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado Asimétrico y firma con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado simétrico con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.hashfunctions.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Funciones Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.ssllabs.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Comprobación de Vulnerabilidades en Sitios Web Seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/opt.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Tarea: Envío de mensaje cifrado y firmado usando GPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.XCA%201.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.PKI.openssl.XCA 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.XCA.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Creación de un Certificado SSL/TLS Multisitio en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Autoridad Certificadora con OpenSSL y Servidor Web Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.hash_pwd_jtr.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Fortaleza de contraseñas en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/1.seguridad_acceso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fortificación de Hosts: Autenticación, Arranque Seguro y Cifrado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/2.malware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/3.actualizacion_vulnerabilidades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/4.monitorizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Monitorización en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/1.seguridad_acceso.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en acceso a hosts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/2.malware.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/4.monitorizacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Auditoría en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ELKstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ELKstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/Ideas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ideas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/OSSEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSSEC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P02_Bitlocker.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de disco en Windows 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P05_Debian_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de discos en Linux (LUKS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P13_Actualizaciones_debian.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualizaciones de software Debian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.Informe_mandiant2024.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis del informe de ciberseguridad "M-Trends 2024"
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.cifrado_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de Discos LUKS en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.politicas_de_contrasen%CC%83as_linux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Establecimiento de Políticas de Contraseñas y Gestión de Permisos en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.resetPass.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ej.resetPass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.virustotal.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación de ficheros y URLs con VirtusTotal.com
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/nessus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nessus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/openSCAP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openSCAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/opt.ssh_2step.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Autenticación de Doble Factor por SSH en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.GVM.openVAS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.lynis.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.wazuh.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wazuh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/1.intro_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/2.redes_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/cluster_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/ha_red.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ha red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Presentaciones/1.intro_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción Alta Disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Presentaciones/2.redes_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    HA en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/kubernetes.cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/kubernetes.wordpress.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.wordpress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/openstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Openstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/pacemaker.corosync.mysql.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Pacemaker.corosync.mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.balanceador.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.balanceador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.proxmox.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Máquinas virtuales en alta disponibilidad con Proxmox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.vrrp.keepalived.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Puerta de enlace en alta disponibilidad (VRRP) con Keepalived
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/wordpress_cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wordpress cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/2.WLAN-LAN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/3.firewalls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Seguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/4.VPN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/5.IDS-IPS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/6.proxies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/7.DDos-ZTA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.DDos ZTA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    ntroducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/2.WLAN-LAN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/3.firewalls.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    eguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/4.VPN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/5.IDS-IPS.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Presentaciones/6.proxies.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.IDS.IPS.snort.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.IDS.IPS.snort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.IDS.IPS.suricata.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Instalación y Configuración de Suricata en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.pfsense_dmz.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Instalación y configuración de un cortafuegos perimetral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.proxy.directo.squid.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.proxy.directo.squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.vpn.ra.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.vpn.ra.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.ra.wireguard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.vpn.site2site.ipsec.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.site2site.ipsec
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.vpn.site2site.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD6/Tareas/t.vpn.site2site.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN site to site con WireGuard en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Incidentes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Incidentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/1988.gusano.morris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El gusano Morris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2010.stuxnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Malware Stuxnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2016.botnet_mirai.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botnet Mirai
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2017.wannacry.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dossier sobre WannaCry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2018.spectre_meltdown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018.spectre meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2019.ramsomware.jerez.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque Ransomware al Ayuntamiento de Jerez en 2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2020.solarwinds.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de SolarWinds 2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2021.ransomware.colonial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque de Ransomware a Colonial Pipeline (2021)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2023.hack.LTT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023.hack.LTT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2024.crowdstrike.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de CrowdStrike 2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/buffer_overflow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buffer overflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/heartbleed.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heartbleed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/ransomware.pago.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Empresas que han pagado rescates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/xss.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Xss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/zeroday.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Zero-Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_16">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/slides/2017.operation_cloud_hopper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017.operation cloud hopper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/slides/2018.spectre_meltdown.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Spectre y Meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="almacenamiento-de-la-informacion">Almacenamiento de la Información<a class="headerlink" href="#almacenamiento-de-la-informacion" title="Permanent link">&para;</a></h1>
+<p>La información es uno de los activos más valiosos para cualquier organización, y su protección es de vital importancia. En este tema, nos centraremos en cómo se almacena físicamente la información y en las mejores prácticas para protegerla de manera adecuada.</p>
+<p>Los cuatro aspectos fundamentales que debemos considerar al tratar la seguridad física de la información son:</p>
+<ul>
+<li>
+<p><strong>Capacidad:</strong> Cantidad de información que pueden almacenar los dispositivos. Comprender la capacidad de almacenamiento es esencial para planificar las necesidades presentes y futuras de la organización, asegurando que haya suficiente espacio para los datos actuales y para el crecimiento esperado.</p>
+</li>
+<li>
+<p><strong>Rendimiento:</strong> Velocidad a la que puede ser guardada y recuperada la información. Depende de la tecnología utilizada en el dispositivo de almacenamiento y afecta directamente a la eficiencia operativa. Un rendimiento óptimo es crucial para aplicaciones que requieren acceso rápido a grandes volúmenes de datos.</p>
+</li>
+<li>
+<p><strong>Disponibilidad:</strong> Capacidad de los sistemas para funcionar con las menores interrupciones posibles. Implementar sistemas tolerantes a fallos y con redundancia aumenta la disponibilidad, asegurando que la información esté accesible cuando se necesite, incluso en caso de fallos en el hardware o software.</p>
+</li>
+<li>
+<p><strong>Acceso a la información:</strong> Tiempo necesario para acceder a los datos. Por ejemplo, una unidad que permite la lectura aleatoria de datos proporciona un acceso más rápido y flexible que otra que solo permite lectura secuencial, como las cintas magnéticas.</p>
+</li>
+</ul>
+<p>Para optimizar estos aspectos, existen diversas tecnologías y técnicas, como los sistemas RAID, que combinan múltiples discos para mejorar el rendimiento y la redundancia, y las arquitecturas SAN y NAS, que permiten la centralización y el acceso eficiente al almacenamiento en red.</p>
+<h2 id="tipos-de-almacenamiento">Tipos de Almacenamiento<a class="headerlink" href="#tipos-de-almacenamiento" title="Permanent link">&para;</a></h2>
+<h3 id="unidades-fisicas-de-almacenamiento">Unidades Físicas de Almacenamiento<a class="headerlink" href="#unidades-fisicas-de-almacenamiento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Discos Duros (HDD):</strong> Utilizan platos magnéticos y cabezales móviles para leer y escribir datos. Son ampliamente utilizados debido a su alta capacidad y costo relativamente bajo por gigabyte.</p>
+</li>
+<li>
+<p><strong>Unidades de Estado Sólido (SSD):</strong> Basadas en memoria flash, sin partes móviles. Ofrecen velocidades de lectura y escritura significativamente más altas que los HDD y menores tiempos de acceso, aunque a un costo mayor por gigabyte.</p>
+</li>
+<li>
+<p><strong>Cintas Magnéticas:</strong> Utilizadas principalmente para copias de seguridad y archivado a largo plazo. Ofrecen una alta capacidad de almacenamiento a un costo muy bajo, pero con tiempos de acceso más lentos y operaciones de lectura/escritura secuenciales.</p>
+</li>
+</ul>
+<h3 id="configuraciones-raid">Configuraciones RAID<a class="headerlink" href="#configuraciones-raid" title="Permanent link">&para;</a></h3>
+<p>Las configuraciones RAID (Redundant Array of Independent Disks) permiten combinar múltiples discos para mejorar el rendimiento, la disponibilidad o ambas. Existen varios niveles de RAID, cada uno con sus propias ventajas y desventajas:</p>
+<ul>
+<li>
+<p><strong>RAID 0 (Striping):</strong> Divide los datos entre dos o más discos, mejorando el rendimiento pero sin redundancia. Si un disco falla, se pierde toda la información.</p>
+</li>
+<li>
+<p><strong>RAID 1 (Mirroring):</strong> Duplica los datos en dos o más discos, ofreciendo alta redundancia. Si un disco falla, los datos permanecen disponibles en el disco duplicado.</p>
+</li>
+<li>
+<p><strong>RAID 5:</strong> Combina striping con paridad distribuida, permitiendo la recuperación de datos si falla un disco. Requiere al menos tres discos y ofrece un equilibrio entre rendimiento, capacidad y redundancia.</p>
+</li>
+<li>
+<p><strong>RAID 6:</strong> Similar a RAID 5, pero con paridad adicional, lo que permite la falla de hasta dos discos. Requiere al menos cuatro discos.</p>
+</li>
+<li>
+<p><strong>RAID 10 (1+0):</strong> Combina mirroring y striping. Ofrece alta redundancia y rendimiento, pero requiere al menos cuatro discos y tiene una eficiencia de almacenamiento del 50%.</p>
+</li>
+</ul>
+<h3 id="almacenamiento-en-red-centralizacion-del-almacenamiento">Almacenamiento en Red (Centralización del Almacenamiento)<a class="headerlink" href="#almacenamiento-en-red-centralizacion-del-almacenamiento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>NAS (Network Attached Storage):</strong> Es un dispositivo de almacenamiento conectado a una red que permite el acceso a datos a nivel de archivo. Es ideal para compartir archivos entre múltiples usuarios y dispositivos en una red local.</p>
+</li>
+<li>
+<p><strong>SAN (Storage Area Network):</strong> Es una red dedicada de almacenamiento que proporciona acceso a dispositivos de almacenamiento a nivel de bloque. Es más compleja y costosa que NAS, pero ofrece un rendimiento superior y es adecuada para aplicaciones empresariales críticas que requieren acceso rápido y confiable a los datos.</p>
+</li>
+</ul>
+<h3 id="almacenamiento-en-la-nube">Almacenamiento en la Nube<a class="headerlink" href="#almacenamiento-en-la-nube" title="Permanent link">&para;</a></h3>
+<p>El almacenamiento en la nube implica la deslocalización del almacenamiento, ofreciendo escalabilidad y accesibilidad remota. Los datos se almacenan en servidores remotos mantenidos por proveedores de servicios en la nube y son accesibles a través de internet.</p>
+<p><strong>Ventajas:</strong></p>
+<ul>
+<li><strong>Escalabilidad:</strong> Capacidad de aumentar o disminuir el almacenamiento según las necesidades.</li>
+<li><strong>Accesibilidad:</strong> Acceso a los datos desde cualquier lugar con conexión a internet.</li>
+<li><strong>Costo Operativo Reducido:</strong> Minimiza la necesidad de invertir en infraestructura física de almacenamiento.</li>
+</ul>
+<p><strong>Desafíos:</strong></p>
+<ul>
+<li><strong>Seguridad y Privacidad:</strong> Es fundamental asegurar que los datos estén protegidos y cumplan con las regulaciones de privacidad.</li>
+<li><strong>Dependencia del Proveedor:</strong> La disponibilidad y rendimiento dependen del proveedor de servicios.</li>
+<li><strong>Latencia:</strong> Puede haber retrasos en el acceso a los datos debido a la distancia y la calidad de la conexión.</li>
+</ul>
+<h2 id="unidades-de-almacenamiento">Unidades de Almacenamiento<a class="headerlink" href="#unidades-de-almacenamiento" title="Permanent link">&para;</a></h2>
+<h3 id="caracteristicas-principales">Características Principales<a class="headerlink" href="#caracteristicas-principales" title="Permanent link">&para;</a></h3>
+<p>Al seleccionar unidades de almacenamiento, es importante considerar las siguientes características:</p>
+<ul>
+<li>
+<p><strong>Capacidad:</strong> Medida en bytes y sus múltiplos, determina cuánto puede almacenar la unidad. Es crucial para satisfacer las necesidades de almacenamiento actuales y futuras.</p>
+</li>
+<li>
+<p><strong>Velocidad:</strong> Incluye la velocidad de lectura y escritura, tanto secuencial como aleatoria. Afecta el rendimiento general del sistema, especialmente en aplicaciones que requieren acceso rápido a los datos.</p>
+</li>
+<li>
+<p><strong>Precio:</strong> Factor importante en la planificación de recursos y presupuesto. Es necesario equilibrar el costo con las necesidades de rendimiento y capacidad.</p>
+</li>
+<li>
+<p><strong>Fiabilidad:</strong> Se refiere a la probabilidad de que la unidad funcione correctamente durante un período de tiempo. Las métricas comunes incluyen:</p>
+</li>
+<li>
+<p><strong>MTBF (Mean Time Between Failures):</strong> Tiempo medio entre fallos, expresado en horas.</p>
+</li>
+<li>
+<p><strong>AFR (Annualized Failure Rate):</strong> Tasa anualizada de fallos, expresada como un porcentaje.</p>
+</li>
+<li>
+<p><strong>Durabilidad:</strong> Especialmente relevante en SSD, donde la vida útil está determinada por el número de ciclos de escritura que las celdas de memoria pueden soportar.</p>
+</li>
+<li>
+<p><strong>Consumo de Energía:</strong> Importante para reducir costos operativos y en entornos donde la eficiencia energética es crucial.</p>
+</li>
+</ul>
+<h3 id="tipos-de-almacenamiento-fisico">Tipos de Almacenamiento Físico<a class="headerlink" href="#tipos-de-almacenamiento-fisico" title="Permanent link">&para;</a></h3>
+<h4 id="discos-duros-hdd">Discos Duros (HDD)<a class="headerlink" href="#discos-duros-hdd" title="Permanent link">&para;</a></h4>
+<p>Los HDD son dispositivos electromecánicos que almacenan datos en platos giratorios recubiertos de material magnético. Sus principales características incluyen:</p>
+<ul>
+<li><strong>Altas Capacidades:</strong> Pueden almacenar varios terabytes de datos a un costo bajo por gigabyte.</li>
+<li><strong>Velocidades Variables:</strong> Las RPM comunes son 5,400, 7,200 y 10,000, afectando el tiempo de acceso y la tasa de transferencia.</li>
+<li><strong>Partes Móviles:</strong> Son susceptibles a daños físicos por golpes o vibraciones, lo que puede afectar su fiabilidad.</li>
+<li><strong>Aplicaciones Comunes:</strong> Almacenamiento masivo, servidores de archivos y sistemas donde el costo es un factor clave.</li>
+</ul>
+<h4 id="unidades-de-estado-solido-ssd">Unidades de Estado Sólido (SSD)<a class="headerlink" href="#unidades-de-estado-solido-ssd" title="Permanent link">&para;</a></h4>
+<p>Las SSD utilizan memoria flash para almacenar datos, ofreciendo varias ventajas:</p>
+<ul>
+<li><strong>Velocidades Superiores:</strong> Lecturas y escrituras más rápidas, con tiempos de acceso casi instantáneos.</li>
+<li><strong>Sin Partes Móviles:</strong> Mayor resistencia a impactos y vibraciones, y menor riesgo de fallos mecánicos.</li>
+<li><strong>Consumo Energético Menor:</strong> Generan menos calor y requieren menos energía, beneficioso en dispositivos móviles y centros de datos.</li>
+<li><strong>Tipos de Memoria Flash:</strong></li>
+<li><strong>SLC (Single-Level Cell):</strong> Almacena un bit por celda, ofreciendo mayor durabilidad y rendimiento, pero a un costo más alto.</li>
+<li><strong>MLC (Multi-Level Cell):</strong> Almacena dos bits por celda, equilibrando costo y rendimiento.</li>
+<li><strong>TLC (Triple-Level Cell):</strong> Almacena tres bits por celda, con mayor capacidad a menor costo, pero con menor durabilidad.</li>
+<li><strong>QLC (Quad-Level Cell):</strong> Almacena cuatro bits por celda, aumentando la capacidad y reduciendo el costo, pero con menor rendimiento y durabilidad.</li>
+<li><strong>Aplicaciones Comunes:</strong> Sistemas operativos, aplicaciones que requieren alto rendimiento, dispositivos móviles y servidores que necesitan tiempos de respuesta rápidos.</li>
+</ul>
+<h4 id="cintas-magneticas">Cintas Magnéticas<a class="headerlink" href="#cintas-magneticas" title="Permanent link">&para;</a></h4>
+<p>Las cintas magnéticas son un medio de almacenamiento tradicional que sigue siendo relevante para ciertas aplicaciones:</p>
+<ul>
+<li><strong>Alta Capacidad y Bajo Costo:</strong> Excelente para almacenar grandes volúmenes de datos a largo plazo.</li>
+<li><strong>Larga Vida Útil:</strong> Las cintas bien almacenadas pueden conservar datos durante décadas.</li>
+<li><strong>Lectura/Escritura Secuencial:</strong> No son adecuadas para acceso aleatorio; el tiempo de acceso es significativamente mayor que en HDD o SSD.</li>
+<li><strong>Aplicaciones Comunes:</strong> Copias de seguridad, archivado de datos históricos y almacenamiento de datos que rara vez se acceden.</li>
+</ul>
+<h3 id="capacidad-multiplos-binarios">Capacidad: Múltiplos Binarios<a class="headerlink" href="#capacidad-multiplos-binarios" title="Permanent link">&para;</a></h3>
+<p>Es importante distinguir entre los prefijos decimales y binarios al medir la capacidad de las unidades de almacenamiento:</p>
+<table>
+<thead>
+<tr>
+<th>Múltiplo</th>
+<th>Prefijo Decimal (SI)</th>
+<th>Valor Decimal</th>
+<th>Prefijo Binario (IEC)</th>
+<th>Valor Binario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kilobyte (kB)</td>
+<td>kilo</td>
+<td>10³ bytes</td>
+<td>Kibibyte (KiB)</td>
+<td>2¹⁰ bytes (1,024)</td>
+</tr>
+<tr>
+<td>Megabyte (MB)</td>
+<td>mega</td>
+<td>10⁶ bytes</td>
+<td>Mebibyte (MiB)</td>
+<td>2²⁰ bytes (1,048,576)</td>
+</tr>
+<tr>
+<td>Gigabyte (GB)</td>
+<td>giga</td>
+<td>10⁹ bytes</td>
+<td>Gibibyte (GiB)</td>
+<td>2³⁰ bytes (1,073,741,824)</td>
+</tr>
+<tr>
+<td>Terabyte (TB)</td>
+<td>tera</td>
+<td>10¹² bytes</td>
+<td>Tebibyte (TiB)</td>
+<td>2⁴⁰ bytes</td>
+</tr>
+<tr>
+<td>Petabyte (PB)</td>
+<td>peta</td>
+<td>10¹⁵ bytes</td>
+<td>Pebibyte (PiB)</td>
+<td>2⁵⁰ bytes</td>
+</tr>
+<tr>
+<td>Exabyte (EB)</td>
+<td>exa</td>
+<td>10¹⁸ bytes</td>
+<td>Exbibyte (EiB)</td>
+<td>2⁶⁰ bytes</td>
+</tr>
+<tr>
+<td>Zettabyte (ZB)</td>
+<td>zetta</td>
+<td>10²¹ bytes</td>
+<td>Zebibyte (ZiB)</td>
+<td>2⁷⁰ bytes</td>
+</tr>
+<tr>
+<td>Yottabyte (YB)</td>
+<td>yotta</td>
+<td>10²⁴ bytes</td>
+<td>Yobibyte (YiB)</td>
+<td>2⁸⁰ bytes</td>
+</tr>
+</tbody>
+</table>
+<p>Los fabricantes suelen indicar las capacidades usando los prefijos decimales (base 10), lo que resulta en números más grandes. Sin embargo, los sistemas operativos y aplicaciones a menudo usan prefijos binarios (base 2), lo que puede generar discrepancias en la capacidad reportada. Por ejemplo, un disco etiquetado como 1 TB puede mostrarse como aproximadamente 931 GiB en el sistema operativo.</p>
+<h3 id="fiabilidad">Fiabilidad<a class="headerlink" href="#fiabilidad" title="Permanent link">&para;</a></h3>
+<p>La fiabilidad es un aspecto crítico en el almacenamiento de información, ya que los fallos pueden resultar en pérdida de datos importantes. Las principales métricas utilizadas para evaluar la fiabilidad son:</p>
+<h4 id="mtbf-mean-time-between-failures">MTBF (Mean Time Between Failures)<a class="headerlink" href="#mtbf-mean-time-between-failures" title="Permanent link">&para;</a></h4>
+<p>Es una medida estadística que indica el tiempo medio esperado entre fallos durante la operación normal. Se expresa en horas y se calcula en condiciones controladas. Es importante notar que el MTBF no predice la vida útil exacta de un dispositivo individual, sino que es una estimación basada en un gran número de unidades.</p>
+<h4 id="afr-annualized-failure-rate">AFR (Annualized Failure Rate)<a class="headerlink" href="#afr-annualized-failure-rate" title="Permanent link">&para;</a></h4>
+<p>Es el porcentaje estimado de dispositivos que fallarán en un año de operación continua. Se deriva del MTBF y proporciona una perspectiva más práctica sobre la probabilidad de fallos en un período determinado.</p>
+<p>Es esencial implementar estrategias de respaldo y redundancia para mitigar los riesgos asociados con fallos de hardware, independientemente de las métricas de fiabilidad.</p>
+<h3 id="velocidad">Velocidad<a class="headerlink" href="#velocidad" title="Permanent link">&para;</a></h3>
+<p>La velocidad de una unidad de almacenamiento influye directamente en el rendimiento del sistema y en la eficiencia de las operaciones de lectura y escritura. Los factores que afectan la velocidad incluyen:</p>
+<ul>
+<li><strong>Tipo de Interfaz:</strong></li>
+<li><strong>SATA (Serial ATA):</strong> Común en HDD y SSD de consumo, con velocidades de hasta 600 MB/s (SATA III).</li>
+<li><strong>SAS (Serial Attached SCSI):</strong> Utilizado en entornos empresariales, ofrece mayor fiabilidad y velocidades de hasta 12 Gb/s.</li>
+<li>
+<p><strong>NVMe (Non-Volatile Memory Express):</strong> Protocolo diseñado para SSD, utiliza el bus PCIe, permitiendo velocidades de varios GB/s y baja latencia.</p>
+</li>
+<li>
+<p><strong>Velocidad de Rotación en HDD:</strong></p>
+</li>
+<li><strong>RPM (Revoluciones por Minuto):</strong> Discos con mayores RPM tienen tiempos de acceso y tasas de transferencia más rápidas.</li>
+<li>
+<p><strong>Valores Comunes:</strong> 5,400 RPM (bajo consumo), 7,200 RPM (equilibrio), 10,000 RPM y 15,000 RPM (alto rendimiento).</p>
+</li>
+<li>
+<p><strong>Tecnología de Memoria en SSD:</strong></p>
+</li>
+<li><strong>Tipo de NAND Flash:</strong> SLC, MLC, TLC, QLC, afectando la velocidad y durabilidad.</li>
+<li><strong>Controlador y Caché:</strong> Un buen controlador y el uso de caché DRAM pueden mejorar significativamente el rendimiento.</li>
+</ul>
+<h3 id="estadisticas-smart">Estadísticas SMART<a class="headerlink" href="#estadisticas-smart" title="Permanent link">&para;</a></h3>
+<p>La tecnología SMART es una herramienta de diagnóstico que permite monitorear el estado de salud de los dispositivos de almacenamiento.</p>
+<p><strong>Aspectos Clave:</strong></p>
+<ul>
+<li><strong>Monitoreo de Atributos:</strong> SMART rastrea parámetros como:</li>
+<li><strong>Errores de Lectura/Escritura:</strong> Indican problemas en la superficie del disco o en los mecanismos de lectura/escritura.</li>
+<li><strong>Sectores Reasignados:</strong> Sectores defectuosos que han sido reemplazados por sectores de reserva.</li>
+<li><strong>Tiempo de Arranque:</strong> Retrasos pueden indicar problemas mecánicos.</li>
+<li>
+<p><strong>Temperatura Operativa:</strong> Temperaturas altas pueden reducir la vida útil del dispositivo.</p>
+</li>
+<li>
+<p><strong>Alertas Preventivas:</strong> Los sistemas pueden configurar alertas cuando ciertos umbrales se superan, permitiendo al usuario tomar medidas antes de un fallo crítico.</p>
+</li>
+<li>
+<p><strong>Limitaciones:</strong> Aunque SMART es útil, no detecta todos los tipos de fallos. Algunos problemas pueden ocurrir repentinamente sin señales previas.</p>
+</li>
+</ul>
+<p><strong>Buenas Prácticas:</strong></p>
+<ul>
+<li><strong>Monitoreo Regular:</strong> Utilizar software que supervise los atributos SMART y notifique anomalías.</li>
+<li><strong>Respaldo Frecuente:</strong> Mantener copias de seguridad actualizadas para prevenir pérdida de datos.</li>
+<li><strong>Mantenimiento Preventivo:</strong> Reemplazar dispositivos que muestren signos de degradación antes de que fallen completamente.</li>
+</ul>
+<p>Según un estudio de Google titulado "<a href="https://research.google/pubs/pub32774/">Tendencias de Fallos en una Gran Población de Unidades de Disco</a>", se encontró que el 36% de los discos que fallaron no mostraron ningún error SMART previo. Esto resalta la importancia de no depender exclusivamente de SMART y de implementar estrategias adicionales de protección de datos.</p>
+<h4 id="parametros-smart-mas-significativos">Parámetros SMART más significativos<a class="headerlink" href="#parametros-smart-mas-significativos" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Parámetro</strong></th>
+<th><strong>HDD</strong></th>
+<th><strong>SSD</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raw Read Error Rate</strong></td>
+<td>Crítico (Errores de lectura)</td>
+<td>No tan relevante</td>
+</tr>
+<tr>
+<td><strong>Reallocated Sectors Count</strong></td>
+<td>Muy importante (sectores defectuosos)</td>
+<td>Muy importante (bloques reasignados)</td>
+</tr>
+<tr>
+<td><strong>Seek Error Rate</strong></td>
+<td>Importante (Errores de búsqueda)</td>
+<td>No aplicable</td>
+</tr>
+<tr>
+<td><strong>Spin Retry Count</strong></td>
+<td>Importante (Problemas de motor)</td>
+<td>No aplicable</td>
+</tr>
+<tr>
+<td><strong>Pending Sectors Count</strong></td>
+<td>Crítico (Sectores pendientes)</td>
+<td>No aplicable</td>
+</tr>
+<tr>
+<td><strong>Wear Leveling Count</strong></td>
+<td>No aplicable</td>
+<td>Crítico (Desgaste de celdas NAND)</td>
+</tr>
+<tr>
+<td><strong>Program Fail Count</strong></td>
+<td>No aplicable</td>
+<td>Crítico (Errores de escritura)</td>
+</tr>
+<tr>
+<td><strong>Erase Fail Count</strong></td>
+<td>No aplicable</td>
+<td>Crítico (Errores de borrado)</td>
+</tr>
+<tr>
+<td><strong>Uncorrectable Error Count</strong></td>
+<td>Importante</td>
+<td>Crítico (Errores de corrección fallidos)</td>
+</tr>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>Moderadamente importante</td>
+<td>Moderadamente importante</td>
+</tr>
+<tr>
+<td><strong>Remaining Life</strong></td>
+<td>No aplicable</td>
+<td>Crítico</td>
+</tr>
+</tbody>
+</table>
+<h2 id="almacenamiento-redundante-raid">Almacenamiento Redundante (RAID)<a class="headerlink" href="#almacenamiento-redundante-raid" title="Permanent link">&para;</a></h2>
+<p>Un <strong>RAID</strong> (Redundant Array of Independent Disks) es un sistema que utiliza múltiples discos duros o SSD para mejorar el rendimiento y/o la tolerancia a fallos mediante la distribución y/o replicación de datos.</p>
+<p>Los sistemas RAID pueden ser implementados por <strong>hardware</strong> (controladoras RAID dedicadas) o por <strong>software</strong> (gestión del RAID por el sistema operativo). La implementación por hardware suele ofrecer mejor rendimiento y funcionalidades avanzadas como intercambio de discos en caliente (hot swapping).</p>
+<p>Además, en entornos empresariales es común utilizar discos <strong>hot spare</strong>, que son discos de reserva que se activan automáticamente en caso de fallo de uno de los discos activos, sin necesidad de intervención manual.</p>
+<h3 id="ventajas-del-raid">Ventajas del RAID<a class="headerlink" href="#ventajas-del-raid" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mayor Capacidad:</strong> Combinación de múltiples discos para aumentar el espacio de almacenamiento disponible.</li>
+<li><strong>Mayor Tolerancia a Fallos:</strong> Redundancia de datos que permite continuar operando incluso si uno o varios discos fallan.</li>
+<li><strong>Mayor Seguridad:</strong> Protección de datos mediante redundancia, aumentando la disponibilidad y la integridad.</li>
+<li><strong>Mayor Velocidad:</strong> Distribución de datos que permite realizar operaciones de lectura/escritura en paralelo.</li>
+</ul>
+<h3 id="niveles-de-raid-comunes">Niveles de RAID Comunes<a class="headerlink" href="#niveles-de-raid-comunes" title="Permanent link">&para;</a></h3>
+<h4 id="raid-0-striping"><strong>RAID 0 (Striping)</strong><a class="headerlink" href="#raid-0-striping" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Características:</strong> Distribuye los datos equitativamente entre dos o más discos sin información redundante ni paridad.</li>
+<li><strong>Número mínimo de discos:</strong> 2</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Aumento significativo del rendimiento de lectura y escritura.</li>
+<li>Utilización completa de la capacidad de almacenamiento disponible.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Sin tolerancia a fallos; la avería de un solo disco resulta en la pérdida total de datos.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Aplicaciones donde el rendimiento es crítico y la pérdida de datos es aceptable, como en estaciones de trabajo para edición de vídeo o renderizado.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 0" class="center" src="img/02/Raid0.png" style="width: 30%;" /></p>
+<h4 id="raid-1-mirroring">RAID 1 (Mirroring)<a class="headerlink" href="#raid-1-mirroring" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Características:</strong> Duplica los datos en dos o más discos, creando copias idénticas.</li>
+<li><strong>Número mínimo de discos:</strong> 2</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Alta disponibilidad y tolerancia a fallos; los datos permanecen accesibles si falla un disco.</li>
+<li>Recuperación sencilla y rápida en caso de fallo.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Capacidad efectiva reducida al 50% del total de discos, ya que se utiliza la mitad para la duplicación.</li>
+<li>No mejora el rendimiento de escritura; el rendimiento de lectura puede mejorar si se implementa lectura simultánea.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Sistemas críticos que requieren alta disponibilidad y fiabilidad, como servidores de bases de datos y aplicaciones financieras.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 1" class="center" src="img/02/Raid1.png" style="width: 30%;" /></p>
+<h4 id="raid-5-striping-con-paridad-distribuida">RAID 5 (Striping con Paridad Distribuida)<a class="headerlink" href="#raid-5-striping-con-paridad-distribuida" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Características:</strong> Combina striping con paridad distribuida, permitiendo reconstruir datos en caso de fallo de un disco.</li>
+<li><strong>Número mínimo de discos:</strong> 3</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Equilibrio entre rendimiento, capacidad y tolerancia a fallos.</li>
+<li>Capacidad de continuar operando tras el fallo de un disco.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Rendimiento de escritura más lento debido al cálculo y escritura de paridad.</li>
+<li>Tiempo de reconstrucción prolongado en caso de fallo, lo que puede afectar al rendimiento.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Servidores de archivos y aplicaciones donde se requiere un balance entre seguridad de datos y capacidad de almacenamiento.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 5" class="center" src="img/02/Raid5.png" /></p>
+<h4 id="raid-6-striping-con-paridad-doble-distribuida"><strong>RAID 6 (Striping con Paridad Doble Distribuida)</strong><a class="headerlink" href="#raid-6-striping-con-paridad-doble-distribuida" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Características:</strong> Similar a RAID 5, pero con paridad doble, permitiendo tolerar el fallo simultáneo de dos discos.</li>
+<li><strong>Número mínimo de discos:</strong> 4</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Mayor tolerancia a fallos en comparación con RAID 5.</li>
+<li>Adecuado para sistemas con grandes volúmenes de datos y discos de gran capacidad.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Rendimiento de escritura aún más lento que RAID 5 debido al cálculo adicional de paridad.</li>
+<li>Reducción adicional de la capacidad efectiva por el almacenamiento de paridad extra.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Entornos donde la disponibilidad y la integridad de los datos son extremadamente críticas, como en grandes sistemas de almacenamiento y servidores empresariales.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 6" class="center" src="img/02/Raid6.png" /></p>
+<h3 id="raid-anidados">RAID Anidados<a class="headerlink" href="#raid-anidados" title="Permanent link">&para;</a></h3>
+<h4 id="raid-10-raid-10-mirroring-y-striping">RAID 10 (RAID 1+0, Mirroring y Striping)<a class="headerlink" href="#raid-10-raid-10-mirroring-y-striping" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Características:</strong> Combina mirroring y striping, ofreciendo lo mejor de RAID 0 y RAID 1.</li>
+<li><strong>Número mínimo de discos:</strong> 4</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Alto rendimiento en lectura y escritura.</li>
+<li>Excelente tolerancia a fallos; puede soportar múltiples fallos de discos siempre que no sean del mismo espejo.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>La capacidad efectiva es la mitad del total debido al mirroring.</li>
+<li>Coste elevado por la necesidad de más discos para obtener la misma capacidad utilizable.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Aplicaciones empresariales críticas que requieren alto rendimiento y disponibilidad, como servidores de bases de datos transaccionales y entornos de virtualización.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 10" class="center" src="img/02/Raid10.png" /></p>
+<h4 id="raid-01">RAID 0+1<a class="headerlink" href="#raid-01" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Características:</strong> Realiza striping de los datos primero (RAID 0) y luego mirroring del conjunto (RAID 1).</p>
+</li>
+<li>
+<p><strong>Número mínimo de discos:</strong> 4</p>
+</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Alto rendimiento gracias al striping.</li>
+<li>Proporciona redundancia mediante el mirroring.</li>
+<li>La recuperación tras un fallo de disco es rápida y sencilla.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Menor tolerancia a fallos múltiples comparado con RAID 10 (si se pierde un disco en ambos conjuntos, se pierden los datos).</li>
+<li>Solo se utiliza el 50% de la capacidad total debido al mirroring.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Sistemas que requieren alto rendimiento y redundancia, como servidores de aplicaciones, bases de datos o sistemas de almacenamiento multimedia.</li>
+<li>No es adecuado para entornos que necesitan alta tolerancia a fallos múltiples; en estos casos, RAID 10 es preferible.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 0+1" class="center" src="img/02/Raid01.png" /></p>
+<h4 id="raid-anidado-raid-50">RAID anidado: RAID 50<a class="headerlink" href="#raid-anidado-raid-50" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Características:</strong> Realiza striping (RAID 0) sobre varios conjuntos RAID 5, combinando el rendimiento de RAID 0 con la redundancia de RAID 5.</p>
+</li>
+<li>
+<p><strong>Número mínimo de discos:</strong> 6</p>
+</li>
+<li><strong>Ventajas:</strong><ul>
+<li>Mejora el rendimiento de escritura en comparación con RAID 5 puro.</li>
+<li>La reconstrucción es más rápida porque solo se requiere leer una parte del array, no todos los discos a la vez.</li>
+<li>Mejor rendimiento del array durante el proceso de reconstrucción.</li>
+</ul>
+</li>
+<li><strong>Desventajas:</strong><ul>
+<li>Si fallan dos discos en la misma rama de RAID 5, el array completo se destruye.</li>
+<li>El coste es más elevado que RAID 5 debido al mayor número de discos requeridos.</li>
+</ul>
+</li>
+<li><strong>Uso recomendado:</strong><ul>
+<li>Ideal para aplicaciones que necesitan alto rendimiento y redundancia, como grandes servidores de almacenamiento, entornos de backup o sistemas con altas cargas de lectura/escritura que requieren rápida recuperación tras fallos.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="RAID 50" class="center" src="img/02/Raid50.jpg" /></p>
+<h3 id="reconstruccion-en-caso-de-fallo">Reconstrucción en caso de fallo<a class="headerlink" href="#reconstruccion-en-caso-de-fallo" title="Permanent link">&para;</a></h3>
+<p>Cuando un disco de un arreglo RAID falla, es fundamental entender el proceso de reconstrucción y cómo impacta en el rendimiento del sistema, la disponibilidad de los datos y el tiempo de recuperación. En este apartado veremos los factores clave que influyen en la reconstrucción del RAID, el uso de los <strong>spare disks</strong> (discos de reserva) y la conveniencia de elegir una configuración RAID adecuada según el uso del sistema.</p>
+<h4 id="tiempo-de-reconstruccion">Tiempo de reconstrucción<a class="headerlink" href="#tiempo-de-reconstruccion" title="Permanent link">&para;</a></h4>
+<p>El tiempo de reconstrucción en RAID depende de varios factores, tales como:</p>
+<ul>
+<li><strong>Capacidad del disco</strong>: A mayor capacidad del disco, mayor será el tiempo de reconstrucción. Si el sistema usa discos de gran tamaño (por ejemplo, 10 TB o más), el proceso de reconstrucción puede durar varias horas o incluso días.</li>
+<li><strong>Nivel de RAID</strong>: Los diferentes niveles de RAID tienen distintos tiempos de reconstrucción. RAID 1, al ser una simple copia espejo, es más rápido de reconstruir que configuraciones como RAID 5 o RAID 6, que requieren cálculos de paridad.</li>
+<li><strong>Carga de trabajo durante la reconstrucción</strong>: Si el sistema sigue estando en uso mientras se realiza la reconstrucción, esta puede verse ralentizada debido a la competencia por los recursos de E/S (entrada/salida).</li>
+<li><strong>Velocidad del disco y del controlador RAID</strong>: Cuanto más rápidos sean los discos y el controlador RAID, más rápido será el proceso de reconstrucción.</li>
+</ul>
+<h5 id="ejemplo-de-tiempos-aproximados-de-reconstruccion">Ejemplo de tiempos aproximados de reconstrucción:<a class="headerlink" href="#ejemplo-de-tiempos-aproximados-de-reconstruccion" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>RAID 1</strong>: Puede ser relativamente rápido, dado que simplemente se copia el contenido del disco sobreviviente al nuevo disco. Para un disco de 1 TB, puede tomar de 1 a 2 horas.</li>
+<li><strong>RAID 5</strong>: El tiempo de reconstrucción es mayor, ya que implica recalcular la paridad. En discos grandes de 4 TB, la reconstrucción puede tardar entre 5 y 10 horas, dependiendo de la carga del sistema.</li>
+<li><strong>RAID 6</strong>: Debido a que tiene dos paridades, la reconstrucción es más lenta que en RAID 5. En el mismo disco de 4 TB, puede tardar entre 10 y 20 horas.</li>
+</ul>
+<h4 id="discos-de-reserva-spare-disks">Discos de reserva (Spare Disks)<a class="headerlink" href="#discos-de-reserva-spare-disks" title="Permanent link">&para;</a></h4>
+<p>Los <strong>spare disks</strong> son discos adicionales que no forman parte activa del RAID, pero están listos para entrar en acción en caso de que uno de los discos activos falle. Estos pueden ser:</p>
+<ul>
+<li><strong>Spare disk local</strong>: Asignado a un único volumen RAID. Si ese volumen tiene un fallo, el disco de reserva se activa inmediatamente para iniciar el proceso de reconstrucción.</li>
+<li><strong>Spare disk global</strong>: No está vinculado a un volumen RAID específico, sino que está disponible para cualquier volumen RAID en el sistema. Si cualquiera de los volúmenes sufre un fallo, este disco de reserva entrará en acción.</li>
+</ul>
+<p>El uso de <strong>spare disks</strong> minimiza el tiempo de inactividad porque el proceso de reconstrucción comienza inmediatamente después de que el sistema detecta el fallo de un disco. En un escenario sin disco de reserva, el administrador tendría que reemplazar manualmente el disco fallido y, solo entonces, iniciar la reconstrucción, lo que podría incrementar significativamente el tiempo de inactividad y el riesgo de pérdida de datos.</p>
+<h4 id="conveniencia-de-las-configuraciones-raid-segun-el-uso">Conveniencia de las configuraciones RAID según el uso<a class="headerlink" href="#conveniencia-de-las-configuraciones-raid-segun-el-uso" title="Permanent link">&para;</a></h4>
+<p>Elegir la configuración RAID adecuada depende en gran medida del uso del sistema y de los requisitos de disponibilidad y rendimiento. A continuación, se detallan algunas recomendaciones:</p>
+<ul>
+<li>
+<p><strong>RAID 1</strong>: Recomendado para entornos donde la disponibilidad de los datos es crítica y se requieren tiempos de reconstrucción rápidos. Ideal para pequeñas bases de datos o servidores que no manejan grandes cantidades de datos, pero donde la redundancia es esencial.</p>
+</li>
+<li>
+<p><strong>RAID 5</strong>: Adecuado para entornos de lectura intensiva donde se necesita un equilibrio entre redundancia, almacenamiento eficiente y rendimiento. No es ideal para grandes cantidades de escritura, ya que la reconstrucción en caso de fallo es lenta y consume muchos recursos. Se recomienda en entornos de oficina</p>
+</li>
+</ul>
+<h2 id="almacenamiento-en-red">Almacenamiento en Red<a class="headerlink" href="#almacenamiento-en-red" title="Permanent link">&para;</a></h2>
+<p>El almacenamiento en red es fundamental para centralizar la gestión y el acceso a los datos en entornos empresariales, facilitando la escalabilidad, la administración eficiente y el intercambio de información entre usuarios y sistemas.</p>
+<h3 id="nas-network-attached-storage">NAS (Network Attached Storage)<a class="headerlink" href="#nas-network-attached-storage" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas">Características<a class="headerlink" href="#caracteristicas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Acceso a Nivel de Archivo</strong>: Los dispositivos NAS se conectan directamente a la red y proporcionan servicios de archivos mediante protocolos estándar como <strong>NFS</strong> (Network File System) para sistemas Unix/Linux y <strong>SMB/CIFS</strong> (Server Message Block/Common Internet File System) para sistemas Windows.</li>
+<li><strong>Implementación y Administración Sencillas</strong>: Suelen ser soluciones plug-and-play con interfaces de gestión intuitivas, simplificando su configuración y mantenimiento.</li>
+<li><strong>Escalabilidad Modular</strong>: Permiten añadir capacidad de almacenamiento de forma modular, adaptándose a las necesidades crecientes de la empresa.</li>
+<li><strong>Compatibilidad Multiplataforma</strong>: Facilitan el acceso compartido a archivos desde diferentes sistemas operativos y dispositivos.</li>
+</ul>
+<h4 id="uso-recomendado">Uso Recomendado<a class="headerlink" href="#uso-recomendado" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Pequeñas y Medianas Empresas (PYMES)</strong>: Organizaciones que necesitan compartir archivos y recursos entre múltiples usuarios sin la complejidad de una infraestructura de almacenamiento más robusta.</li>
+<li><strong>Entornos de Colaboración</strong>: Departamentos o equipos que requieren acceder y compartir documentos, proyectos y recursos de manera simultánea.</li>
+<li><strong>Almacenamiento de Copias de Seguridad</strong>: Para realizar copias de seguridad y restauraciones de datos de forma sencilla y rápida.</li>
+</ul>
+<h4 id="tecnologias-y-fabricantes-principales">Tecnologías y Fabricantes Principales<a class="headerlink" href="#tecnologias-y-fabricantes-principales" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Tecnologías</strong>: Protocolos NFS, SMB/CIFS; sistemas de archivos distribuidos; soporte para RAID y redundancia.</li>
+<li><strong>Fabricantes</strong>:<ul>
+<li><strong>Synology</strong>: Reconocido por sus soluciones NAS versátiles y fáciles de usar.</li>
+<li><strong>QNAP</strong>: Ofrece dispositivos NAS con funcionalidades avanzadas y alto rendimiento.</li>
+<li><strong>Netgear</strong>: Proporciona soluciones NAS para pequeñas y medianas empresas.</li>
+<li><strong>Dell EMC (Isilon)</strong>: Especializado en almacenamiento en red escalable para empresas.</li>
+<li><strong>HPE (StoreEasy)</strong>: Combina facilidad de uso con características empresariales.</li>
+<li><strong>NetApp (Serie FAS)</strong>: Líder en soluciones de almacenamiento unificado con alta eficiencia.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="san-storage-area-network">SAN (Storage Area Network)<a class="headerlink" href="#san-storage-area-network" title="Permanent link">&para;</a></h3>
+<h3 id="caracteristicas_1">Características<a class="headerlink" href="#caracteristicas_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Acceso a Nivel de Bloque</strong>: Una SAN es una red dedicada que conecta servidores a dispositivos de almacenamiento a través de protocolos como <strong>Fibre Channel</strong>, <strong>iSCSI</strong> o <strong>FCoE</strong> (Fibre Channel over Ethernet), permitiendo un acceso de alto rendimiento y baja latencia.</li>
+<li><strong>Elevada Escalabilidad y Rendimiento</strong>: Diseñadas para manejar grandes volúmenes de datos y cargas de trabajo intensivas, como bases de datos empresariales y aplicaciones críticas.</li>
+<li><strong>Alta Disponibilidad y Redundancia</strong>: Incluyen características avanzadas como replicación, instantáneas y tolerancia a fallos.</li>
+<li><strong>Gestión Centralizada</strong>: Facilitan la administración de recursos de almacenamiento desde una única interfaz.</li>
+</ul>
+<h3 id="uso-recomendado_1">Uso Recomendado<a class="headerlink" href="#uso-recomendado_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Grandes Organizaciones y Centros de Datos</strong>: Empresas con necesidades masivas de almacenamiento y aplicaciones que requieren acceso rápido y constante a grandes volúmenes de datos.</li>
+<li><strong>Aplicaciones Críticas de Negocio</strong>: Sistemas ERP, CRM y bases de datos transaccionales que demandan alto rendimiento y disponibilidad.</li>
+<li><strong>Entornos Virtualizados y de Nube Privada</strong>: Donde la consolidación y eficiencia del almacenamiento son esenciales.</li>
+</ul>
+<h3 id="tecnologias-y-fabricantes-principales_1">Tecnologías y Fabricantes Principales<a class="headerlink" href="#tecnologias-y-fabricantes-principales_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tecnologías</strong>: <strong>Fibre Channel</strong>, <strong>iSCSI</strong>, <strong>FCoE</strong>, <strong>NVMe over Fabrics (NVMe-oF)</strong>; protocolos de almacenamiento definidos por software.</li>
+<li><strong>Fabricantes</strong>:<ul>
+<li><strong>Dell EMC (PowerMax, Unity XT)</strong>: Ofrece soluciones SAN de alto rendimiento y escalabilidad.</li>
+<li><strong>HPE (3PAR StoreServ, Primera)</strong>: Proporciona sistemas de almacenamiento con inteligencia integrada.</li>
+<li><strong>IBM (FlashSystem)</strong>: Especializado en almacenamiento flash para acelerar aplicaciones empresariales.</li>
+<li><strong>NetApp (Serie AFF)</strong>: Soluciones all-flash para rendimiento extremo.</li>
+<li><strong>Hitachi Vantara (Serie VSP)</strong>: Ofrece almacenamiento de nivel empresarial con alta resiliencia.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="convergencia-de-san-y-nas">Convergencia de SAN y NAS<a class="headerlink" href="#convergencia-de-san-y-nas" title="Permanent link">&para;</a></h3>
+<p>La convergencia entre SAN y NAS se ha logrado gracias al avance de tecnologías basadas en <strong>IP y Ethernet</strong>. Esto ha permitido que los sistemas de almacenamiento ofrezcan acceso tanto a nivel de bloque como de archivo desde una única plataforma, conocida como <strong>Almacenamiento Unificado</strong>.</p>
+<h4 id="ventajas-de-la-convergencia">Ventajas de la Convergencia<a class="headerlink" href="#ventajas-de-la-convergencia" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Gestión Simplificada</strong>: Una única infraestructura para administrar diferentes tipos de acceso al almacenamiento.</li>
+<li><strong>Flexibilidad</strong>: Capacidad para soportar múltiples protocolos y tipos de datos.</li>
+<li><strong>Optimización de Recursos</strong>: Mejor utilización de la capacidad de almacenamiento y reducción de costes operativos.</li>
+</ul>
+<h4 id="fabricantes-y-soluciones-destacadas">Fabricantes y Soluciones Destacadas<a class="headerlink" href="#fabricantes-y-soluciones-destacadas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>NetApp</strong>: Líder en soluciones de almacenamiento unificado con su sistema <strong>ONTAP</strong>.</li>
+<li><strong>Dell EMC</strong>: Ofrece plataformas unificadas como <strong>Unity XT</strong>.</li>
+<li><strong>HPE</strong>: Con <strong>Nimble Storage</strong> y sistemas que soportan múltiples protocolos.</li>
+<li><strong>IBM</strong>: Con su familia de productos <strong>Storwize</strong> y <strong>Spectrum Virtualize</strong>.<ul>
+<li><strong>Pure Storage (FlashArray)</strong>: Reconocido por su innovación en almacenamiento flash.</li>
+</ul>
+</li>
+</ul>
+<h2 id="almacenamiento-en-la-nube_1">Almacenamiento en la Nube<a class="headerlink" href="#almacenamiento-en-la-nube_1" title="Permanent link">&para;</a></h2>
+<p>El almacenamiento en la nube proporciona soluciones deslocalizadas y escalables, accesibles a través de internet, con modelos de <strong>pago por uso</strong> que permiten a las empresas ajustar sus costes a las necesidades reales.</p>
+<h3 id="tipos-de-almacenamiento-en-la-nube">Tipos de Almacenamiento en la Nube<a class="headerlink" href="#tipos-de-almacenamiento-en-la-nube" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Almacenamiento de Objetos</strong>: Ideal para grandes cantidades de datos no estructurados.<ul>
+<li><strong>Ejemplos</strong>: Amazon S3, Azure Blob Storage, Google Cloud Storage.</li>
+</ul>
+</li>
+<li><strong>Almacenamiento de Bloques</strong>: Similar al almacenamiento en una SAN, utilizado para aplicaciones que requieren acceso de bajo nivel.<ul>
+<li><strong>Ejemplos</strong>: Amazon EBS, Azure Disk Storage.</li>
+</ul>
+</li>
+<li><strong>Almacenamiento de Archivos</strong>: Proporciona acceso compartido a archivos a través de protocolos estándar.<ul>
+<li><strong>Ejemplos</strong>: Amazon EFS, Azure Files.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ventajas">Ventajas<a class="headerlink" href="#ventajas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Escalabilidad y Flexibilidad</strong>: Capacidad para aumentar o disminuir recursos rápidamente.</li>
+<li><strong>Reducción de Costes de Infraestructura</strong>: Eliminación de inversiones iniciales en hardware y mantenimiento.</li>
+<li><strong>Accesibilidad Global</strong>: Acceso a datos desde cualquier ubicación con conexión a internet.</li>
+<li><strong>Resiliencia y Disponibilidad</strong>: Altos niveles de redundancia y disponibilidad garantizados por los proveedores.</li>
+</ul>
+<h3 id="desafios">Desafíos<a class="headerlink" href="#desafios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Seguridad y Privacidad</strong>: Preocupaciones sobre la protección de datos sensibles y cumplimiento de regulaciones como el <strong>RGPD</strong> (Reglamento General de Protección de Datos).</li>
+<li><strong>Dependencia de la Conectividad</strong>: Requiere conexiones estables y de alta velocidad a internet.</li>
+<li><strong>Control y Gobernanza de Datos</strong>: Necesidad de políticas claras para la gestión y ubicación de los datos.</li>
+</ul>
+<h3 id="principales-proveedores-y-tecnologias">Principales Proveedores y Tecnologías<a class="headerlink" href="#principales-proveedores-y-tecnologias" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Amazon Web Services (AWS)</strong>: Lidera el mercado con servicios como <strong>S3</strong>, <strong>EBS</strong>, <strong>EFS</strong>.</li>
+<li><strong>Microsoft Azure</strong>: Ofrece <strong>Azure Blob Storage</strong>, <strong>Disk Storage</strong> y <strong>Files</strong>.</li>
+<li><strong>Google Cloud Platform (GCP)</strong>: Proporciona <strong>Cloud Storage</strong>, <strong>Persistent Disk</strong> y <strong>Filestore</strong>.</li>
+<li><strong>IBM Cloud</strong>, <strong>Oracle Cloud</strong>, <strong>Alibaba Cloud</strong>: También ofrecen soluciones competitivas en almacenamiento en la nube.</li>
+</ul>
+<h2 id="tendencias-actuales-en-almacenamiento-empresarial">Tendencias Actuales en Almacenamiento Empresarial<a class="headerlink" href="#tendencias-actuales-en-almacenamiento-empresarial" title="Permanent link">&para;</a></h2>
+<h3 id="almacenamiento-definido-por-software-sds">Almacenamiento Definido por Software (SDS)<a class="headerlink" href="#almacenamiento-definido-por-software-sds" title="Permanent link">&para;</a></h3>
+<p>Permite la gestión del almacenamiento a través de software independiente del hardware subyacente, ofreciendo mayor flexibilidad y reducción de costes.</p>
+<h3 id="infraestructura-hiperconvergente-hci">Infraestructura Hiperconvergente (HCI)<a class="headerlink" href="#infraestructura-hiperconvergente-hci" title="Permanent link">&para;</a></h3>
+<p>Combina computación, almacenamiento y redes en una única solución integrada, simplificando la gestión y escalabilidad.</p>
+<h3 id="nvme-y-nvme-of">NVMe y NVMe-oF<a class="headerlink" href="#nvme-y-nvme-of" title="Permanent link">&para;</a></h3>
+<p>La tecnología <strong>NVMe</strong> (Non-Volatile Memory Express) y su extensión sobre redes (<strong>NVMe over Fabrics</strong>) proporcionan velocidades de acceso a datos extremadamente rápidas, aprovechando las capacidades de las memorias flash y SSD de última generación.</p>
+<h3 id="inteligencia-artificial-y-machine-learning-en-almacenamiento">Inteligencia Artificial y Machine Learning en Almacenamiento<a class="headerlink" href="#inteligencia-artificial-y-machine-learning-en-almacenamiento" title="Permanent link">&para;</a></h3>
+<p>El uso de <strong>IA y ML</strong> para optimizar el rendimiento, la gestión y la seguridad del almacenamiento, permitiendo análisis predictivos y automatización de tareas.</p>
+<h2 id="consideraciones-para-la-seleccion-de-soluciones-de-almacenamiento">Consideraciones para la Selección de Soluciones de Almacenamiento<a class="headerlink" href="#consideraciones-para-la-seleccion-de-soluciones-de-almacenamiento" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Necesidades Actuales y Futuras</strong>: Evaluar la capacidad y el rendimiento requeridos, considerando el crecimiento previsto.</li>
+<li><strong>Presupuesto y Coste Total</strong>: Incluir costes de adquisición, operación, mantenimiento y posibles actualizaciones.</li>
+<li><strong>Integración y Compatibilidad</strong>: Asegurar que la solución sea compatible con la infraestructura existente y las aplicaciones críticas.</li>
+<li><strong>Seguridad y Cumplimiento</strong>: Garantizar que las soluciones cumplan con las políticas internas y las regulaciones externas aplicables.</li>
+<li><strong>Soporte y Servicios del Fabricante</strong>: Considerar la reputación del proveedor, el soporte técnico y los servicios adicionales ofrecidos.</li>
+</ul>
+<h1 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h1>
+<h3 id="ejercicio-1-investigacion-de-especificaciones-de-fiabilidad-de-discos-duros-y-unidades-ssd"><a href="especificaciones_fiabilidad.md">Ejercicio 1: Investigación de Especificaciones de Fiabilidad de Discos Duros y Unidades SSD</a><a class="headerlink" href="#ejercicio-1-investigacion-de-especificaciones-de-fiabilidad-de-discos-duros-y-unidades-ssd" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-2-comprension-de-la-fiabilidad-de-los-discos-duros-segun-el-estudio-de-google"><a href="fiabilidadDiscosGoogle.md">Ejercicio 2: Comprensión de la Fiabilidad de los Discos Duros según el Estudio de Google</a><a class="headerlink" href="#ejercicio-2-comprension-de-la-fiabilidad-de-los-discos-duros-segun-el-estudio-de-google" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-3-comprobacion-del-estado-smart-de-las-unidades-de-disco"><a href="SMART.md">Ejercicio 3: Comprobación del estado SMART de las unidades de disco</a><a class="headerlink" href="#ejercicio-3-comprobacion-del-estado-smart-de-las-unidades-de-disco" title="Permanent link">&para;</a></h3>
+<h1 id="bibliografia">Bibliografía<a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/S.M.A.R.T">https://es.wikipedia.org/wiki/S.M.A.R.T</a></li>
+<li><a href="https://es.wikipedia.org/wiki/RAID">https://es.wikipedia.org/wiki/RAID</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Red_de_%C3%A1rea_de_almacenamiento">https://es.wikipedia.org/wiki/Red_de_%C3%A1rea_de_almacenamiento</a></li>
+<li><a href="https://www.synology.com/es-es/knowledgebase/DSM/help/DSM/StorageManager/storage_pool_what_is_raid">https://www.synology.com/es-es/knowledgebase/DSM/help/DSM/StorageManager/storage_pool_what_is_raid</a></li>
+<li><a href="https://www.backblaze.com/blog/history-hard-drives/">https://www.backblaze.com/blog/history-hard-drives/</a></li>
+<li><a href="https://www.synology.com/es-es/support/RAID_calculator">https://www.synology.com/es-es/support/RAID_calculator</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/es//archive/disk_failures.pdf">https://static.googleusercontent.com/media/research.google.com/es//archive/disk_failures.pdf</a></li>
+<li><a href="https://www.seagate.com/es/es/support/kb/hard-disk-drive-reliability-and-mtbf-afr-174791en/">https://www.seagate.com/es/es/support/kb/hard-disk-drive-reliability-and-mtbf-afr-174791en/</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Serial_Attached_SCSI">https://es.wikipedia.org/wiki/Serial_Attached_SCSI</a></li>
+<li><a href="https://www.hitachivantara.com/es-latam/insights/faq/what-is-storage-area-network.html">SAN Hitachi</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026-2027 Francisco Pérez Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.annotate", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
