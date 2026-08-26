@@ -35,6 +35,22 @@
 
 }
 
+/* Justificar texto de párrafos */
+.md-typeset p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Títulos en negrita */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold !important;
+}
+
+/* Tamaño letra adminition */
+.md-typeset .admonition {
+    font-size: 1.0em;
+}
+
 .img-center {
   display: block;
   margin-left: auto;

@@ -1,0 +1,6077 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fperezies.github.com/SMR-SIN/UD2/Tareas/TrueNAS_RAID5.html">
+      
+      
+        <link rel="prev" href="SMART.html">
+      
+      
+        <link rel="next" href="backup_duplicati.html">
+      
+      
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox - 2SMR Seguridad Informática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-de-raid-5-con-truenas-nas-y-san-usando-virtualbox" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="2SMR Seguridad Informática" class="md-header__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2SMR Seguridad Informática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="2SMR Seguridad Informática" class="md-nav__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    2SMR Seguridad Informática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Presentación del módulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../UD1/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/1.introduccion.seguridad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/2.vulnerabilidades.amenazas.exploits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades, Amenazas y Exploits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/3.SGSI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGSI y Análisis de Riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/4.cumplimiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cumplimiento legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/2.amenazas.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/3.auditorias.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis y gestión de riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/4.incidentes.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Gestión de Incidentes de Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/5.cumplimiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cumplimiento Legal en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/1.1.analisis.riesgos.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis de riesgos en 5 minutos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/2.1.amenazas.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Identificación y Análisis de Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/2.2.rss.seguridad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Análisis de Incidentes de Ciberseguridad con RSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/3.1.familiaiso27000.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Familiarización con normas ISO/IEC 27000
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/4.1.Normativa.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"/></svg>
+  
+  <span class="md-ellipsis">
+    Caso Práctico: Soporte Informático y Normativa Legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.fisica_CPD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Física en Centros de Procesamiento de Datos (CPD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.almacenamiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Almacenamiento de la Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.backup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de Copias de Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.borradoyrecuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado Seguro de Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../borrado_recuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado recuperacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/1.fisica_CPD.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    bicación equipos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/2.almacenamiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Unidades de almacenamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/3.backup.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/4.borradoyrecuperacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Borrado y recuperación de información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RAID_almalinux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Guía paso a paso para configurar RAID 5 y RAID 6 en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RAID_windows11.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    RAID windows11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SMART.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación del estado SMART de las unidades de disco
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="TrueNAS_RAID5.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-de-la-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo de la práctica:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetivo de la práctica:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#informe-escrito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informe Escrito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturas-de-pantalla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capturas de Pantalla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-a-truenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a TrueNAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versiones-de-truenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versiones de TrueNAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-Z
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-de-raid-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características de RAID-Z
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-raid-z-frente-a-raid-tradicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de RAID-Z frente a RAID tradicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usos-comunes-de-raid-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usos comunes de RAID-Z
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-1-preparacion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 1: Preparación del entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 1: Preparación del entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalacion-de-virtualbox-y-creacion-de-una-maquina-virtual-para-truenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Instalación de VirtualBox y creación de una máquina virtual para TrueNAS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-2-configuracion-de-truenas-y-creacion-del-raid-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 2: Configuración de TrueNAS y creación del RAID 5
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 2: Configuración de TrueNAS y creación del RAID 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuracion-inicial-de-truenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Configuración inicial de TrueNAS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-3-creacion-de-carpetas-compartidas-nas-y-almacenamiento-por-bloques-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 3: Creación de carpetas compartidas (NAS) y almacenamiento por bloques (SAN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 3: Creación de carpetas compartidas (NAS) y almacenamiento por bloques (SAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuracion-de-carpetas-compartidas-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Configuración de carpetas compartidas (NAS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ve-a-sharing-windows-shares-smb-haz-clic-en-add-y-selecciona-el-dataset-creado-previamente-compartido_nas-como-el-directorio-compartido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ve a "Sharing" &gt; "Windows Shares (SMB)". Haz clic en "Add" y selecciona el Dataset creado previamente, "Compartido_NAS", como el directorio compartido.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ve a &#34;Sharing&#34; &gt; &#34;Windows Shares (SMB)&#34;. Haz clic en &#34;Add&#34; y selecciona el Dataset creado previamente, &#34;Compartido_NAS&#34;, como el directorio compartido.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-configuracion-de-almacenamiento-por-bloques-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuración de almacenamiento por bloques (SAN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ve-a-sharing-block-shares-iscsi-y-usa-el-boton-wizard-que-te-guiara-por-los-diferentes-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ve a "Sharing" &gt; "Block Shares (iSCSI)" y usa el botón "Wizard" que te guiará por los diferentes pasos:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ve a &#34;Sharing&#34; &gt; &#34;Block Shares (iSCSI)&#34; y usa el botón &#34;Wizard&#34; que te guiará por los diferentes pasos:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parte-4-simulacion-de-fallo-y-reconstruccion-de-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 4: Simulación de fallo y reconstrucción de RAID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 4: Simulación de fallo y reconstrucción de RAID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-simular-un-fallo-de-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Simular un fallo de disco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-verificar-la-accesibilidad-durante-la-reconstruccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Verificar la accesibilidad durante la reconstrucción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-reconstruir-el-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Reconstruir el RAID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-un-spare-disk-en-truenas-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar un Spare Disk en TrueNAS (Opcional)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurar un Spare Disk en TrueNAS (Opcional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-para-configurar-un-spare-disk-en-truenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos para configurar un Spare Disk en TrueNAS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-preparar-el-entorno-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Preparar el entorno de almacenamiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-anadir-un-disco-de-repuesto-spare-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Añadir un disco de repuesto (Spare Disk)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-probar-el-spare-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Probar el Spare Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-consideraciones-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Consideraciones adicionales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conectar-iscsi-en-almalinux-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectar iSCSI en AlmaLinux (Opcional)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conectar iSCSI en AlmaLinux (Opcional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-instalar-el-paquete-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Instalar el paquete iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-configurar-el-iniciador-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Configurar el iniciador iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-31-configurar-la-autenticacion-chap-si-es-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.1 Configurar la autenticación CHAP (Si es necesario)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-32-descubrir-el-objetivo-iscsi-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.2: Descubrir el objetivo iSCSI (Target)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-iniciar-sesion-en-el-objetivo-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Iniciar sesión en el objetivo iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-formatear-y-montar-el-dispositivo-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Formatear y montar el dispositivo iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-desconectar-el-objetivo-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6: Desconectar el objetivo iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conectar-un-volumen-iscsi-en-windows-10-o-11-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectar un volumen iSCSI en Windows 10 o 11 (Opcional):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conectar un volumen iSCSI en Windows 10 o 11 (Opcional):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-acceder-al-iniciador-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Acceder al iniciador iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conectar-a-un-destino-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Conectar a un destino iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configurar-el-disco-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configurar el disco iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-opciones-avanzadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Opciones avanzadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conectar-volumen-iscsi-desde-windows-server-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectar volumen iSCSI desde Windows Server (Opcional)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conectar volumen iSCSI desde Windows Server (Opcional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-acceder-al-iniciador-iscsi-en-windows-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Acceder al iniciador iSCSI en Windows Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-descubrir-el-objetivo-iscsi-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Descubrir el objetivo iSCSI (Target)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-conectarse-al-objetivo-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Conectarse al objetivo iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-inicializar-y-formatear-el-disco-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Inicializar y formatear el disco iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-desconectar-el-objetivo-iscsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5: Desconectar el objetivo iSCSI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones-de-la-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones de la práctica:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backup_duplicati.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Backup duplicati
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backup_rsync.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad con rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="borrado_seguro.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica 5: Recuperación de Ficheros y Borrado Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clonezilla.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Clonado de máquinas usando Clonezilla
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="especificaciones_fiabilidad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Investigación de Especificaciones de Fiabilidad de Discos Duros y Unidades SSD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fiabilidadDiscosGoogle.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprensión de la Fiabilidad de los Discos Duros según el Estudio de Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/2.c_simetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/3.c_asimetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/4.PKI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infraestructura de Clave Pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/5.c_aplicaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones de la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/6.c_cuantica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Criptografía Cuántica y Post-Cuántica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/2.c_simetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/3.c_asimetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/4.PKI.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Infraestructura de clave pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.gpg.asimetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado Asimétrico y firma con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado simétrico con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.hashfunctions.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Funciones Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.ssllabs.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Comprobación de Vulnerabilidades en Sitios Web Seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/opt.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Tarea: Envío de mensaje cifrado y firmado usando GPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.XCA%201.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.PKI.openssl.XCA 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.XCA.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Creación de un Certificado SSL/TLS Multisitio en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Autoridad Certificadora con OpenSSL y Servidor Web Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.hash_pwd_jtr.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Fortaleza de contraseñas en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/1.seguridad_acceso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fortificación de Hosts: Autenticación, Arranque Seguro y Cifrado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/2.malware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/3.actualizacion_vulnerabilidades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/4.monitorizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Monitorización en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/1.seguridad_acceso.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en acceso a hosts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/2.malware.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/4.monitorizacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Auditoría en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ELKstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ELKstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/Ideas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ideas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/OSSEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSSEC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P02_Bitlocker.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de disco en Windows 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P05_Debian_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de discos en Linux (LUKS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P13_Actualizaciones_debian.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualizaciones de software Debian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.Informe_mandiant2024.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis del informe de ciberseguridad "M-Trends 2024"
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.cifrado_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de Discos LUKS en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.politicas_de_contrasen%CC%83as_linux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Establecimiento de Políticas de Contraseñas y Gestión de Permisos en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.resetPass.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ej.resetPass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.virustotal.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación de ficheros y URLs con VirtusTotal.com
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/nessus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nessus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/openSCAP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openSCAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/opt.ssh_2step.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Autenticación de Doble Factor por SSH en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.GVM.openVAS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.lynis.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.wazuh.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wazuh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/1.intro_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/2.redes_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/cluster_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/ha_red.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ha red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Presentaciones/1.intro_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción Alta Disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Presentaciones/2.redes_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    HA en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/kubernetes.cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/kubernetes.wordpress.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.wordpress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/openstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Openstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/pacemaker.corosync.mysql.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Pacemaker.corosync.mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.balanceador.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.balanceador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.proxmox.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Máquinas virtuales en alta disponibilidad con Proxmox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.vrrp.keepalived.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Puerta de enlace en alta disponibilidad (VRRP) con Keepalived
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/wordpress_cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wordpress cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/2.WLAN-LAN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/3.firewalls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Seguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/4.VPN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/5.IDS-IPS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/6.proxies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/7.DDos-ZTA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.DDos ZTA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    ntroducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/2.WLAN-LAN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/3.firewalls.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    eguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/4.VPN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/5.IDS-IPS.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Presentaciones/6.proxies.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.IDS.IPS.snort.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.IDS.IPS.snort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.IDS.IPS.suricata.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Instalación y Configuración de Suricata en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.pfsense_dmz.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Instalación y configuración de un cortafuegos perimetral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.proxy.directo.squid.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.proxy.directo.squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.vpn.ra.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.vpn.ra.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.ra.wireguard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.vpn.site2site.ipsec.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.site2site.ipsec
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.vpn.site2site.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD6/Tareas/t.vpn.site2site.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN site to site con WireGuard en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Incidentes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Incidentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/1988.gusano.morris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El gusano Morris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2010.stuxnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Malware Stuxnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2016.botnet_mirai.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botnet Mirai
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2017.wannacry.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dossier sobre WannaCry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2018.spectre_meltdown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018.spectre meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2019.ramsomware.jerez.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque Ransomware al Ayuntamiento de Jerez en 2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2020.solarwinds.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de SolarWinds 2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2021.ransomware.colonial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque de Ransomware a Colonial Pipeline (2021)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2023.hack.LTT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023.hack.LTT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2024.crowdstrike.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de CrowdStrike 2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/buffer_overflow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buffer overflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/heartbleed.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heartbleed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/ransomware.pago.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Empresas que han pagado rescates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/xss.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Xss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/zeroday.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Zero-Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_16">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/slides/2017.operation_cloud_hopper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017.operation cloud hopper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/slides/2018.spectre_meltdown.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Spectre y Meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-de-raid-5-con-truenas-nas-y-san-usando-virtualbox">Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox<a class="headerlink" href="#practica-de-raid-5-con-truenas-nas-y-san-usando-virtualbox" title="Permanent link">&para;</a></h1>
+<p><img alt="" class="center" src="TrueNAS_logo.svg" /></p>
+<h2 id="objetivo-de-la-practica">Objetivo de la práctica:<a class="headerlink" href="#objetivo-de-la-practica" title="Permanent link">&para;</a></h2>
+<p>El objetivo de esta práctica es que los estudiantes configuren un sistema RAID 5 (RAID-Z1) utilizando TrueNAS, simulen un fallo de disco y comprueben la integridad y disponibilidad de los datos durante la reconstrucción del RAID. Además, se configurará un sistema de almacenamiento compartido (NAS) y almacenamiento por bloques (SAN) para comprobar su accesibilidad antes, durante y después del fallo.</p>
+<h3 id="informe-escrito">Informe Escrito<a class="headerlink" href="#informe-escrito" title="Permanent link">&para;</a></h3>
+<p>Debes entregar un fichero PDF que contenga un informe sobre la realización de la práctica con los siguientes apartados:</p>
+<ul>
+<li>
+<p><strong>Introducción</strong>: Descripción breve de los conceptos que han aplicado durante la práctica (RAID-Z, NAS, SAN, TrueNAS, etc.).</p>
+</li>
+<li>
+<p><strong>Descripción de la configuración</strong>: Explicación detallada de cómo configuraron cada parte de la práctica:</p>
+<ul>
+<li><strong>Máquina virtual en VirtualBox</strong>: Especificaciones de la VM (memoria, discos, red).</li>
+<li><strong>Configuración de RAID-Z1</strong>: Cómo crearon el RAID-Z1 (RAID 5) y el pool de discos en TrueNAS.</li>
+<li><strong>Configuración de NAS y SAN</strong>: Cómo crearon el almacenamiento compartido (carpeta SMB) y por bloques (iSCSI), incluyendo los servicios que habilitaron (SMB e iSCSI).</li>
+<li>
+<p><strong>Simulación de fallo y recuperación</strong>:</p>
+</li>
+<li>
+<p>Explicación sobre cómo simularon el fallo de un disco, el estado del RAID tras el fallo, y el proceso de recuperación (añadir un nuevo disco y reconstruir el RAID).</p>
+</li>
+<li>Comprobación de la accesibilidad a los datos durante la reconstrucción.</li>
+</ul>
+</li>
+</ul>
+<h3 id="capturas-de-pantalla">Capturas de Pantalla<a class="headerlink" href="#capturas-de-pantalla" title="Permanent link">&para;</a></h3>
+<p>Se deben incluir en la  capturas de pantalla que documenten cada paso del proceso:</p>
+<ol>
+<li>
+<p><strong>Configuración de la máquina virtual en VirtualBox</strong>:</p>
+<ul>
+<li>Muestra los discos añadidos y la memoria asignada.</li>
+<li>
+<p><strong>Configuración de RAID-Z1 en TrueNAS</strong>:</p>
+</li>
+<li>
+<p>Captura de la creación del pool RAID-Z1 con los discos seleccionados.</p>
+</li>
+<li>
+<p><strong>Configuración de NAS y SAN</strong>:</p>
+</li>
+<li>
+<p>Captura del panel de TrueNAS mostrando la creación de los Datasets para NAS (carpeta compartida) y SAN (iSCSI).</p>
+</li>
+<li>Captura de la pantalla donde habilitan los servicios SMB e iSCSI.</li>
+<li>
+<p><strong>Simulación del fallo de disco</strong>:</p>
+</li>
+<li>
+<p>Captura del estado degradado del RAID en TrueNAS, donde se muestra el fallo de un disco.</p>
+</li>
+<li>
+<p><strong>Proceso de reconstrucción del RAID</strong>:</p>
+</li>
+<li>
+<p>Captura del proceso de sustitución del disco y reconstrucción del RAID.</p>
+</li>
+<li>
+<p><strong>Verificación de accesibilidad de los datos</strong>:</p>
+</li>
+<li>
+<p>Captura de la carpeta compartida (NAS) accesible desde el explorador de archivos en su equipo, con los archivos creados antes del fallo.</p>
+</li>
+<li>Captura de la unidad iSCSI montada en el cliente iSCSI (Windows o Linux), mostrando que el almacenamiento por bloques es accesible.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="introduccion-a-truenas">Introducción a TrueNAS<a class="headerlink" href="#introduccion-a-truenas" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.truenas.com"><strong>TrueNAS</strong></a> es una plataforma de almacenamiento en red (NAS) y almacenamiento por bloques (SAN) basada en el sistema de archivos ZFS, diseñada para ofrecer una gestión de datos robusta, segura y eficiente. Es una solución de código abierto que puede implementarse en redes locales para compartir archivos, gestionar copias de seguridad, crear volúmenes virtuales y ofrecer servicios iSCSI. Gracias a su enfoque en la redundancia y la protección de datos, TrueNAS es ideal tanto para entornos domésticos como empresariales.</p>
+<p>TrueNAS es conocido por su capacidad para gestionar grandes volúmenes de datos con alta fiabilidad, lo que lo convierte en una solución popular para administradores de sistemas que necesitan proteger y gestionar el almacenamiento de manera eficaz. Entre sus características destacan:</p>
+<ul>
+<li><strong>Compatibilidad con RAID-Z</strong>: Implementación avanzada de RAID que ofrece tolerancia a fallos y recuperación rápida.</li>
+<li><strong>Almacenamiento unificado</strong>: Soporta tanto sistemas NAS como SAN, permitiendo la gestión centralizada de múltiples tipos de almacenamiento.</li>
+<li><strong>Snapshots y replicación</strong>: Funcionalidades para proteger los datos contra errores humanos, corrupciones o ciberataques.</li>
+</ul>
+<h3 id="versiones-de-truenas">Versiones de TrueNAS<a class="headerlink" href="#versiones-de-truenas" title="Permanent link">&para;</a></h3>
+<p>TrueNAS se presenta en dos versiones principales:</p>
+<ol>
+<li>
+<p><strong>TrueNAS CORE</strong>:</p>
+<ul>
+<li>Esta es la versión más conocida y está basada en FreeBSD. Está diseñada para soluciones de almacenamiento unificado, combinando NAS y SAN, con soporte completo para ZFS, RAID-Z y otros mecanismos avanzados de protección de datos.</li>
+<li><strong>Uso recomendado</strong>: Ideal para pequeñas y medianas empresas, así como para usuarios domésticos avanzados que necesitan un sistema de almacenamiento robusto y eficiente.</li>
+<li><strong>Características destacadas</strong>:<ul>
+<li>Soporte para plugins y virtualización ligera.</li>
+<li>Enfoque en sistemas NAS tradicionales.</li>
+<li>Comunidad activa de usuarios y soporte gratuito.</li>
+</ul>
+</li>
+<li>
+<p><strong>TrueNAS SCALE</strong>:</p>
+</li>
+<li>
+<p>Basado en Linux, TrueNAS SCALE es una versión más reciente que incorpora características avanzadas como escalabilidad en clúster y soporte nativo para virtualización y contenedores (Docker y Kubernetes).</p>
+</li>
+<li><strong>Uso recomendado</strong>: Empresas y entornos que requieren mayor flexibilidad y escalabilidad, especialmente en almacenamiento distribuido.</li>
+<li><strong>Características destacadas</strong>:<ul>
+<li>Soporte nativo para máquinas virtuales y contenedores.</li>
+<li>Escalabilidad en clústeres.</li>
+<li>Flexibilidad para almacenamiento híbrido y entornos distribuidos.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Ambas versiones permiten a los usuarios aprovechar las fortalezas del sistema de archivos ZFS, con su enfoque en la integridad de los datos y la protección contra fallos de hardware. Además, TrueNAS SCALE introduce nuevas posibilidades para empresas que buscan soluciones de almacenamiento escalables y flexibles en entornos modernos.</p>
+<h3 id="raid-z">RAID-Z<a class="headerlink" href="#raid-z" title="Permanent link">&para;</a></h3>
+<p><strong>RAID-Z</strong> es una implementación de RAID (Redundant Array of Independent Disks) que utiliza el sistema de archivos <strong>ZFS</strong>. Fue diseñado por Sun Microsystems como una mejora sobre los niveles tradicionales de RAID, ofreciendo mayor integridad y protección de datos. RAID-Z se usa comúnmente en sistemas como <strong>TrueNAS</strong> debido a su capacidad para gestionar grandes volúmenes de datos con alta fiabilidad y eficiencia.</p>
+<h3 id="caracteristicas-de-raid-z">Características de RAID-Z<a class="headerlink" href="#caracteristicas-de-raid-z" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Sin escritura de paridad desalineada (write hole)</strong>:
+   A diferencia de los niveles tradicionales de RAID, como RAID 5, RAID-Z está diseñado para evitar el problema conocido como "escritura desalineada" o "write hole". Este problema ocurre cuando una escritura interrumpida (por ejemplo, debido a un apagón) deja la paridad inconsistente, lo que puede corromper los datos. RAID-Z maneja las escrituras de manera transaccional, lo que garantiza la coherencia entre los datos y la paridad en todo momento.</p>
+</li>
+<li>
+<p><strong>Integridad de los datos</strong>:
+   RAID-Z usa el sistema de archivos ZFS, que implementa una verificación de los datos con <strong>sumas de verificación</strong> en cada bloque almacenado. Esto permite detectar y corregir automáticamente errores de datos en caso de corrupción, lo que ofrece una protección adicional sobre los RAID tradicionales.</p>
+</li>
+<li>
+<p><strong>Redundancia y tolerancia a fallos</strong>:
+   RAID-Z permite la pérdida de uno o más discos sin pérdida de datos, dependiendo de la configuración específica de RAID-Z:</p>
+</li>
+<li><strong>RAID-Z1</strong>: Similar a RAID 5, permite el fallo de <strong>un solo disco</strong>.</li>
+<li><strong>RAID-Z2</strong>: Similar a RAID 6, permite el fallo de <strong>hasta dos discos</strong>.</li>
+<li>
+<p><strong>RAID-Z3</strong>: Permite  el fallo de <strong>hasta tres discos</strong>, proporcionando un nivel muy alto de tolerancia a fallos.</p>
+</li>
+<li>
+<p><strong>Gestión de espacio eficiente</strong>:
+   RAID-Z utiliza un enfoque más eficiente en la gestión del espacio, optimizando la distribución de la paridad y los datos, lo que minimiza la sobrecarga.</p>
+</li>
+</ol>
+<h3 id="ventajas-de-raid-z-frente-a-raid-tradicional">Ventajas de RAID-Z frente a RAID tradicional<a class="headerlink" href="#ventajas-de-raid-z-frente-a-raid-tradicional" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Recuperación rápida</strong>: RAID-Z está diseñado para maximizar el rendimiento de la reconstrucción de discos fallidos, reduciendo los tiempos de recuperación.</li>
+<li><strong>Gestión de bloques variable</strong>: A diferencia de RAID 5, que utiliza un tamaño de bloque fijo para los datos y la paridad, RAID-Z ajusta dinámicamente el tamaño de los bloques de datos, mejorando el uso del espacio y el rendimiento.</li>
+<li><strong>No requiere escritura previa a la paridad</strong>: RAID-Z escribe los datos y la paridad de una sola vez, eliminando la necesidad de realizar cálculos adicionales antes de la escritura.</li>
+</ul>
+<h3 id="usos-comunes-de-raid-z">Usos comunes de RAID-Z<a class="headerlink" href="#usos-comunes-de-raid-z" title="Permanent link">&para;</a></h3>
+<p>RAID-Z se utiliza comúnmente en entornos de almacenamiento donde la <strong>seguridad e integridad de los datos</strong> son fundamentales, como en servidores NAS (almacenamiento en red), servidores empresariales y centros de datos. Su implementación en sistemas como TrueNAS lo hace ideal para administrar grandes volúmenes de datos con un alto nivel de protección, siendo una elección popular para configuraciones de almacenamiento críticas.</p>
+<p>En resumen, RAID-Z es una solución avanzada de RAID que combina la flexibilidad y eficiencia del sistema de archivos ZFS con la redundancia y protección de datos, superando algunas de las limitaciones presentes en los RAID tradicionales.</p>
+<hr />
+<h3 id="parte-1-preparacion-del-entorno">Parte 1: Preparación del entorno<a class="headerlink" href="#parte-1-preparacion-del-entorno" title="Permanent link">&para;</a></h3>
+<h4 id="1-instalacion-de-virtualbox-y-creacion-de-una-maquina-virtual-para-truenas">1. Instalación de VirtualBox y creación de una máquina virtual para TrueNAS<a class="headerlink" href="#1-instalacion-de-virtualbox-y-creacion-de-una-maquina-virtual-para-truenas" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Descargar VirtualBox</strong>:</p>
+<ul>
+<li>Descargar e instalar VirtualBox desde <a href="https://www.virtualbox.org">virtualbox.org</a>.</li>
+<li>
+<p><strong>Crear una nueva máquina virtual</strong>:</p>
+</li>
+<li>
+<p>Abre VirtualBox y selecciona <code>Nueva</code>.</p>
+</li>
+<li>Asigna un nombre descriptivo, por ejemplo, "TrueNAS RAID".</li>
+<li>Tipo: Selecciona <strong>BSD</strong>.</li>
+<li>Versión: Selecciona <strong>FreeBSD (64-bit)</strong>.</li>
+<li>Asigna <strong>2 GB de memoria RAM</strong> ( 8 GB mínimo recomendado en producción) y continúa.</li>
+<li>
+<p><strong>Configuración de disco virtual</strong>:</p>
+</li>
+<li>
+<p>Selecciona "Crear un disco duro virtual ahora" y luego "VDI (VirtualBox Disk Image)".</p>
+</li>
+<li>Tipo de almacenamiento: "Dinamicamente asignado".</li>
+<li>Tamaño del disco: Asegura al menos 20 GB para el sistema operativo TrueNAS.</li>
+<li>
+<p><strong>Añadir discos adicionales</strong>:</p>
+</li>
+<li>
+<p>Selecciona la máquina virtual creada, ve a "Configuración" y selecciona "Almacenamiento".</p>
+</li>
+<li>Añade tres discos adicionales para crear el RAID 5:<ul>
+<li>Haciendo clic en el ícono "Añadir disco duro". (Es posible que necesites añadir un nuevo controlador también.)</li>
+<li>Tamaño de los discos adicionales: Al menos <strong>5 GB cada uno</strong> (puedes usar discos de mayor capacidad si lo deseas).</li>
+</ul>
+</li>
+<li>
+<p><strong>Configurar red</strong>:</p>
+</li>
+<li>
+<p>Ve a la sección "Red" en la configuración de la máquina virtual.</p>
+</li>
+<li>Asegúrate de seleccionar "Adaptador puente" para conectar TrueNAS a la red local.</li>
+<li>
+<p><strong>Instalación del sistema TrueNAS</strong>:</p>
+</li>
+<li>
+<p>Descarga la ISO de <strong>TrueNAS CORE</strong> desde <a href="https://www.truenas.com">truenas.com</a>.</p>
+</li>
+<li>En "Almacenamiento", selecciona la ISO de TrueNAS como unidad de arranque (óptica).</li>
+<li>Inicia la máquina virtual y sigue las instrucciones de instalación de TrueNAS.</li>
+<li>Durante la instalación, selecciona el disco de 20 GB para instalar el sistema.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="parte-2-configuracion-de-truenas-y-creacion-del-raid-5">Parte 2: Configuración de TrueNAS y creación del RAID 5<a class="headerlink" href="#parte-2-configuracion-de-truenas-y-creacion-del-raid-5" title="Permanent link">&para;</a></h3>
+<h4 id="1-configuracion-inicial-de-truenas">1. Configuración inicial de TrueNAS<a class="headerlink" href="#1-configuracion-inicial-de-truenas" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Acceso a la interfaz de TrueNAS</strong>:</p>
+<ul>
+<li>Después de la instalación, TrueNAS mostrará una dirección IP.</li>
+<li>Conéctate a esa IP desde un navegador en tu equipo local.</li>
+<li>Inicia sesión con las credenciales que configuraste durante la instalación. (usr: root, pass: especificado durante instalación)</li>
+<li>
+<p><strong>Configuración de discos y creación del RAID 5</strong>:</p>
+</li>
+<li>
+<p>Ve a la pestaña "Storage" (almacenamiento) y selecciona "Pools".</p>
+</li>
+<li>Haz clic en "Add" para crear un nuevo pool.</li>
+<li>Selecciona los tres discos adicionales que añadiste en VirtualBox.</li>
+<li>Elige la opción <strong>RAID-Z1</strong> (RAID 5) para distribuir los datos con paridad entre los discos.</li>
+<li>Asigna un nombre al pool, como "RAID5_Pool", y haz clic en "Create".</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="parte-3-creacion-de-carpetas-compartidas-nas-y-almacenamiento-por-bloques-san">Parte 3: Creación de carpetas compartidas (NAS) y almacenamiento por bloques (SAN)<a class="headerlink" href="#parte-3-creacion-de-carpetas-compartidas-nas-y-almacenamiento-por-bloques-san" title="Permanent link">&para;</a></h3>
+<h4 id="1-configuracion-de-carpetas-compartidas-nas">1. Configuración de carpetas compartidas (NAS)<a class="headerlink" href="#1-configuracion-de-carpetas-compartidas-nas" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Crear Dataset para NAS</strong>:</p>
+<ul>
+<li>En "Storage" &gt; "Pools", selecciona tu pool recién creado y haz clic en "Add Dataset".</li>
+<li>Asigna un nombre, como "Compartido_NAS".</li>
+<li>Deja las configuraciones por defecto y haz clic en "Save".</li>
+<li>
+<p><strong>Habilitar servicio SMB para compartir archivos</strong>:</p>
+</li>
+<li>
+<p>Ve a "Services" en el menú principal y activa el servicio <strong>SMB</strong> (Samba).</p>
+</li>
+<li>Crea un usuario para asignarle permisos a la carpeta compartida.</li>
+<li>Configura las credenciales (Edit Share ACL) para poder leer y escribir en el recurso compartido (tendrás que crear un nuevo usuario previamente).</li>
+<li>
+<h2 id="ve-a-sharing-windows-shares-smb-haz-clic-en-add-y-selecciona-el-dataset-creado-previamente-compartido_nas-como-el-directorio-compartido">Ve a "Sharing" &gt; "Windows Shares (SMB)". Haz clic en "Add" y selecciona el Dataset creado previamente, "Compartido_NAS", como el directorio compartido.<a class="headerlink" href="#ve-a-sharing-windows-shares-smb-haz-clic-en-add-y-selecciona-el-dataset-creado-previamente-compartido_nas-como-el-directorio-compartido" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p><strong>Acceso desde el equipo local</strong>:</p>
+</li>
+<li>
+<p>En el explorador de archivos de tu equipo local, accede a la carpeta compartida ingresando la dirección IP de TrueNAS precedida por dos barras inclinadas (por ejemplo, <code>\\192.168.1.100\Compartido_NAS</code>).</p>
+</li>
+<li>Crea un archivo o carpeta dentro del recurso compartido para probar el acceso.</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-configuracion-de-almacenamiento-por-bloques-san">2. Configuración de almacenamiento por bloques (SAN)<a class="headerlink" href="#2-configuracion-de-almacenamiento-por-bloques-san" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Crear Dataset para SAN</strong>:</p>
+<ul>
+<li>En "Storage" &gt; "Pools", selecciona tu pool y añade otro Dataset, llamado "Compartido_SAN".</li>
+<li><strong>Configurar iSCSI (SAN)</strong>:  </li>
+<li>
+<h2 id="ve-a-sharing-block-shares-iscsi-y-usa-el-boton-wizard-que-te-guiara-por-los-diferentes-pasos">Ve a "Sharing" &gt; "Block Shares (iSCSI)" y usa el botón "Wizard" que te guiará por los diferentes pasos:<a class="headerlink" href="#ve-a-sharing-block-shares-iscsi-y-usa-el-boton-wizard-que-te-guiara-por-los-diferentes-pasos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>"Create or Choose BlockDevice": Asigna un nombre y en "Device" usa "Create New" para elegir el dataset creado previamente (Compartido_SAN). En "Size" especifica el tamaño del disco. En "Sharin Platform" selecciona "Modern OS".</li>
+<li>"Portal": usa "Create New", añade un nombre y Authentication "NONE". Elige la IP en la que se anuncirá. Puedes usar 0.0.0.0 para que se anuncie en todas las interfaces). </li>
+<li>(Opcional) Alternativamente puedes usar autenticación CHAP: crea un nuevo "Discovery Authentication Group", "usa Group ID" 1, añade un nombre de usuario y un "Secret", luego tendrás que usar estas credenciales al descubrir el volumen desde el cliente.</li>
+<li>En "Initiators" puedes limitar los hosts y redes desde los que se conectará el dispositivo. En nuestro caso lo dejaremos sin cambiar.</li>
+<li>Confirma los ajustes.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Acceso desde un cliente iSCSI</strong>:</p>
+<ul>
+<li>Desde otro sistema, configura un cliente iSCSI para conectarte al Target y verifica que puedas acceder y escribir en el almacenamiento por bloques. Tienes instrucciones de cómo hacerlo en AlmaLinux, Windows y Windows Server más adelante.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="parte-4-simulacion-de-fallo-y-reconstruccion-de-raid">Parte 4: Simulación de fallo y reconstrucción de RAID<a class="headerlink" href="#parte-4-simulacion-de-fallo-y-reconstruccion-de-raid" title="Permanent link">&para;</a></h3>
+<h4 id="1-simular-un-fallo-de-disco">1. Simular un fallo de disco<a class="headerlink" href="#1-simular-un-fallo-de-disco" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Apagar la máquina virtual</strong>:</p>
+<ul>
+<li>Apaga TrueNAS y ve a la configuración de la máquina virtual en VirtualBox.</li>
+<li>Ve a la pestaña "Almacenamiento" y elimina uno de los discos adicionales (simulando un fallo).</li>
+<li>
+<p><strong>Encender la máquina virtual y comprobar el estado del RAID</strong>:</p>
+</li>
+<li>
+<p>Inicia TrueNAS nuevamente.</p>
+</li>
+<li>Ve a "Storage" &gt; "Pools", y deberías ver el pool en estado "Degraded" (degradado).</li>
+<li>TrueNAS te notificará del fallo en uno de los discos.</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-verificar-la-accesibilidad-durante-la-reconstruccion">2. Verificar la accesibilidad durante la reconstrucción<a class="headerlink" href="#2-verificar-la-accesibilidad-durante-la-reconstruccion" title="Permanent link">&para;</a></h4>
+<p>Aunque el RAID esté  en estado degradado es posible seguir usándolo, mientras se reconstruye. Esto aumentará el tiempo de reconstrucción.</p>
+<ol>
+<li>
+<p><strong>Comprobar el acceso a la carpeta compartida (NAS)</strong>:</p>
+<ul>
+<li>Accede nuevamente a la carpeta compartida desde tu equipo local.</li>
+<li>Intenta crear o modificar archivos para comprobar la integridad de los datos durante la reconstrucción.</li>
+<li>
+<p><strong>Comprobar el acceso al almacenamiento por bloques (SAN)</strong>:</p>
+</li>
+<li>
+<p>Accede al almacenamiento iSCSI desde el cliente configurado.</p>
+</li>
+<li>Verifica que los datos siguen siendo accesibles.</li>
+</ul>
+<h4 id="3-reconstruir-el-raid">3. Reconstruir el RAID<a class="headerlink" href="#3-reconstruir-el-raid" title="Permanent link">&para;</a></h4>
+</li>
+<li>
+<p><strong>Añadir un nuevo disco</strong>:</p>
+<ul>
+<li>Apaga nuevamente la máquina virtual.</li>
+<li>Añade un nuevo disco en VirtualBox como sustituto del que falló.</li>
+<li>
+<p><strong>Reemplazar el disco fallido en TrueNAS</strong>:</p>
+</li>
+<li>
+<p>Inicia TrueNAS y accede a "Storage" &gt; "Pools".</p>
+</li>
+<li>Selecciona el pool degradado y elige la opción "Status" desde el menú de la rueda dentada. Busca el disco duro que falla y usa la opción "Replace" en el disco fallido.</li>
+<li>Selecciona el disco nuevo añadido para iniciar el proceso de reconstrucción.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="configurar-un-spare-disk-en-truenas-opcional">Configurar un <strong>Spare Disk</strong> en TrueNAS (Opcional)<a class="headerlink" href="#configurar-un-spare-disk-en-truenas-opcional" title="Permanent link">&para;</a></h2>
+<p>Un <strong>Spare Disk</strong> es un disco de reserva que se configura en un sistema RAID para reemplazar automáticamente a un disco que falle. Cuando uno de los discos en el conjunto RAID deja de funcionar, el disco de repuesto (Spare Disk) se activa y se utiliza para reemplazar el disco fallido, iniciando de manera automática el proceso de reconstrucción sin intervención manual. A continuación, te explico cómo configurar un <strong>Spare Disk</strong> en <strong>TrueNAS</strong>.</p>
+<h4 id="pasos-para-configurar-un-spare-disk-en-truenas"><strong>Pasos para configurar un Spare Disk en TrueNAS</strong><a class="headerlink" href="#pasos-para-configurar-un-spare-disk-en-truenas" title="Permanent link">&para;</a></h4>
+<h3 id="1-preparar-el-entorno-de-almacenamiento">1. Preparar el entorno de almacenamiento<a class="headerlink" href="#1-preparar-el-entorno-de-almacenamiento" title="Permanent link">&para;</a></h3>
+<p>Antes de configurar un Spare Disk, es importante que ya tengas un pool configurado con algún tipo de redundancia, como RAID-Z1, RAID-Z2 o RAID-Z3, donde se pueda añadir el disco de repuesto.</p>
+<h3 id="2-anadir-un-disco-de-repuesto-spare-disk">2. Añadir un disco de repuesto (Spare Disk)<a class="headerlink" href="#2-anadir-un-disco-de-repuesto-spare-disk" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Acceder a la interfaz de administración de TrueNAS</strong>:</p>
+<ul>
+<li>Inicia sesión en la interfaz web de TrueNAS utilizando tu navegador.</li>
+<li>
+<p><strong>Ir a la sección de almacenamiento</strong>:</p>
+</li>
+<li>
+<p>Ve a <strong>"Storage" (Almacenamiento)</strong> en el menú principal y selecciona la opción <strong>"Pools"</strong>.</p>
+</li>
+<li>
+<p><strong>Seleccionar el pool de almacenamiento</strong>:</p>
+</li>
+<li>
+<p>Elige el pool de discos RAID-Z ya existente en el que deseas añadir el Spare Disk.</p>
+</li>
+<li>Haz clic en la rueda dentada al lado del nombre del pool y selecciona <strong>"Status" (Estado)</strong> para ver los detalles del pool.</li>
+<li>
+<p><strong>Añadir un disco de repuesto</strong>:</p>
+</li>
+<li>
+<p>En la parte superior derecha de la pantalla de estado del pool haz click en la rueda dentada, luego, haz clic en <strong>"Add Vdevs"</strong>.</p>
+</li>
+<li>Aparecerá una ventana emergente donde puedes añadir diferentes tipos de VDEVs (Virtual Device) al pool.</li>
+<li>Selecciona la opción <strong>"Hot Spare"</strong> en el menú de la izquierda.</li>
+<li>
+<p><strong>Seleccionar el disco a utilizar como Spare Disk</strong>:</p>
+</li>
+<li>
+<p>En la lista de discos disponibles, selecciona el disco que quieres usar como Spare Disk. Este disco no debe estar actualmente en uso en el pool.</p>
+</li>
+<li>Asegúrate de que el disco tiene suficiente capacidad y está sin formatear, ya que se usará para reemplazar un disco en caso de fallo.</li>
+<li>
+<p><strong>Confirmar la operación</strong>:</p>
+</li>
+<li>
+<p>Haz clic en <strong>"Add" (Añadir)</strong> para confirmar la adición del Spare Disk al pool.</p>
+</li>
+<li>
+<p><strong>Verificar el Spare Disk</strong>:</p>
+</li>
+<li>
+<p>Una vez añadido, deberías poder ver el disco de repuesto (Spare Disk) listado en el estado del pool. Aparecerá como un disco en reserva que no está siendo utilizado hasta que sea necesario.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-probar-el-spare-disk">3. Probar el Spare Disk<a class="headerlink" href="#3-probar-el-spare-disk" title="Permanent link">&para;</a></h3>
+<p>Para comprobar que el Spare Disk funciona correctamente, puedes simular un fallo de disco en el pool (como ya hiciste en la práctica de RAID-Z). Cuando un disco del pool falle, el sistema debería automáticamente activar el Spare Disk para reemplazar al disco defectuoso y comenzar el proceso de reconstrucción.</p>
+<ol>
+<li>
+<p><strong>Simular un fallo de disco</strong>:</p>
+<ul>
+<li>Apaga la máquina virtual (o el servidor físico) y desconecta uno de los discos que forman parte del pool RAID-Z.</li>
+<li>Inicia TrueNAS de nuevo y observa el estado del pool. El sistema debería detectar el disco fallido y automáticamente empezar a utilizar el Spare Disk.</li>
+<li>
+<p><strong>Verificar la reconstrucción</strong>:</p>
+</li>
+<li>
+<p>Ve a la sección de <strong>"Status"</strong> del pool en TrueNAS y deberías ver que el Spare Disk está activo y el sistema está reconstruyendo los datos desde los discos restantes.</p>
+</li>
+<li>Puedes monitorizar el proceso de reconstrucción y ver cómo el Spare Disk asume el rol del disco fallido.</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-consideraciones-adicionales">4. Consideraciones adicionales<a class="headerlink" href="#4-consideraciones-adicionales" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Sustituir el disco fallido</strong>: Aunque el Spare Disk reemplaza automáticamente al disco defectuoso, es importante que reemplaces el disco fallido lo antes posible por otro nuevo para mantener una configuración de redundancia adecuada. Una vez que añadas el nuevo disco, puedes volver a configurar un Spare Disk para futuras fallos.</p>
+</li>
+<li>
+<p><strong>Notificaciones</strong>: Asegúrate de tener configuradas las notificaciones en TrueNAS (a través de correo electrónico, por ejemplo) para que te avise en caso de fallos de discos o la activación del Spare Disk.</p>
+</li>
+</ul>
+<hr />
+<h2 id="conectar-iscsi-en-almalinux-opcional">Conectar iSCSI en AlmaLinux (Opcional)<a class="headerlink" href="#conectar-iscsi-en-almalinux-opcional" title="Permanent link">&para;</a></h2>
+<p>Conectar un almacenamiento iSCSI en <strong>AlmaLinux</strong> implica algunos pasos clave que incluyen la instalación de los paquetes necesarios, la configuración del cliente iSCSI (iniciador), y la conexión al dispositivo de almacenamiento iSCSI (objetivo). Aquí te explico los pasos detallados para hacerlo:</p>
+<h3 id="paso-1-instalar-el-paquete-iscsi">Paso 1: Instalar el paquete iSCSI<a class="headerlink" href="#paso-1-instalar-el-paquete-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Actualizar el sistema</strong>:
+   Asegúrate de que tu sistema está actualizado ejecutando los siguientes comandos:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>update
+</span></code></pre></div>
+<ol>
+<li><strong>Instalar los paquetes necesarios para iSCSI</strong>:
+   Instala los paquetes que te permitirán conectarte a un dispositivo iSCSI:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>iscsi-initiator-utils
+</span></code></pre></div>
+<h3 id="paso-2-configurar-el-iniciador-iscsi">Paso 2: Configurar el iniciador iSCSI<a class="headerlink" href="#paso-2-configurar-el-iniciador-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Configurar el servicio iSCSI</strong>:
+   Asegúrate de que el servicio iSCSI esté habilitado para iniciarse automáticamente al arrancar el sistema:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>iscsid
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>iscsid
+</span></code></pre></div>
+<ol>
+<li><strong>Ver el nombre del iniciador iSCSI</strong>:
+   El iniciador iSCSI tiene un nombre único (IQN) que se utiliza para identificar el cliente iSCSI. Para ver el IQN de tu sistema, utiliza el siguiente comando:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>cat<span class="w"> </span>/etc/iscsi/initiatorname.iscsi
+</span></code></pre></div>
+<p>Esto debería mostrar algo como:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">   </span><span class="nv">InitiatorName</span><span class="o">=</span>iqn.1994-05.com.redhat:xxxxxxx
+</span></code></pre></div>
+<h3 id="paso-31-configurar-la-autenticacion-chap-si-es-necesario">Paso 3.1 Configurar la autenticación CHAP (Si es necesario)<a class="headerlink" href="#paso-31-configurar-la-autenticacion-chap-si-es-necesario" title="Permanent link">&para;</a></h3>
+<p>Una vez que hayas identificado el destino iSCSI correcto, configura la autenticación CHAP (Si es necesario). Necesitarás editar el archivo de configuración iSCSI para agregar las credenciales CHAP.</p>
+<ol>
+<li><strong>Editar la configuración de iSCSI:</strong>
+    Abre el archivo de configuración del objetivo iSCSI:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="sb">`</span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/iscsi/iscsid.conf
+</span></code></pre></div>
+<ol>
+<li><strong>Habilitar la autenticación CHAP</strong> comentando o descomentando las siguientes líneas (dependiendo de tu configuración actual):</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>node.session.auth.authmethod<span class="w"> </span><span class="o">=</span><span class="w"> </span>CHAP<span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>node.session.auth.chap_algs<span class="w"> </span><span class="o">=</span><span class="w"> </span>SHA3-256,SHA256,SHA1,MD5
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>node.session.auth.username<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;tu_usuario_CHAP&gt;<span class="w"> </span>node.session.auth.password<span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;tu_password_CHAP
+</span></code></pre></div>
+<ol>
+<li><strong>Guardar los cambios</strong> y cerrar el editor. (Ctrl+O, Ctrl+X)</li>
+</ol>
+<h3 id="paso-32-descubrir-el-objetivo-iscsi-target">Paso 3.2: Descubrir el objetivo iSCSI (Target)<a class="headerlink" href="#paso-32-descubrir-el-objetivo-iscsi-target" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Descubrir los dispositivos iSCSI disponibles</strong>:
+   Para conectarte a un servidor iSCSI (Target), primero debes descubrir los objetivos disponibles. Utiliza el siguiente comando, donde <code>&lt;IP_del_servidor&gt;</code> es la dirección IP del servidor TrueNAS u otro dispositivo que esté actuando como servidor iSCSI.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>iscsiadm<span class="w"> </span>--mode<span class="w"> </span>discovery<span class="w"> </span>--type<span class="w"> </span>sendtargets<span class="w"> </span>--portal<span class="w"> </span>&lt;IP_del_servidor&gt;
+</span></code></pre></div>
+<p>Esto debería devolver una lista de objetivos iSCSI disponibles en el servidor.</p>
+<h3 id="paso-4-iniciar-sesion-en-el-objetivo-iscsi">Paso 4: Iniciar sesión en el objetivo iSCSI<a class="headerlink" href="#paso-4-iniciar-sesion-en-el-objetivo-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Iniciar sesión en el dispositivo iSCSI</strong>:
+   Después de descubrir los objetivos, puedes conectarte al objetivo deseado utilizando su IQN (identificador único del objetivo iSCSI) y el portal de destino:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>iscsiadm<span class="w"> </span>--mode<span class="w"> </span>node<span class="w"> </span>--targetname<span class="w"> </span>&lt;nombre_del_objetivo&gt;<span class="w"> </span>--portal<span class="w"> </span>&lt;IP_del_servidor&gt;<span class="w"> </span>--login
+</span></code></pre></div>
+<p>Ejemplo:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>iscsiadm<span class="w"> </span>--mode<span class="w"> </span>node<span class="w"> </span>--targetname<span class="w"> </span>iqn.2005-03.com.example:storage.target01<span class="w"> </span>--portal<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--login
+</span></code></pre></div></p>
+<ol>
+<li><strong>Verificar la conexión</strong>:
+   Para comprobar que la conexión se realizó correctamente, puedes utilizar el siguiente comando para listar las sesiones iSCSI activas:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>iscsiadm<span class="w"> </span>--mode<span class="w"> </span>session
+</span></code></pre></div>
+<h3 id="paso-5-formatear-y-montar-el-dispositivo-iscsi">Paso 5: Formatear y montar el dispositivo iSCSI<a class="headerlink" href="#paso-5-formatear-y-montar-el-dispositivo-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Listar los nuevos dispositivos</strong>:
+   Una vez conectado, el sistema debería haber detectado el nuevo dispositivo de bloque asociado con el objetivo iSCSI. Para verlo, puedes utilizar <code>lsblk</code> o <code>fdisk</code>:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>lsblk
+</span></code></pre></div>
+<p>El nuevo dispositivo probablemente será algo como <code>/dev/sdb</code> o similar.</p>
+<ol>
+<li><strong>Formatear el dispositivo</strong>:
+   Si el dispositivo iSCSI es nuevo o no tiene un sistema de archivos, puedes formatearlo con el sistema de archivos deseado, por ejemplo, ext4:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/sdX
+</span></code></pre></div>
+<p>Asegúrate de reemplazar <code>sdX</code> con el identificador correcto de tu dispositivo.</p>
+<ol>
+<li><strong>Montar el dispositivo</strong>:
+   Crea un punto de montaje y monta el dispositivo iSCSI:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/mnt/iscsi
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdX<span class="w"> </span>/mnt/iscsi
+</span></code></pre></div>
+<ol>
+<li><strong>Verificar el montaje</strong>:
+   Puedes verificar que el dispositivo esté correctamente montado con el comando <code>df</code>:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>df<span class="w"> </span>-h
+</span></code></pre></div>
+<p>Deberías ver el nuevo dispositivo iSCSI montado en el punto de montaje que elegiste.</p>
+<h3 id="paso-6-desconectar-el-objetivo-iscsi">Paso 6: Desconectar el objetivo iSCSI<a class="headerlink" href="#paso-6-desconectar-el-objetivo-iscsi" title="Permanent link">&para;</a></h3>
+<p>Cuando ya no necesites usar el dispositivo iSCSI, puedes desconectar el objetivo de la siguiente manera:</p>
+<ol>
+<li><strong>Desmontar el dispositivo</strong>:
+   Primero, desmonta el dispositivo de tu sistema:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt/iscsi
+</span></code></pre></div>
+<ol>
+<li><strong>Cerrar la sesión del objetivo iSCSI</strong>:
+   Luego, desconéctate del servidor iSCSI:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>iscsiadm<span class="w"> </span>--mode<span class="w"> </span>node<span class="w"> </span>--targetname<span class="w"> </span>&lt;nombre_del_objetivo&gt;<span class="w"> </span>--portal<span class="w"> </span>&lt;IP_del_servidor&gt;<span class="w"> </span>--logout
+</span></code></pre></div>
+<p>Con estos pasos, habrás configurado un cliente iSCSI en AlmaLinux y conectado a un dispositivo iSCSI para acceder a un almacenamiento remoto. Esta técnica es útil para integrar sistemas Linux con servidores de almacenamiento en red como TrueNAS u otros sistemas SAN, permitiendo aprovechar al máximo las ventajas del almacenamiento distribuido.</p>
+<h2 id="conectar-un-volumen-iscsi-en-windows-10-o-11-opcional">Conectar un volumen iSCSI en Windows 10 o 11 (Opcional):<a class="headerlink" href="#conectar-un-volumen-iscsi-en-windows-10-o-11-opcional" title="Permanent link">&para;</a></h2>
+<h3 id="1-acceder-al-iniciador-iscsi">1. <strong>Acceder al iniciador iSCSI</strong><a class="headerlink" href="#1-acceder-al-iniciador-iscsi" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Abre el <strong>Panel de control</strong> y selecciona la opción <strong>Herramientas administrativas</strong>.</li>
+<li>Haz clic en <strong>Iniciador iSCSI</strong>. Si es la primera vez que lo abres, te pedirá que inicies el servicio de iSCSI. Haz clic en <strong>Sí</strong> para activarlo.</li>
+</ul>
+<h3 id="2-conectar-a-un-destino-iscsi">2. <strong>Conectar a un destino iSCSI</strong><a class="headerlink" href="#2-conectar-a-un-destino-iscsi" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>En la pestaña "Detección", pulsa el botón "Detectar portal", introduce la ip y las credenciales CHAP (si lo has configurado) usando el botón "Opciones avanzadas..."</p>
+</li>
+<li>
+<p>En la pestaña <strong>Destinos</strong> pulsa "Actualizar", debería aparecer el disco compartido.</p>
+</li>
+<li>Seleccionalo y haz click <strong>Conectar</strong>. Si todo está bien configurado en el servidor, el cliente se conectará al destino iSCSI.</li>
+</ul>
+<h3 id="3-configurar-el-disco-iscsi">3. <strong>Configurar el disco iSCSI</strong><a class="headerlink" href="#3-configurar-el-disco-iscsi" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Después de establecer la conexión, abre <strong>Administración de discos</strong> en Windows (puedes buscar "Crear y formatear particiones del disco duro" en el menú de inicio).</li>
+<li>Ahí verás el nuevo disco iSCSI. Deberás inicializarlo, formatearlo y asignarle una letra de unidad, como harías con cualquier disco local.</li>
+</ul>
+<h3 id="4-opciones-avanzadas">4. <strong>Opciones avanzadas</strong><a class="headerlink" href="#4-opciones-avanzadas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>En el iniciador iSCSI, puedes configurar opciones avanzadas como autenticación CHAP, persistencia de la conexión y ajuste de las configuraciones de red, en caso de que lo necesites.</li>
+</ul>
+<hr />
+<h2 id="conectar-volumen-iscsi-desde-windows-server-opcional">Conectar volumen iSCSI desde Windows Server (Opcional)<a class="headerlink" href="#conectar-volumen-iscsi-desde-windows-server-opcional" title="Permanent link">&para;</a></h2>
+<p>Para conectar un almacenamiento iSCSI desde <strong>Windows Server</strong>, sigue los pasos detallados a continuación. La conexión iSCSI te permitirá acceder a un dispositivo de almacenamiento remoto como si fuera un disco local.</p>
+<h3 id="paso-1-acceder-al-iniciador-iscsi-en-windows-server">Paso 1: Acceder al iniciador iSCSI en Windows Server<a class="headerlink" href="#paso-1-acceder-al-iniciador-iscsi-en-windows-server" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Abrir el iniciador iSCSI</strong>:</li>
+<li>En el <strong>Administrador del Servidor</strong>, ve a <strong>Herramientas</strong> y selecciona <strong>Iniciador iSCSI</strong>.</li>
+<li>
+<p>También puedes acceder al Iniciador iSCSI desde el menú de inicio buscando "Iniciador iSCSI".</p>
+</li>
+<li>
+<p><strong>Iniciar el servicio iSCSI</strong>:</p>
+</li>
+<li>Si es la primera vez que inicias el Iniciador iSCSI, te pedirá habilitar el servicio. Haz clic en <strong>Sí</strong> para que se inicie automáticamente cada vez que se arranque el servidor.</li>
+</ol>
+<h3 id="paso-2-descubrir-el-objetivo-iscsi-target">Paso 2: Descubrir el objetivo iSCSI (Target)<a class="headerlink" href="#paso-2-descubrir-el-objetivo-iscsi-target" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Configurar el portal de destino</strong>:</li>
+<li>En la pestaña <strong>Destinos</strong>, haz clic en <strong>Descubrir portal</strong>.</li>
+<li>Introduce la <strong>dirección IP</strong> o el <strong>nombre de dominio</strong> del servidor iSCSI al que te quieres conectar (por ejemplo, el servidor TrueNAS).</li>
+<li>
+<p>Deja el puerto por defecto en <strong>3260</strong>, a menos que hayas configurado un puerto diferente en el servidor iSCSI.</p>
+</li>
+<li>
+<p><strong>Descubrir los objetivos iSCSI</strong>:</p>
+</li>
+<li>Una vez añadido el portal, debería aparecer el objetivo (Target) iSCSI en la lista de destinos disponibles. Si no aparece de inmediato, puedes hacer clic en <strong>Actualizar</strong>.</li>
+<li>Verás algo similar a <code>iqn.2005-03.com.example:storage.target01</code> con el estado "Desconectado".</li>
+</ol>
+<h3 id="paso-3-conectarse-al-objetivo-iscsi">Paso 3: Conectarse al objetivo iSCSI<a class="headerlink" href="#paso-3-conectarse-al-objetivo-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Conectar al objetivo</strong>:</li>
+<li>Selecciona el objetivo iSCSI descubierto y haz clic en <strong>Conectar</strong>.</li>
+<li>
+<p>Si no necesitas autenticación adicional (CHAP), puedes conectarte directamente. Si tu servidor iSCSI requiere autenticación, selecciona <strong>Habilitar CHAP</strong> e introduce las credenciales correspondientes.</p>
+</li>
+<li>
+<p><strong>Configuración avanzada (opcional)</strong>:</p>
+</li>
+<li>
+<p>Si necesitas configurar opciones adicionales como multipathing o configurar un adaptador NIC específico, haz clic en <strong>Avanzado</strong> y ajusta las configuraciones según sea necesario.</p>
+</li>
+<li>
+<p><strong>Verificar la conexión</strong>:</p>
+</li>
+<li>Una vez conectado, el estado del objetivo debería cambiar a <strong>Conectado</strong>.</li>
+</ol>
+<h3 id="paso-4-inicializar-y-formatear-el-disco-iscsi">Paso 4: Inicializar y formatear el disco iSCSI<a class="headerlink" href="#paso-4-inicializar-y-formatear-el-disco-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Acceder al Administrador de discos</strong>:</li>
+<li>Después de conectar el objetivo, abre <strong>Administrador de discos</strong>. Puedes hacerlo haciendo clic derecho en el botón de inicio y seleccionando <strong>Administración de discos</strong>.</li>
+<li>
+<p>Verás el nuevo disco iSCSI en la lista de discos como un dispositivo no asignado.</p>
+</li>
+<li>
+<p><strong>Inicializar el disco</strong>:</p>
+</li>
+<li>
+<p>Si el disco no está inicializado, Windows te pedirá que lo inicialices. Selecciona <strong>MBR</strong> o <strong>GPT</strong>, dependiendo de tus necesidades.</p>
+</li>
+<li>
+<p><strong>Crear un nuevo volumen</strong>:</p>
+</li>
+<li>Haz clic derecho sobre el espacio no asignado del nuevo disco iSCSI y selecciona <strong>Nuevo volumen simple</strong>.</li>
+<li>
+<p>Sigue el asistente para formatear el disco con el sistema de archivos que prefieras (normalmente <strong>NTFS</strong>) y asignar una letra de unidad.</p>
+</li>
+<li>
+<p><strong>Verificar el montaje del disco</strong>:</p>
+</li>
+<li>Una vez formateado y montado, el disco iSCSI aparecerá en <strong>Este equipo</strong> como un nuevo disco, y podrás utilizarlo como cualquier otro disco local.</li>
+</ol>
+<h3 id="paso-5-desconectar-el-objetivo-iscsi">Paso 5: Desconectar el objetivo iSCSI<a class="headerlink" href="#paso-5-desconectar-el-objetivo-iscsi" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Desconectar el objetivo iSCSI</strong>:</li>
+<li>Si necesitas desconectar el objetivo iSCSI en el futuro, abre nuevamente el <strong>Iniciador iSCSI</strong>.</li>
+<li>
+<p>Selecciona el objetivo al que estás conectado y haz clic en <strong>Desconectar</strong>.</p>
+</li>
+<li>
+<p><strong>Detener el servicio iSCSI (opcional)</strong>:</p>
+</li>
+<li>Si no necesitas más la conexión iSCSI, puedes detener el servicio haciendo clic en <strong>Detener</strong> dentro del <strong>Administrador de servicios</strong>.</li>
+</ol>
+<hr />
+<h2 id="conclusiones-de-la-practica">Conclusiones de la práctica:<a class="headerlink" href="#conclusiones-de-la-practica" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Durante esta práctica, habrás configurado un sistema RAID 5 utilizando TrueNAS, simulado un fallo de disco y verificado que los datos siguen siendo accesibles durante la reconstrucción del RAID. Opcionalmente puedes haber configurado un "Spare disk" para que la reconstrucción del RAID sea lo más rápida posible.</li>
+<li>El acceso continuo a los datos tanto en NAS como en SAN demuestra la robustez de los sistemas RAID en entornos reales.</li>
+</ul>
+<h1 id="bibliografia">Bibliografía<a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://www.truenas.com/docs/core/">Documentación TrueNAS Core</a><ul>
+<li><a href="https://www.truenas.com/docs/core/gettingstarted/storingdata/">Configuración de almacenamiento</a></li>
+<li><em><a href="https://www.truenas.com/docs/core/gettingstarted/sharingstorage/">Cómo compartir almacenamiento</a></em></li>
+<li><a href="https://www.truenas.com/docs/core/coretutorials/sharing/iscsi/addingiscsishare/">Cómo configurar iSCSI</a></li>
+</ul>
+</li>
+<li><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_storage_devices/configuring-an-iscsi-initiator_managing-storage-devices">RedHat 9 iSCSI initiator</a></li>
+<li><a href="https://www.server-world.info/en/note?os=AlmaLinux_9&amp;p=iscsi&amp;f=2#google_vignette">AlmaLinux 9 iSCI initiator</a></li>
+<li><a href="https://www.sqlshack.com/how-to-configure-an-iscsi-initiator-on-windows-server-2016/">Iniciador iSCSI Windows Server 2016</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026-2027 Francisco Pérez Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.annotate", "announce.dismiss", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

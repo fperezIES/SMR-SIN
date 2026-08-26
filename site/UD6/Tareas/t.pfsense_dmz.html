@@ -1,0 +1,5673 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fperezies.github.com/SMR-SIN/UD6/Tareas/t.pfsense_dmz.html">
+      
+      
+        <link rel="prev" href="t.IDS.IPS.suricata.html">
+      
+      
+        <link rel="next" href="t.proxy.directo.squid.html">
+      
+      
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Instalación y configuración de un cortafuegos perimetral - 2SMR Seguridad Informática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-y-configuracion-de-un-cortafuegos-perimetral" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="2SMR Seguridad Informática" class="md-header__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2SMR Seguridad Informática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalación y configuración de un cortafuegos perimetral
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="2SMR Seguridad Informática" class="md-nav__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    2SMR Seguridad Informática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Presentación del módulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../UD1/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/1.introduccion.seguridad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/2.vulnerabilidades.amenazas.exploits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades, Amenazas y Exploits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/3.SGSI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGSI y Análisis de Riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/4.cumplimiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cumplimiento legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/2.amenazas.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/3.auditorias.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis y gestión de riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/4.incidentes.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Gestión de Incidentes de Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Presentaciones/5.cumplimiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cumplimiento Legal en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/1.1.analisis.riesgos.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis de riesgos en 5 minutos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/2.1.amenazas.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Identificación y Análisis de Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/2.2.rss.seguridad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Análisis de Incidentes de Ciberseguridad con RSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/3.1.familiaiso27000.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Familiarización con normas ISO/IEC 27000
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD1/Tareas/4.1.Normativa.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"/></svg>
+  
+  <span class="md-ellipsis">
+    Caso Práctico: Soporte Informático y Normativa Legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/1.fisica_CPD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Física en Centros de Procesamiento de Datos (CPD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/2.almacenamiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Almacenamiento de la Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/3.backup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de Copias de Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/4.borradoyrecuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado Seguro de Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/borrado_recuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado recuperacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Presentaciones/1.fisica_CPD.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    bicación equipos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Presentaciones/2.almacenamiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Unidades de almacenamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Presentaciones/3.backup.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Presentaciones/4.borradoyrecuperacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Borrado y recuperación de información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/RAID_almalinux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Guía paso a paso para configurar RAID 5 y RAID 6 en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/RAID_windows11.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    RAID windows11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/SMART.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación del estado SMART de las unidades de disco
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/TrueNAS_RAID5.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/backup_duplicati.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Backup duplicati
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/backup_rsync.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad con rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/borrado_seguro.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica 5: Recuperación de Ficheros y Borrado Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/clonezilla.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Clonado de máquinas usando Clonezilla
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/especificaciones_fiabilidad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Investigación de Especificaciones de Fiabilidad de Discos Duros y Unidades SSD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD2/Tareas/fiabilidadDiscosGoogle.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprensión de la Fiabilidad de los Discos Duros según el Estudio de Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/2.c_simetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/3.c_asimetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/4.PKI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infraestructura de Clave Pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/5.c_aplicaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones de la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/6.c_cuantica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Criptografía Cuántica y Post-Cuántica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/2.c_simetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/3.c_asimetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Presentaciones/4.PKI.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Infraestructura de clave pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.gpg.asimetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado Asimétrico y firma con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado simétrico con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.hashfunctions.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Funciones Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/ej.ssllabs.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Comprobación de Vulnerabilidades en Sitios Web Seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/opt.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Tarea: Envío de mensaje cifrado y firmado usando GPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.XCA%201.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.PKI.openssl.XCA 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.XCA.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Creación de un Certificado SSL/TLS Multisitio en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.PKI.openssl.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Autoridad Certificadora con OpenSSL y Servidor Web Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD3/Tareas/t.hash_pwd_jtr.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Fortaleza de contraseñas en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/1.seguridad_acceso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fortificación de Hosts: Autenticación, Arranque Seguro y Cifrado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/2.malware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/3.actualizacion_vulnerabilidades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/4.monitorizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Monitorización en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/1.seguridad_acceso.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en acceso a hosts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/2.malware.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Presentaciones/4.monitorizacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Auditoría en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ELKstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ELKstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/Ideas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ideas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/OSSEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSSEC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P02_Bitlocker.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de disco en Windows 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P05_Debian_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de discos en Linux (LUKS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/U04-P13_Actualizaciones_debian.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualizaciones de software Debian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.Informe_mandiant2024.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis del informe de ciberseguridad "M-Trends 2024"
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.cifrado_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de Discos LUKS en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.politicas_de_contrasen%CC%83as_linux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Establecimiento de Políticas de Contraseñas y Gestión de Permisos en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.resetPass.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ej.resetPass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/ej.virustotal.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación de ficheros y URLs con VirtusTotal.com
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/nessus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nessus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/openSCAP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openSCAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/opt.ssh_2step.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Autenticación de Doble Factor por SSH en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.GVM.openVAS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.lynis.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD4/Tareas/t.wazuh.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wazuh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/1.intro_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/2.redes_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/cluster_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/ha_red.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ha red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Presentaciones/1.intro_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción Alta Disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Presentaciones/2.redes_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    HA en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/kubernetes.cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/kubernetes.wordpress.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.wordpress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/openstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Openstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/pacemaker.corosync.mysql.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Pacemaker.corosync.mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.balanceador.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.balanceador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.proxmox.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Máquinas virtuales en alta disponibilidad con Proxmox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/t.vrrp.keepalived.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Puerta de enlace en alta disponibilidad (VRRP) con Keepalived
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD5/Tareas/wordpress_cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wordpress cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.WLAN-LAN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.firewalls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Seguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.VPN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.IDS-IPS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.proxies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.DDos-ZTA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.DDos ZTA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    ntroducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/2.WLAN-LAN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/3.firewalls.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    eguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/4.VPN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/5.IDS-IPS.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Presentaciones/6.proxies.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.IDS.IPS.snort.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.IDS.IPS.snort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.IDS.IPS.suricata.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Instalación y Configuración de Suricata en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Instalación y configuración de un cortafuegos perimetral
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="t.pfsense_dmz.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Instalación y configuración de un cortafuegos perimetral
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netgate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netgate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      pfSense
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-objetivos-de-la-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Objetivos de la práctica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requisitos-y-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requisitos y Preparación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Requisitos y Preparación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-requisitos-de-virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Requisitos de VirtualBox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-configuracion-de-la-vm-de-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Configuración de la VM de pfSense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-maquinas-clientesservidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Máquinas Clientes/Servidores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-instalacion-y-configuracion-inicial-de-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Instalación y Configuración inicial de pfSense
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Instalación y Configuración inicial de pfSense">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posibles-problemas-pfsense-virtualizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posibles Problemas pfSense virtualizado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Posibles Problemas pfSense virtualizado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#las-maquinas-virtuales-no-consiguen-conectarse-a-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Las máquinas virtuales no consiguen conectarse a Internet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuracion-de-nat-y-reglas-de-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configuración de NAT y Reglas de Firewall
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configuración de NAT y Reglas de Firewall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#50-configurar-dns-de-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0 Configurar DNS de pfSense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-habilitar-y-verificar-nat-saliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Habilitar y verificar NAT saliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-reglas-de-firewall-en-la-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Reglas de Firewall en la LAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-reglas-de-firewall-en-la-dmz" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Reglas de Firewall en la DMZ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-directiva-1-lan-dmz" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Directiva 1: LAN -&gt; DMZ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-directiva-2-wan-dmz-port-forward-redireccion-de-puertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Directiva 2: WAN -&gt; DMZ (Port Forward / Redirección de Puertos)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-comprobacion-y-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Comprobación y Pruebas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Comprobación y Pruebas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#60-configuracion-de-red-de-equipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.0 Configuración de red de equipos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61-pruebas-desde-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Pruebas desde LAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-pruebas-desde-dmz-cumplimiento-de-directiva-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Pruebas desde DMZ (cumplimiento de Directiva 3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-pruebas-desde-la-wan-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Pruebas desde la WAN (Internet)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recomendaciones-finales-y-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recomendaciones Finales y Buenas Prácticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-opcional-aislar-la-interfaz-grafica-a-una-red-de-administracion-en-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Opcional) Aislar la interfaz gráfica a una red de administración en pfSense
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. (Opcional) Aislar la interfaz gráfica a una red de administración en pfSense">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-mover-la-interfaz-grafica-a-una-red-de-administracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de mover la interfaz gráfica a una red de administración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-una-red-de-administracion-dedicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crear una red de administración dedicada:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ajustar-las-reglas-del-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ajustar las reglas del firewall:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deshabilitar-acceso-desde-otras-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deshabilitar acceso desde otras interfaces:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-revisa-las-reglas-de-las-interfaces-lan-y-wan-para-asegurarte-de-que-no-permitan-acceso-al-puerto-de-la-interfaz-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Revisa las reglas de las interfaces LAN y WAN para asegurarte de que no permitan acceso al puerto de la interfaz web.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="- Revisa las reglas de las interfaces LAN y WAN para asegurarte de que no permitan acceso al puerto de la interfaz web.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-configurar-acceso-ssh-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configurar acceso SSH (opcional):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-opcional-usar-pfblockerng-para-evitar-amenazas" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 (Opcional) Usar pfblockerNG para evitar amenazas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 (Opcional) Usar pfblockerNG para evitar amenazas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales-de-pfblockerng" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características principales de pfBlockerNG
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografía
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliografía">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descarga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guías
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.proxy.directo.squid.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.proxy.directo.squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.vpn.ra.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.vpn.ra.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.ra.wireguard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.vpn.site2site.ipsec.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.site2site.ipsec
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.vpn.site2site.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t.vpn.site2site.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN site to site con WireGuard en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Incidentes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Incidentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/1988.gusano.morris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El gusano Morris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2010.stuxnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Malware Stuxnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2016.botnet_mirai.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botnet Mirai
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2017.wannacry.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dossier sobre WannaCry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2018.spectre_meltdown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018.spectre meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2019.ramsomware.jerez.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque Ransomware al Ayuntamiento de Jerez en 2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2020.solarwinds.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de SolarWinds 2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2021.ransomware.colonial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque de Ransomware a Colonial Pipeline (2021)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2023.hack.LTT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023.hack.LTT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/2024.crowdstrike.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de CrowdStrike 2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/buffer_overflow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buffer overflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/heartbleed.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heartbleed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/ransomware.pago.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Empresas que han pagado rescates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/xss.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Xss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/zeroday.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Zero-Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_16">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/slides/2017.operation_cloud_hopper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017.operation cloud hopper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../incidentes/slides/2018.spectre_meltdown.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Spectre y Meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="instalacion-y-configuracion-de-un-cortafuegos-perimetral">Instalación y configuración de un cortafuegos perimetral<a class="headerlink" href="#instalacion-y-configuracion-de-un-cortafuegos-perimetral" title="Permanent link">&para;</a></h1>
+<h2 id="1-introduccion">1. Introducción<a class="headerlink" href="#1-introduccion" title="Permanent link">&para;</a></h2>
+<p>En esta práctica vamos a montar un escenario de firewall con NAT y una DMZ (zona desmilitarizada) usando <strong>pfSense</strong>. <strong>La idea principal</strong> es aislar uno o más servidores en una red dedicada (DMZ), mientras permitimos que los usuarios internos (LAN) accedan a Internet de manera segura por medio del firewall y la traducción de direcciones de red (NAT).</p>
+<p><img alt="Logo pfSense" class="center" src="../img/pfsense/pfsense_logo.png" style="width: 50%;" /></p>
+<h3 id="netgate">Netgate<a class="headerlink" href="#netgate" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.netgate.com/">Netgate</a> es la empresa detrás del desarrollo y soporte de pfSense, conocida por ofrecer soluciones de seguridad de red de alto rendimiento y a un costo accesible. Ofrecen:</p>
+<ul>
+<li><strong><a href="https://www.netgate.com/pfsense-plus-software/how-to-buy#appliances">Hardware dedicado</a>:</strong> Dispositivos diseñados y optimizados para ejecutar pfSense, como la serie Netgate 1100, 4100 o 6100.</li>
+<li><strong><a href="https://www.netgate.com/support">Soporte comercial</a>:</strong> Servicios de soporte técnico y consultoría para clientes empresariales.</li>
+<li><strong><a href="https://www.netgate.com/pfsense-plus-software">pfSense Plus</a>:</strong> Una versión comercial de pfSense con características adicionales enfocadas en empresas.</li>
+<li><strong>Desarrollo continuo:</strong> Netgate mantiene y mejora pfSense, asegurando actualizaciones regulares y soporte a la comunidad.</li>
+</ul>
+<h3 id="pfsense">pfSense<a class="headerlink" href="#pfsense" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.pfsense.org/"><strong>pfSense</strong></a> es un sistema operativo de código abierto basado en <strong>FreeBSD</strong> diseñado para funcionar como un firewall y router. Es ampliamente reconocido por su robustez, flexibilidad y capacidad de personalización, y se utiliza tanto en entornos empresariales como domésticos. Sus características clave incluyen:</p>
+<ul>
+<li><strong>Firewall avanzado:</strong> Basado en reglas con inspección de estado (stateful).</li>
+<li><strong>VPN integrado:</strong> Compatibilidad con IPsec, OpenVPN y WireGuard.</li>
+<li><strong>Balanceo de carga y conmutación por error.</strong></li>
+<li><strong>Soporte de VLAN y NAT.</strong></li>
+<li><strong>Funciones de seguridad adicionales:</strong> IDS/IPS con Snort o Suricata.</li>
+<li><strong>Ampliación mediante paquetes:</strong> Squid (proxy), pfBlockerNG (bloqueo de publicidad y control de contenido), etc.</li>
+</ul>
+<h2 id="2-objetivos-de-la-practica">2. Objetivos de la práctica<a class="headerlink" href="#2-objetivos-de-la-practica" title="Permanent link">&para;</a></h2>
+<p>Usaremos <strong>VirtualBox</strong> para simular el escenario de la red de una organización con un cortafuegos que disponga de tres zonas: interna (LAN), externa (WAN) y DMZ. Esta configuración es habitual en pequeñas organizaciones, aunque existen entornos más complejos con varias capas de cortafuegos y más zonas.</p>
+<p>El esquema propuesto es el siguiente:</p>
+<p><img alt="Esquema de red" class="center" src="../img/pfsense/pfsense_dmz.drawio.png" style="width: 90%;" /></p>
+<ol>
+<li><strong>Configurar pfSense</strong> como firewall principal en la red.</li>
+<li><strong>Habilitar NAT</strong> para que las conexiones salientes desde LAN y DMZ a Internet se realicen correctamente.</li>
+<li><strong>Crear una DMZ</strong> para alojar uno o varios servicios (servidores web, correo, etc.) separada de la LAN.</li>
+<li><strong>Establecer reglas de firewall</strong> que permitan (o restrinjan) tráfico entre LAN, DMZ e Internet.<ul>
+<li><strong>Directiva 1</strong>: Desde la red interna (LAN) a la DMZ se permite ICMP, HTTP, HTTPS y SSH. No se permite ningún otro servicio.</li>
+<li><strong>Directiva 2</strong>: Desde Internet al servidor de la DMZ debe permitirse tráfico entrante a HTTP, HTTPS y SSH, aunque <strong>el SSH</strong> se publicará externamente en el <strong>puerto 20022</strong> (redirección de puertos).</li>
+<li>Directiva3: Desde la DMZ no se debe poder acceder a la LAN,</li>
+</ul>
+</li>
+</ol>
+<p>Durante la práctica, se debe <strong>realizar una memoria</strong> en <strong>PDF</strong> para documentar todo el proceso, se recomienda documentar con <strong>capturas</strong> y <strong>explicaciones</strong>:</p>
+<ol>
+<li><strong>Configuración de VirtualBox</strong> (adaptadores de red).</li>
+<li><strong>Instalación de pfSense</strong> y asignación de interfaces (capturas de la consola o del asistente web).</li>
+<li><strong>Configuración WAN, LAN y DMZ</strong> (capturas de las pantallas con IPs asignadas).</li>
+<li><strong>Configuraciones de NAT</strong> (reglas de Port Forward y NAT Outbound).</li>
+<li><strong>Reglas de Firewall</strong> en WAN, LAN y DMZ (capturas y explicaciones de cada regla).</li>
+<li><strong>Pruebas de conectividad</strong> (ping, acceso web, SSH desde WAN y LAN).</li>
+<li><strong>Conclusiones</strong>: Reflexión sobre el funcionamiento, posibles mejoras, buenas prácticas de seguridad (bloqueo de puertos no usados, hardening, etc.).</li>
+</ol>
+<p>El informe final puede ser en formato PDF con capturas de pantalla y comentarios claros. Asegúrate de subirlo según las instrucciones de tu profesor o de la plataforma de e-learning correspondiente.</p>
+<h2 id="3-requisitos-y-preparacion">3. Requisitos y Preparación<a class="headerlink" href="#3-requisitos-y-preparacion" title="Permanent link">&para;</a></h2>
+<h3 id="31-requisitos-de-virtualbox">3.1 Requisitos de VirtualBox<a class="headerlink" href="#31-requisitos-de-virtualbox" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>VirtualBox</strong> instalado en el equipo anfitrión (host).</li>
+<li><strong>Imagen ISO de pfSense</strong> descargada de la web oficial (<a href="https://www.pfsense.org/download/">https://www.pfsense.org/download/</a>).</li>
+</ul>
+<h3 id="32-configuracion-de-la-vm-de-pfsense">3.2 Configuración de la VM de pfSense<a class="headerlink" href="#32-configuracion-de-la-vm-de-pfsense" title="Permanent link">&para;</a></h3>
+<p><strong>Configuración de VM y requisitos mínimos</strong> en VirtualBox:</p>
+<ul>
+<li><strong>Sistema operativo</strong>: BSD (FreeBSD 64-bit).</li>
+<li><strong>RAM</strong>: mínimo 512 MB (recomendado 1024 MB o más).</li>
+<li><strong>Disco duro (HDD)</strong>: mínimo 20 GB.</li>
+<li><strong>3 Interfaces de red</strong> en la VM de pfSense.</li>
+</ul>
+<p><strong>Adaptadores de red</strong> en VirtualBox:</p>
+<ol>
+<li><strong>Adaptador 1</strong>: Modo Puente (Bridge) o NAT (para simular la WAN).<ul>
+<li>Obtendrá IP por DHCP si eliges NAT o Bridge.</li>
+</ul>
+</li>
+<li><strong>Adaptador 2</strong>: <code>Sólo-anfitrión</code> (Host-only) para la <strong>LAN</strong>.</li>
+<li><strong>Adaptador 3</strong>: <code>Red interna</code> con nombre DMZ (por ejemplo “DMZ”) para la <strong>DMZ</strong>.</li>
+</ol>
+<h3 id="33-maquinas-clientesservidores">3.3 Máquinas Clientes/Servidores<a class="headerlink" href="#33-maquinas-clientesservidores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Máquinas Linux</strong> (servidores) en la DMZ con servicios como Apache (HTTP/S) y SSH.</li>
+<li><strong>Máquinas Linux/Windows</strong> (clientes) en la LAN para probar conectividad.</li>
+<li>Asegurarse de configurar el firewall local de los servidores para <strong>permitir</strong> las conexiones en los puertos necesarios (80, 443 y 22).</li>
+<li>También <strong>se recomienda asignar IP estática a los servidores en la DMZ</strong> para un mayor control (ej. 192.168.30.2, 192.168.30.3, etc.).</li>
+</ul>
+<h2 id="4-instalacion-y-configuracion-inicial-de-pfsense">4. Instalación y Configuración inicial de pfSense<a class="headerlink" href="#4-instalacion-y-configuracion-inicial-de-pfsense" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Instalar pfSense</strong> desde la ISO en la VM:    <ul>
+<li>Seleccionar los valores por defecto durante la instalación.</li>
+<li>Asignar:<ul>
+<li><strong>WAN</strong> a <code>em0</code> (o la que corresponda en tu caso).</li>
+<li><strong>LAN</strong> a <code>em1</code>.</li>
+</ul>
+</li>
+<li>Seleccionar instalar la versión <strong>CE</strong> (Community Edition)</li>
+<li>Al finalizar, <strong>reiniciar</strong> la VM.</li>
+</ul>
+</li>
+<li><strong>Acceso a la interfaz web de pfSense</strong>    <ul>
+<li>Por defecto, pfSense asigna la IP 192.168.1.1 a la LAN y bloquea el acceso desde la WAN.</li>
+<li>Desde tu <strong>máquina cliente en LAN</strong>, abrir un navegador y acceder a <code>https://192.168.20.1</code> (o la IP que configuraste).</li>
+<li>Credenciales por defecto:<ul>
+<li>Usuario: <code>admin</code></li>
+<li>Contraseña: <code>pfsense</code></li>
+</ul>
+</li>
+<li><strong>Cambiarlas inmediatamente por seguridad.</strong></li>
+<li>Si tienes dificultades conectando desde el host, intenta conectar desde una máquina virtual conectada a la red LAN y con la configuración de red adecuada.</li>
+</ul>
+</li>
+<li><strong>Asignación de interfaces</strong> (al iniciar pfSense por primera vez):    <ul>
+<li>pfSense detectará las tarjetas de red como <code>em0</code>, <code>em1</code>, <code>em2</code>, etc.</li>
+<li>Asignar:<ul>
+<li><strong>WAN</strong> a <code>em0</code> (o la que corresponda en tu caso).</li>
+<li><strong>LAN</strong> a <code>em1</code>.</li>
+<li><strong>OPT1</strong> (renombrada a “DMZ”) a <code>em2</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Configuración de la IP WAN</strong>    <ul>
+<li>Si la WAN está en modo DHCP (p.ej. VirtualBox NAT/Bridge), pfSense obtendrá IP automáticamente.</li>
+<li>Si es una IP estática, configurar manualmente en <code>Interfaces &gt; WAN</code> (IP, máscara, gateway, DNS, etc.).</li>
+</ul>
+</li>
+<li><strong>Configuración de la IP LAN</strong>    <ul>
+<li>En <code>Interfaces &gt; LAN</code>, asignar una IP del tipo 192.168.20.1/24.</li>
+<li>Habilitar (opcional) el <strong>servidor DHCP</strong> para la LAN, o asignar IPs fijas a los clientes.</li>
+</ul>
+</li>
+<li><strong>Configuración de la IP DMZ</strong>    <ul>
+<li>Renombrar la interfaz <code>OPT1</code> a “DMZ” para mayor claridad.</li>
+<li>En <code>Interfaces &gt; (OPT1 o DMZ)</code>, habilitar la interfaz y asignar una IP distinta a la de LAN. Ejemplo: 192.168.30.1/24.</li>
+<li>(Opcional) Habilitar servidor DHCP en DMZ o asignar IP fija a los servidores en DMZ. En entornos reales, <strong>IP fija</strong> es más común para servidores.</li>
+</ul>
+</li>
+<li><strong>Permitir IPs privadas en WAN</strong> (si tu WAN usa direcciones de red privada)    <ul>
+<li>Ve a <strong>Interfaces &gt; WAN</strong>.</li>
+<li>Localiza la opción <strong>Block private networks and loopback addresses</strong> y <strong>desmárcala</strong> si la WAN está recibiendo una IP privada (10.x, 172.16.x, 192.168.x...).</li>
+<li>Guardar y aplicar cambios.</li>
+</ul>
+</li>
+</ol>
+<h3 id="posibles-problemas-pfsense-virtualizado">Posibles Problemas pfSense virtualizado<a class="headerlink" href="#posibles-problemas-pfsense-virtualizado" title="Permanent link">&para;</a></h3>
+<h4 id="las-maquinas-virtuales-no-consiguen-conectarse-a-internet">Las máquinas virtuales no consiguen conectarse a Internet<a class="headerlink" href="#las-maquinas-virtuales-no-consiguen-conectarse-a-internet" title="Permanent link">&para;</a></h4>
+<p>Dependiendo de tu hardware es posible que pfSense no funcione bien, no siendo capaz de enviar tráfico desde las máquinas virtuales hacia la WAN. Si esto te sucede, puedes solucionarno desde <code>System &gt; Advanced &gt; Networking</code>y marca la casilla <strong>Disable hardware checksum offload</strong>. Esto requerirá un reinicio de pfSense para tener efecto. Más información <a href="https://docs.netgate.com/pfsense/en/latest/virtualization/virtio.html">aquí</a>.</p>
+<h2 id="5-configuracion-de-nat-y-reglas-de-firewall">5. Configuración de NAT y Reglas de Firewall<a class="headerlink" href="#5-configuracion-de-nat-y-reglas-de-firewall" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Las reglas en pfSense se ejecutan de arriba hacia abajo, así que el orden es muy importante. Se pueden reordenar arrastrando desde la interfaz web.</li>
+<li>Recuerda que cada vez que añades o haces cambios a las reglas no se aplicarán hasta que pulses el botón "Apply changes" que aparecerá en un banner en la parte superior tras realizar los cambios. Esto te permite realizar los cambios por partes y aplicarlos solamente cuando todos los cambios necesarios han sido realizados.</li>
+</ul>
+<h3 id="50-configurar-dns-de-pfsense">5.0 Configurar DNS de pfSense<a class="headerlink" href="#50-configurar-dns-de-pfsense" title="Permanent link">&para;</a></h3>
+<p>Para que pfSense resuelva nombres DNS debes indicar qué servidores serán consultados.</p>
+<ol>
+<li>Accede a la interfaz web de pfSense y dirígete a <code>System &gt; General Setup</code>.</li>
+<li>En la sección <strong>DNS Server Settings</strong>, especifica las direcciones IP de los servidores DNS deseados (por ejemplo, los proporcionados por tu ISP o servicios públicos como Cloudflare o Google).</li>
+<li>Guarda los cambios haciendo clic en <code>Save</code>.</li>
+</ol>
+<h3 id="51-habilitar-y-verificar-nat-saliente">5.1 Habilitar y verificar NAT saliente<a class="headerlink" href="#51-habilitar-y-verificar-nat-saliente" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>NAT automático</strong>: Por defecto, pfSense configura NAT saliente automático (Outbound NAT), lo que permite que las redes LAN y DMZ salgan a Internet usando la IP de la WAN.  </li>
+<li>Para verificarlo, ve a <strong>Firewall &gt; NAT &gt; Outbound</strong> y revisa que aparezcan reglas para las subredes LAN (p.ej. 192.168.20.0/24) y DMZ (192.168.30.0/24).  </li>
+<li>Prueba con un cliente en <strong>LAN</strong> y otro en <strong>DMZ</strong> haciendo un <strong>ping</strong> a un dominio (ej. <code>ping www.google.com</code>) para comprobar que sale a Internet y que funcionan los DNS.</li>
+</ol>
+<h3 id="52-reglas-de-firewall-en-la-lan">5.2 Reglas de Firewall en la LAN<a class="headerlink" href="#52-reglas-de-firewall-en-la-lan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Por defecto, pfSense crea una regla en <strong>Firewall &gt; Rules &gt; LAN</strong> que <strong>permite</strong> todo el tráfico saliente (desde LAN a cualquier destino).  </li>
+<li>Para la práctica, normalmente se deja así para simplificar, aunque en producción se recomienda detallar reglas más específicas.  </li>
+</ul>
+<p>En la siguiente captura se muestran las reglas NAT generadas automáticamente en pfSense:</p>
+<p><img alt="" class="center" src="../img/pfsense/pfsense_nat_outbound.png" style="width: 90%;" /></p>
+<h3 id="53-reglas-de-firewall-en-la-dmz">5.3 Reglas de Firewall en la DMZ<a class="headerlink" href="#53-reglas-de-firewall-en-la-dmz" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ir a <strong>Firewall &gt; Rules</strong> y seleccionar la pestaña <strong>DMZ</strong>.  </li>
+<li>Para permitir que la DMZ tenga acceso a Internet (opcional, si tu política lo autoriza), añadir una regla “Allow DMZ net to any” (o solo a puertos específicos).  </li>
+<li><strong>Cumplir Directiva 3</strong>: “Desde la DMZ no se debe poder acceder a la LAN”.  </li>
+<li>Por defecto, si creas una regla genérica “DMZ net to any”, eso <strong>incluye</strong> la LAN, lo cual <strong>rompería</strong> la directiva.  </li>
+<li>Para <strong>bloquear</strong> explícitamente el tráfico de la DMZ hacia la LAN, crea <strong>una regla de bloqueo</strong> en la DMZ con destino “LAN net”. Por ejemplo:  <ul>
+<li><strong>Action</strong>: Block  </li>
+<li><strong>Interface</strong>: DMZ  </li>
+<li><strong>Protocol</strong>: Any (o TCP/UDP/ICMP si quieres ser más granular)  </li>
+<li><strong>Source</strong>: DMZ net  </li>
+<li><strong>Destination</strong>: LAN net  </li>
+<li><strong>Description</strong>: “Bloquear tráfico DMZ -&gt; LAN (Directiva 3)”  </li>
+</ul>
+</li>
+<li>Esta regla de <strong>Block</strong> debe estar <strong>por encima</strong> de cualquier otra regla de tipo “Allow DMZ net to any” para que se aplique primero.  </li>
+</ol>
+<p>La siguiente captura muestra las reglas necesarias para habilitar el tráfico ICMP y TCP/IP saliente de la DMZ, también hay una regla que impide que la DMZ llegue a la LAN. Esta regla debe estar la primera para que no se lleguen a ejecutar las reglas posteriores.
+<img alt="" class="center" src="../img/pfsense/pfsense_reglas_DMZ.png" style="width: 90%;" /></p>
+<h3 id="54-directiva-1-lan-dmz">5.4 Directiva 1: LAN -&gt; DMZ<a class="headerlink" href="#54-directiva-1-lan-dmz" title="Permanent link">&para;</a></h3>
+<p>En la pestaña <strong>LAN</strong> (Firewall &gt; Rules &gt; LAN), se debe permitir <strong>solo</strong> ICMP, HTTP, HTTPS y SSH desde la LAN hacia la DMZ (y nada más).<br />
+1. En lugar de la regla por defecto “Allow any”, crearemos varias reglas puntuales:<br />
+   - <strong>Regla 1</strong>: Permitir LAN net -&gt; DMZ net, <strong>Protocol</strong>: ICMP.<br />
+   - <strong>Regla 2</strong>: Permitir LAN net -&gt; DMZ net, <strong>Protocol</strong>: TCP, <strong>Ports</strong>: 80 (HTTP), 443 (HTTPS), 22 (SSH).  Considera crear un <strong>Alias</strong> para estos puertos.
+2. Para que no se permita <strong>ningún otro servicio</strong> desde LAN a DMZ, ponemos luego una regla de <strong>Block</strong> (o Deny) de “LAN net” a “DMZ net” <strong>por encima</strong> o <strong>debajo</strong> de dichas reglas, dependiendo de cómo estructures las prioridades.<br />
+3. Recuerda: las reglas en pfSense se evalúan de <strong>arriba hacia abajo</strong>. </p>
+<p>La siguiente captura muestra las reglas añadidas a la LAN. La primera es una regla automática para permitir el acceso a la interfaz web, las dos últimas las autoconfigura pfSense durante la instalación. El resto de reglas limita el acceso desde la LAN a la DMZ, permitiendo solamente el tráfico ICP y el tráfico a los puertos TCP 80, 443 y 22. Para poder incluir los tres puertos en una misma regla se ha definido un Alias de puertos.
+<img alt="" class="center" src="../img/pfsense/pfsense_reglas_LAN.png" style="width: 90%;" /></p>
+<p>A continuación se muestra el alias de puertos definido:</p>
+<p><img alt="" class="center" src="../img/pfsense/pfsense_alias.png" style="width: 90%;" /></p>
+<h3 id="55-directiva-2-wan-dmz-port-forward-redireccion-de-puertos">5.5 Directiva 2: WAN -&gt; DMZ (Port Forward / Redirección de Puertos)<a class="headerlink" href="#55-directiva-2-wan-dmz-port-forward-redireccion-de-puertos" title="Permanent link">&para;</a></h3>
+<p>Para acceder al servidor en DMZ desde Internet, configuramos las <strong>reglas de Port Forward</strong> en <strong>Firewall &gt; NAT &gt; Port Forward</strong>:<br />
+1. <strong>Puerto 80 (HTTP)</strong> -&gt; Servidor DMZ (p.ej. 192.168.30.2:80).<br />
+2. <strong>Puerto 443 (HTTPS)</strong> -&gt; Servidor DMZ (p.ej. 192.168.30.2:443).<br />
+3. <strong>Puerto 20022</strong> (SSH externo) -&gt; Servidor DMZ (192.168.30.2:22).  </p>
+<p>pfSense, al <strong>crear</strong> cada port forward, normalmente crea también la regla en <strong>Firewall &gt; Rules &gt; WAN</strong> que permite ese tráfico. Verifica que:<br />
+- <strong>Destination</strong> sea la IP de la WAN (o “WAN address”).<br />
+- <strong>Redirect target IP</strong> sea la IP interna del servidor DMZ (ej. 192.168.30.2) y el puerto final (22, 80, 443).  </p>
+<p>Asegúrate de que el servidor en DMZ tenga abiertos los puertos 22, 80 y 443 en su firewall local.</p>
+<p><img alt="" class="center" src="../img/pfsense/pfsense_portforwarding.png" style="width: 90%;" /></p>
+<h2 id="6-comprobacion-y-pruebas">6. Comprobación y Pruebas<a class="headerlink" href="#6-comprobacion-y-pruebas" title="Permanent link">&para;</a></h2>
+<h4 id="60-configuracion-de-red-de-equipos">6.0 Configuración de red de  equipos<a class="headerlink" href="#60-configuracion-de-red-de-equipos" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Usará DHCP o configuración estática dependiendo de cómo hayas configurado pfSense. (Se recomienda DHCP en la LAN e IPs estáticas en la DMZ)</li>
+<li>En caso de configuraciones de IP estáticas:<ul>
+<li>gateway: ip de pfSense de la red a la que están conectados<ul>
+<li>LAN: 192.168.20.1</li>
+<li>DMZ: 192.168.30.1</li>
+</ul>
+</li>
+<li>DNS: ip de pfSense de la red a la que están conectados</li>
+</ul>
+</li>
+</ul>
+<h3 id="61-pruebas-desde-lan">6.1 Pruebas desde LAN<a class="headerlink" href="#61-pruebas-desde-lan" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Ping</strong> desde una máquina en LAN a la IP de pfSense LAN (192.168.20.1). Debe responder.  </li>
+<li><strong>Ping</strong> desde LAN a la IP del pfSense en DMZ (192.168.30.1) y a la IP del servidor en DMZ (192.168.30.2). Deben responder (ICMP permitido por Directiva 1).  </li>
+<li><strong>HTTP/HTTPS/SSH</strong>: Desde LAN, intenta conectarte al servidor en DMZ (p.ej. <code>http://192.168.30.2</code>, <code>ssh 192.168.30.2</code>). Debe funcionar según Directiva 1.  </li>
+<li>Verificar que <strong>no</strong> puedas usar otros servicios (por ejemplo, <code>telnet</code> a un puerto no autorizado), para confirmar que solo ICMP, HTTP, HTTPS y SSH están permitidos.</li>
+</ol>
+<h3 id="62-pruebas-desde-dmz-cumplimiento-de-directiva-3">6.2 Pruebas desde DMZ (cumplimiento de Directiva 3)<a class="headerlink" href="#62-pruebas-desde-dmz-cumplimiento-de-directiva-3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Ping</strong> desde el servidor en DMZ a la IP de pfSense DMZ (192.168.30.1). Debe responder (si la DMZ-&gt;pfSense DMZ net está permitida).  </li>
+<li><strong>Ping</strong> o acceso a Internet (8.8.8.8, www.google.com), si creaste una regla “Allow DMZ -&gt; any”.  </li>
+<li><strong>Intentar</strong> hacer ping o acceder a la LAN (p.ej. <code>ping 192.168.20.2</code> o abrir http://192.168.20.x).  </li>
+<li><strong>Resultado esperado</strong>: Bloqueo, es decir, <strong>no</strong> debe responder.  </li>
+<li>Revisar los <strong>logs</strong> de pfSense (Status &gt; System Logs &gt; Firewall) para ver la regla de bloqueo aplicada.  </li>
+</ol>
+<h3 id="63-pruebas-desde-la-wan-internet">6.3 Pruebas desde la WAN (Internet)<a class="headerlink" href="#63-pruebas-desde-la-wan-internet" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Obtener la IP pública/externa</strong> (WAN) de pfSense (por DHCP o estática).  </li>
+<li>Desde <strong>otra red externa</strong> (o simulada con otra máquina en VirtualBox en modo NAT/bridge), probar:  </li>
+<li><code>http://(IP_WAN)</code>, <code>https://(IP_WAN)</code>, <code>ssh -p 20022 (IP_WAN)</code>.  </li>
+<li>Verificar que se redirija al servidor DMZ y funcione.  </li>
+<li>Revisar <strong>logs</strong> en pfSense (Status &gt; System Logs) para confirmar que el tráfico es permitido y hacia qué IP interna se dirige.</li>
+</ol>
+<h2 id="7-recomendaciones-finales-y-buenas-practicas">7. Recomendaciones Finales y Buenas Prácticas<a class="headerlink" href="#7-recomendaciones-finales-y-buenas-practicas" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Cambiar credenciales por defecto</strong> de pfSense y de los servidores.  </li>
+<li><strong>Mantener pfSense actualizado</strong> con los últimos parches de seguridad.  </li>
+<li><strong>Respaldar</strong> la configuración de pfSense (<code>Backup &amp; Restore</code>) con regularidad.  </li>
+<li><strong>Registrar logs externamente</strong> (Syslog) para seguimiento y auditoría.  </li>
+<li><strong>Limitar accesos administrativos</strong>:</li>
+<li>Desactivar acceso web desde la WAN (salvo que sea indispensable, usando HTTPS y credenciales seguras).  </li>
+<li>Usar VPN para la administración remota.  </li>
+<li><strong>Monitorear</strong> con paquetes adicionales como Snort/Suricata (IDS/IPS) y pfBlockerNG para filtrar contenido y bloquear IPs maliciosas.</li>
+</ol>
+<h2 id="8-opcional-aislar-la-interfaz-grafica-a-una-red-de-administracion-en-pfsense">8.  (Opcional) Aislar la interfaz gráfica a una red de administración en pfSense<a class="headerlink" href="#8-opcional-aislar-la-interfaz-grafica-a-una-red-de-administracion-en-pfsense" title="Permanent link">&para;</a></h2>
+<p>Mover la interfaz gráfica de <strong>pfSense</strong> a una red de administración dedicada es una <strong>buena práctica en instalaciones profesionales</strong>, ya que mejora la seguridad y facilita la gestión de la infraestructura.</p>
+<h4 id="ventajas-de-mover-la-interfaz-grafica-a-una-red-de-administracion"><strong>Ventajas de mover la interfaz gráfica a una red de administración</strong><a class="headerlink" href="#ventajas-de-mover-la-interfaz-grafica-a-una-red-de-administracion" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Seguridad mejorada</strong>:    <ul>
+<li>Limita el acceso a la interfaz web de pfSense únicamente a administradores autorizados.</li>
+<li>Reduce el riesgo de ataques desde redes de usuarios o dispositivos no confiables.</li>
+</ul>
+</li>
+<li><strong>Segmentación de la red</strong>:    <ul>
+<li>Mantener la administración separada de las redes de producción minimiza posibles interferencias.</li>
+<li>Facilita el monitoreo y el control de accesos.</li>
+</ul>
+</li>
+<li><strong>Acceso controlado</strong>:    <ul>
+<li>Puedes configurar reglas estrictas de firewall para permitir el acceso solo desde dispositivos específicos o subredes administrativas.</li>
+</ul>
+</li>
+</ol>
+<p>Aquí tienes los pasos para hacerlo:</p>
+<h4 id="1-crear-una-red-de-administracion-dedicada">1. <strong>Crear una red de administración dedicada</strong>:<a class="headerlink" href="#1-crear-una-red-de-administracion-dedicada" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Asigna una interfaz física o VLAN en pfSense para la red de administración.</li>
+<li>Ve a <strong>Interfaces &gt; Assignments</strong> y configura una nueva interfaz (por ejemplo, <strong>ADMIN</strong>).</li>
+<li>Asigna una dirección IP fija a esta interfaz (por ejemplo, 192.168.100.1/24).</li>
+</ul>
+<h4 id="2-ajustar-las-reglas-del-firewall">2. <strong>Ajustar las reglas del firewall</strong>:<a class="headerlink" href="#2-ajustar-las-reglas-del-firewall" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ve a <strong>Firewall &gt; Rules</strong> en la nueva interfaz de administración.</li>
+<li>Crea una regla para permitir acceso HTTP/HTTPS (puertos 80 y 443 por defecto) desde las IPs o subredes de administradores autorizados.</li>
+<li>Bloquea el acceso desde otras redes o direcciones IP no autorizadas.</li>
+</ul>
+<h4 id="3-deshabilitar-acceso-desde-otras-interfaces">3. <strong>Deshabilitar acceso desde otras interfaces</strong>:<a class="headerlink" href="#3-deshabilitar-acceso-desde-otras-interfaces" title="Permanent link">&para;</a></h4>
+<h2 id="-revisa-las-reglas-de-las-interfaces-lan-y-wan-para-asegurarte-de-que-no-permitan-acceso-al-puerto-de-la-interfaz-web">- Revisa las reglas de las interfaces <strong>LAN</strong> y <strong>WAN</strong> para asegurarte de que no permitan acceso al puerto de la interfaz web.<a class="headerlink" href="#-revisa-las-reglas-de-las-interfaces-lan-y-wan-para-asegurarte-de-que-no-permitan-acceso-al-puerto-de-la-interfaz-web" title="Permanent link">&para;</a></h2>
+<h4 id="4-configurar-acceso-ssh-opcional">4. <strong>Configurar acceso SSH (opcional)</strong>:<a class="headerlink" href="#4-configurar-acceso-ssh-opcional" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Si necesitas administración remota, configura el acceso SSH también en la interfaz de administración.</li>
+<li>Ve a <strong>System &gt; Advanced</strong>, pestaña <strong>Admin Access</strong>. Y habilita el SSH.</li>
+<li>Asegúrate de usar claves SSH en lugar de contraseñas para mayor seguridad. </li>
+</ul>
+<h2 id="9-opcional-usar-pfblockerng-para-evitar-amenazas">9 (Opcional) Usar pfblockerNG para evitar amenazas<a class="headerlink" href="#9-opcional-usar-pfblockerng-para-evitar-amenazas" title="Permanent link">&para;</a></h2>
+<p><strong>pfBlockerNG</strong> es una potente herramienta de filtrado y seguridad que se integra con <strong>pfSense</strong>, diseñada para proporcionar un control avanzado sobre el tráfico de red. Su principal función es bloquear contenido no deseado, como dominios maliciosos, publicidad, rastreadores y regiones geográficas específicas, mejorando la privacidad, seguridad y rendimiento de la red.</p>
+<p>Con pfBlockerNG, los administradores pueden implementar políticas de red más estrictas, asegurando un entorno protegido frente a amenazas cibernéticas y optimizando la experiencia de navegación de los usuarios.</p>
+<h4 id="caracteristicas-principales-de-pfblockerng"><strong>Características principales de pfBlockerNG</strong><a class="headerlink" href="#caracteristicas-principales-de-pfblockerng" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Filtrado de dominios</strong>:    <ul>
+<li>Permite bloquear dominios maliciosos, phishing o cualquier otro tipo de contenido no deseado utilizando listas negras personalizadas o listas públicas actualizadas automáticamente.</li>
+</ul>
+</li>
+<li><strong>Bloqueo de IPs por región (GeoIP)</strong>:    <ul>
+<li>Ofrece la capacidad de bloquear o permitir tráfico de determinados países o regiones, lo que es útil para limitar accesos no deseados o mitigar ataques específicos.</li>
+</ul>
+</li>
+<li><strong>Eliminación de publicidad y rastreadores</strong>:    <ul>
+<li>Funciona como un bloqueador de anuncios a nivel de red, mejorando la privacidad y la velocidad de navegación al eliminar anuncios y rastreadores.</li>
+</ul>
+</li>
+<li><strong>Compatibilidad con listas personalizadas</strong>:    <ul>
+<li>Permite a los administradores cargar listas negras o listas blancas propias para un control más granular.</li>
+</ul>
+</li>
+<li><strong>Integración con DNSBL</strong> (Domain Name System Block List):    <ul>
+<li>Bloquea la resolución de dominios no deseados, impidiendo que los usuarios accedan a sitios maliciosos o no permitidos.</li>
+</ul>
+</li>
+<li><strong>Gestión centralizada</strong>:    <ul>
+<li>Todo el control se realiza desde la interfaz web de pfSense, permitiendo una configuración sencilla y un monitoreo constante.</li>
+</ul>
+</li>
+</ol>
+<p>Este primer vídeo muestra como instalar y configurar pfblockerNG:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xizAeAqYde4?si=o-VlJpXvda7G4IrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Este segundo vídeo profundiza sobre el uso de pfblockerNG para proteger servicios expuestos en Internet.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oNo77CMoxUM?si=sZswkgj3OIpg1aU_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h2 id="bibliografia">Bibliografía<a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h2>
+<h4 id="descarga">Descarga<a class="headerlink" href="#descarga" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.pfsense.org/download/">Descarga pfSense web oficial</a></li>
+<li><a href="https://repo.ialab.dsu.edu/pfsense/">Descarga pfSense desde Dakota State University Mirror</a></li>
+</ul>
+<h4 id="documentacion">Documentación<a class="headerlink" href="#documentacion" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://docs.netgate.com/pfsense/en/latest/">Documentación pfSense</a></p>
+</li>
+<li>
+<p><a href="https://docs.netgate.com/pfsense/en/latest/hardware/minimum-requirements.html">Requisitos hardware pfSense (doc)</a></p>
+</li>
+<li><a href="https://www.pfsense.org/products/#requirements">Requisitos hardware pfSense</a></li>
+</ul>
+<h4 id="guias">Guías<a class="headerlink" href="#guias" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://simplificandoredes.com/en/install-pfsense-on-virtualbox/">Instalación de pfSense en VirtualBox</a></li>
+<li><a href="https://www.redeszone.net/tutoriales/configuracion-routers/configuracion-router-firewall-pfsense/">Configuración de pfSense - RedesZone</a></li>
+</ul>
+<h4 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="comandos.almalinux.md">Comandos almalinux</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026-2027 Francisco Pérez Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.annotate", "announce.dismiss", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<!--
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+-->
+
+ <title>Monitorización y Auditoría en Ciberseguridad</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../reveal/dist/reveal.css">
+<link rel="stylesheet" href="../../reveal/dist/theme/white.css" id="theme">
+<link rel="stylesheet" href="../../reveal/plugin/highlight/monokai.css">
+<!-- link rel="icon" type="image/x-icon" href="../images/logo.svg" -->
+</head>
+
+<body>   
+ <div class="reveal">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    <!-- .slide: data-background="#2C3E50" -->
+
+# **Fortificación de Hosts**
+
+## **Monitorización en Ciberseguridad**
+
+---
+
+
+## Introducción
+
+Importancia de la **monitorización** y auditoría en ciberseguridad
+
+- **Detección** y **respuesta** a incidentes de seguridad
+- Garantía del **cumplimiento** de políticas y normativas
+- **Protección** de sistemas y redes informáticas
+
+---
+
+## **Registro de Eventos y Logs: Análisis de Eventos de Seguridad**
+
+--
+
+
+### **Análisis de Eventos de Seguridad**
+
+- **Detección de actividades anómalas**
+    - Identificación de patrones sospechosos
+    - Prevención de intentos de intrusión
+- **Investigación de incidentes de seguridad**
+    - Comprensión de qué sucedió, cuándo y cómo
+    - Toma de medidas correctivas
+- **Cumplimiento con regulaciones**
+    - Demostración de seguimiento de políticas internas
+    - Alineación con normativas de seguridad y privacidad
+
+---
+
+### **Herramientas Gratuitas para el Análisis de Logs**
+
+--
+
+#### **[ELK Stack (Elasticsearch, Logstash, Kibana)](https://www.elastic.co/es/elastic-stack)**
+
+   - **Elasticsearch**: Motor de búsqueda y análisis que almacena e indexa los logs.
+   - **Logstash**: Herramienta que recopila y procesa los logs de diferentes fuentes.
+   - **Kibana**: Interfaz gráfica que permite visualizar y explorar los datos.
+   - **Ejemplo de uso**: Una empresa puede utilizar ELK Stack para monitorear en tiempo real los accesos a sus servidores web, detectando intentos de acceso no autorizados.
+
+--
+
+#### **[Wazuh](https://wazuh.com/)**
+
+   - Plataforma de seguridad de código abierto que combina gestión de logs, detección de intrusiones y monitoreo de integridad.
+   - Ofrece alertas y reportes detallados.
+   - [**Ejemplo de uso](https://documentation.wazuh.com/current/compliance/pci-dss/index.html)**: Ideal para organizaciones que necesitan cumplir con normativas como **PCI DSS** (Payment Card Industry Data Security Standard) o **GDPR** (General Data Protection Regulation), proporcionando evidencia de cumplimiento.
+
+--
+
+#### **[Graylog](https://graylog.org/)**
+
+   - Plataforma de gestión de logs que facilita la búsqueda y visualización de eventos.
+   - Escalable para organizaciones de distintos tamaños.
+   - **Ejemplo de uso**: Permite a un equipo de TI analizar rápidamente los errores en aplicaciones y reducir tiempos de inactividad.
+
+---
+
+### **Herramientas de Pago para el Análisis de Logs**
+
+--
+
+
+####  **[Splunk Enterprise](https://www.splunk.com/)**
+
+   - Solución líder para la gestión y análisis de datos de máquina.
+   - Ofrece potentes capacidades de búsqueda y generación de informes.
+   - **Ejemplo de uso**: Una corporación multinacional puede utilizar Splunk para correlacionar datos de seguridad de todas sus filiales en tiempo real.
+
+--
+
+####  **[SolarWinds Security Event Manager](https://www.solarwinds.com/security-event-manager)**
+
+   - Recopila y correlaciona logs, detecta amenazas y automatiza respuestas.
+   - Facilita el cumplimiento regulatorio con informes predefinidos.
+   - **Ejemplo de uso**: Ayuda a medianas empresas a identificar y responder rápidamente a ataques internos y externos.
+
+---
+
+## **Herramientas de Monitorización: IDS/IPS y SIEM**
+
+--
+
+- **Necesidad de protección avanzada**: Detección y prevención de amenazas sofisticadas
+- **Gestión integral de seguridad**: Uso de herramientas especializadas para una postura proactiva
+
+- **IDS**: Intrusion Detection System
+- **IPS**: Intrusion Prevention System
+- **SIEM**: Security Information and Event Management
+
+
+---
+
+### **IDS/IPS (Sistemas de Detección y Prevención de Intrusiones)**
+
+- **IDS** (Intrusion **Detection** System)
+	- Monitoreo de tráfico de red y actividades del sistema
+	- **Detección** de señales de ataques o violaciones de políticas
+
+- **IPS** (Intrusion **Prevention** System)
+	- Detección y **bloqueo** o prevención de actividades maliciosas
+	- Acciones **proactivas** para mitigar amenazas
+
+---
+
+#### **Herramientas Gratuitas IDS/IPS**
+
+--
+
+#### **[Snort](https://www.snort.org/)**
+
+- IDS basado en red que analiza tráfico en tiempo real
+- Uso de reglas definidas por el usuario para detectar actividades sospechosas
+- **Ejemplo de uso**: Detección de escaneos de puertos o inyecciones SQL en una red universitaria
+
+--
+
+####  **[Suricata](https://suricata.io/)**
+
+- Motor de detección de intrusiones multihilo
+- Soporte para detección de protocolos y extracción de archivos
+- **Ejemplo de uso**: Análisis detallado en entornos con alto volumen de tráfico sin afectar el rendimiento
+
+---
+
+#### **Herramientas de Pago IDS/IPS**
+
+--
+
+####  **[Cisco Next-Generation IPS (NGIPS)](https://www.cisco.com/c/en_ca/products/security/ngips/index.html)**
+
+   - Integra detección y prevención de intrusiones con inteligencia de seguridad global.
+   - Utiliza análisis profundo para identificar y bloquear amenazas sofisticadas.
+   - **Ejemplo de uso**: Empresas que necesitan protección avanzada contra ataques dirigidos y amenazas persistentes avanzadas (**APT**, Advanced Persistent Threats).
+
+--
+
+####  **[Palo Alto Networks Threat Prevention](https://www.paloaltonetworks.com/network-security/advanced-threat-prevention)**
+
+   - Combina IPS, análisis de malware y prevención de exploits.
+   - Integrado en el firewall de próxima generación de Palo Alto.
+   - **Ejemplo de uso**: Organizaciones que buscan una solución integral que unifique firewall y prevención de amenazas.
+
+---
+
+### **SIEM (Gestión de Información y Eventos de Seguridad)**
+
+--
+
+## SIEM
+
+- **SIEM**: Security Information and Event Management (Gestión de Información y Eventos de Seguridad)
+- **Funciones clave**:
+	- Recopilación y análisis de datos de eventos y logs de múltiples fuentes
+	- Visión unificada de la seguridad
+	- Detección de amenazas y gestión de incidentes
+	- Facilita el cumplimiento normativo
+
+---
+
+#### **Herramientas Gratuitas SIEM**
+
+1. **[OSSIM (Open Source Security Information Management)](https://cybersecurity.att.com/products/ossim)**
+
+   - Desarrollado por AlienVault.
+   - Combina SIEM con IDS, gestión de activos y escaneo de vulnerabilidades.
+   - **Ejemplo de uso**: Solución todo en uno para mejorar la seguridad en pequeñas empresas sin altos costos
+
+---
+
+#### **Herramientas de Pago SIEM**
+
+1. **[IBM QRadar](https://www.ibm.com/products/qradar-siem)**
+
+- Recopilación, correlación y análisis de datos de seguridad en tiempo real
+- Análisis avanzado para detectar y priorizar amenazas
+- **Ejemplo de uso**: Protección en grandes corporaciones con vastos volúmenes de datos contra amenazas complejas
+
+--
+
+2. **[Splunk Enterprise Security](https://www.splunk.com/en_us/software/enterprise-security.html)**
+
+   - Aprovecha las capacidades de Splunk para análisis de seguridad avanzados.
+   - Ofrece detección de amenazas y gestión de incidentes.
+   - **Ejemplo de uso**: Empresas que ya utilizan Splunk y desean ampliar sus funcionalidades hacia la seguridad.
+
+--
+
+3. **[ArcSight ESM (Enterprise Security Manager)](https://www.microfocus.com/en-us/cyberres/security/siem-and-log-management/arcsight-enterprise-security-manager)**
+
+   - Plataforma SIEM de Micro Focus.
+   - Utiliza correlación de eventos y análisis de comportamiento.
+   - **Ejemplo de uso**: Organizaciones gubernamentales que necesitan cumplir con estrictos estándares de seguridad y requieren alertas en tiempo real.
+
+
+
+## **Implementación Efectiva de Herramientas y Prácticas de Seguridad**
+
+- Para fortalecer la seguridad en una organización, es fundamental no solo seleccionar las herramientas adecuadas, sino también implementarlas y gestionarlas de manera efectiva.
+
+---
+
+### **1. Necesidades Específicas**
+
+- **Evaluación personalizada**:
+
+  - Analizar el tamaño de la organización, el sector, los riesgos y las regulaciones aplicables.
+  - **Ejemplo**: Una startup tecnológica puede centrarse en herramientas escalables y flexibles, mientras que una entidad gubernamental requerirá soluciones con altos estándares de seguridad y cumplimiento.
+
+--
+
+### **2. Integración**
+
+- **Compatibilidad**:
+
+  - Asegurar que las herramientas se integren con sistemas y procesos existentes.
+  - **Ejemplo**: Integrar un SIEM con sistemas de gestión de identidad para correlacionar eventos de seguridad con usuarios específicos.
+
+--
+
+### **3. Escalabilidad**
+
+- **Crecimiento futuro**:
+
+  - Elegir soluciones que puedan adaptarse al crecimiento y cambios en la organización.
+  - **Ejemplo**: Implementar herramientas que soporten aumento de volumen de datos sin pérdida de rendimiento.
+
+--
+
+### **4. Capacitación**
+
+- **Formación del personal**:
+
+  - Garantizar que el equipo esté capacitado para utilizar las herramientas y entender los procesos.
+  - **Ejemplo**: Realizar talleres y cursos periódicos sobre nuevas amenazas y prácticas de seguridad.
+
+--
+
+### **5. Procesos y Políticas**
+
+- **Documentación clara**:
+
+  - Establecer políticas y procedimientos detallados.
+  - **Ejemplo**: Definir protocolos para la gestión de incidentes, incluyendo responsabilidades y acciones a seguir.
+
+--
+
+### **6. Monitoreo y Revisión Continua**
+
+- **Actualización constante**:
+
+  - La seguridad es un campo dinámico; es esencial adaptarse a nuevas amenazas.
+  - **Ejemplo**: Revisar y actualizar regularmente las reglas del IDS para incluir nuevas firmas de ataque.
+
+---
+
+## **Conclusión**
+
+- La inversión en herramientas y prácticas de monitorización y auditoría es esencial para proteger los activos y datos de una organización.
+- Al implementar estas soluciones:
+
+  - Se fortalece la confianza de clientes y socios comerciales.
+  - Se garantiza la resiliencia frente a amenazas cibernéticas en constante evolución.
+
+- Mantener una postura de seguridad proactiva no es solo una necesidad técnica, sino un componente estratégico para el éxito a largo plazo.
+
+
+                </textarea>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="../../reveal/dist/reveal.js"></script>
+    <script src="../../reveal/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script src="../../reveal/plugin/notes/notes.js"></script>
+    <script src="../../reveal/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+                width: "80%",
+    //	    	width: 1280,
+    //		    height: 720,
+    //	    	margin: 0.05,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                hash: true,
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
+
+
+

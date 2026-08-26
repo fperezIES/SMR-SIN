@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/UD1/index.md",
+                "file": "docs/UD1/4.cumplimiento.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "4.cumplimiento"
             }
           },
           {
@@ -212,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/UD1/index.md",
+                "file": "docs/UD1/4.cumplimiento.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of 4.cumplimiento"
             }
           },
           {
@@ -250,16 +250,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5ea11a8c93b28e59",
+  "active": "fa7008b08b4a61ce",
   "lastOpenFiles": [
-    "docs/UD1/Tareas/drafts/Documento_Norma_UNE-EN_ISO-IEC_27002_MINTUR.pdf",
-    "docs/UD1/Tareas/drafts/Documento_Norma_UNE-EN_ISO-IEC_27001 MINTUR.pdf",
+    "docs/UD1/index.md",
     "docs/UD1/4.cumplimiento.md",
+    "site/search/search_index.json",
+    "site/search",
+    "site/incidentes/slides/2018.spectre_meltdown.slides.html",
+    "site/incidentes/slides/2017.operation_cloud_hopper.html",
+    "site/incidentes/slides",
+    "site/incidentes/zeroday.html",
+    "site/incidentes/xss.html",
+    "site/incidentes/ransomware.pago.html",
+    "site/incidentes/heartbleed.html",
+    "site/incidentes/buffer_overflow.html",
+    "site/assets/images/favicon.png",
+    "site/incidentes/img/stuxnet.jpeg",
+    "site/incidentes/img/solarwinds.png",
+    "site/incidentes/img/crowdstrike_stock.png",
+    "site/incidentes/img/crowdstrike_logo.png",
+    "site/incidentes/img/crowdstrike_bsod.jpg",
+    "site/img/logo2.png",
+    "site/img/logo.png",
+    "site/img/logo.jpeg",
+    "site/UD6/img/vpn/vpn_site2site_intro.png",
     "docs/UD1/3.SGSI.md",
     "docs/UD1/2.vulnerabilidades.amenazas.exploits.md",
     "docs/UD1/1.introduccion.seguridad.md",
     "docs/UD1/Tareas/4.1.Normativa.md",
-    "docs/UD1/index.md",
     "docs/UD1/Tareas/3.1.familiaiso27000.md",
     "docs/index.md",
     "docs/UD1/Tareas/2.2.rss.seguridad.md",
@@ -278,24 +296,6 @@
     "docs/UD00_draft/0.demo-diapositivas-md.md",
     "docs/UD00_draft/1.Introduccion.md",
     "docs/UD00_draft/2.Section with spaces.md",
-    "docs/UD00_draft/3.Work_in_progress_draft.md",
-    "Untitled.base",
-    "docs/img/logo2.png",
-    "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf.sb-6994c3fd-JqfpyS",
-    "examenes/Ex_SRI_Ordinaria/SRI-ordinaria-ES.pdf",
-    "examenes/Ex_SRI_Ordinaria/SRI-2EV-UD0-UD2-V0-ES.pdf",
-    "examenes/Ex_SRI_2EV-UD04-UD07/Rubrica/SRI-ex-2ev-rubrica.csv",
-    "examenes/Ex_SRI_2EV-UD04-UD07/Rubrica",
-    "examenes/Ex_SRI_2EV-UD04-UD07/carpeta sin título",
-    "examenes/Ex_SRI_2EV-UD04-UD07/SRI-2EV-UD0-UD2-V0-ES.pdf",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/portada.jpg",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/logo.jpg",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/format/diapositiva.png",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/aleph0.png",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/fondo.png",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/EjPresentaciones/img/aleph0-small.png",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/logo-vector-ministerio-de-educacion-y-formacion-profesional.jpg",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/layout_set_logo.png",
-    "examenes/Ex_SRI_2EV-UD04-UD07/rsrcs/imgCorporativa/LOGO CONS. INNOVACIÓ.jpg"
+    "docs/UD00_draft/3.Work_in_progress_draft.md"
   ]
 }

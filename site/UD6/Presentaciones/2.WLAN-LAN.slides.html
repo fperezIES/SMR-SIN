@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<!--
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+-->
+
+ <title>Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../reveal/dist/reveal.css">
+<link rel="stylesheet" href="../../reveal/dist/theme/white.css" id="theme">
+<link rel="stylesheet" href="../../reveal/plugin/highlight/monokai.css">
+<!-- link rel="icon" type="image/x-icon" href="../images/logo.svg" -->
+</head>
+
+<body>   
+ <div class="reveal">
+    <div class="slides">
+            <section data-markdown 
+                data-separator="^\n---\n"
+                        data-separator-vertical="^\n--\n"
+                        data-separator-notes="^Note:"
+                        data-charset="utf-8">>
+                <textarea data-template id="mdcontent">
+                    <!-- .slide: data-background="#2C3E50" -->
+## Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+
+---
+
+## Seguridad en redes cableadas (LAN)
+
+
+---
+
+### Control de puertos físicos
+
+  **Bloqueo de puertos**: usar carcasas o candados físicos en los puertos RJ45 de los switches o paneles de parcheo para evitar la conexión no autorizada de dispositivos.
+  
+   - **Desactivación de puertos inactivos**: configurar el switch para que, por defecto, los puertos estén desactivados si no se usan. Solo se habilitarán cuando exista una petición de un dispositivo legítimo y aprobado.
+   - **Etiquetado y documentación**: llevar un registro actualizado de los puertos habilitados y a qué dispositivos o áreas están asociados.
+
+--
+
+### MAC Whitelisting y filtrado de direcciones MAC
+
+ **Lista blanca de MAC**: configurar el switch para que permita el acceso únicamente a direcciones MAC específicas registradas. Si se detecta una dirección MAC no autorizada, se bloquea automáticamente la conexión.
+  
+   - **Monitoreo de direcciones MAC**: algunos switches avanzados cuentan con funcionalidades para alertar de posibles intentos de suplantación de direcciones MAC (MAC spoofing), lo que ayuda a identificar actividades sospechosas.
+
+--
+
+### 802.1X (Autenticación a nivel de puerto)
+**Autenticación de usuarios y dispositivos**: el protocolo 802.1X requiere que el dispositivo cliente se autentique (mediante certificados, credenciales o incluso autenticación basada en MAC) antes de poder transmitir datos a través del puerto.
+ 
+- **Control centralizado**: se integra con un servidor RADIUS que almacena la información de autenticación, permitiendo gestionar de forma centralizada quién puede conectarse a cada puerto de la red.
+ - **Aislamiento inicial**: hasta que el dispositivo no supere la autenticación, el tráfico no puede circular más allá del puerto físico, lo que reduce en gran medida el riesgo de intrusiones o accesos no autorizados.
+
+---
+
+## **Network Access Control (NAC)**    
+ 
+ **Políticas de cumplimiento**: antes de otorgar acceso, se verifica que el dispositivo cumpla con requisitos como tener el sistema operativo actualizado, antivirus activo, firewall habilitado, etc.
+ 
+   - **Cuarentena**: en caso de que un dispositivo no cumpla con las políticas de seguridad, puede ser aislado en una VLAN de cuarentena con acceso limitado, hasta que se actualice o se corrijan las vulnerabilidades.
+   - **Integración con 802.1X**: las soluciones NAC suelen combinarse con 802.1X para fortalecer la autenticación y el control de acceso.
+   - Algunas soluciones conocidas son **Cisco ISE**, **Microsoft NPS** o soluciones basadas en **FreeRADIUS**
+
+---
+
+### Listas de control de acceso (ACLs)
+
+ **ACLs en routers y switches:**
+ 
+ - Capa 2 (switch) y Capa 3 (router) para filtrar tráfico.
+ - Control granular: permitir o bloquear protocolos, direcciones IP, puertos específicos.
+ - Se aplican en modo "in" o "out" según la dirección del tráfico.
+
+
+
+---
+
+## VLANs
+
+--
+
+Una **VLAN (Virtual LAN)** es una red lógica independiente que se crea dentro de una misma infraestructura de red física. 
+
+Dicho de otro modo, mediante el uso de VLANs podemos **segmentar** una red física en varias redes lógicas
+
+--
+
+### Protocolo VLAN
+
+Protocolo de etiquetado **IEEE 802.1Q**
+
+- Se basa en el etiquetado de tramas
+- Cada VLAN es etiquetada con un número
+- Cada puerto del switch es asignado a una VLAN
+- Existen los puertos **TRUNK** que permiten llevar tráfico de diferentes VLANS, se usan para interconectar switches
+
+--
+
+### Comunicación entre VLANs
+
+Interconexión VLANs se realiza a nivel 3
+
+* A través de un router
+* A través de switches de nivel 3 (o multicapa)
+
+![Router VLAN](../img/06_2/VLAN_3.png)<!-- .element width="60%" -->
+
+
+--
+
+### Segmentación con VLANs
+
+- Separación de la red en múltiples dominios de broadcast para **reducir el riesgo** de propagación de ataques.
+- Ejemplos: VLAN de servidores, VLAN de usuarios, VLAN de invitados, VLAN de VoIP.
+- Implicaciones de seguridad: cada VLAN puede tener reglas de acceso independientes.
+
+---
+
+## Seguridad en redes inalámbricas (WLAN)
+
+--
+
+### Protocolos y autenticación segura
+
+   - **WPA2:**
+     - Basado en AES/CCMP.
+     - Aún ampliamente utilizado, aunque WPA3 es el estándar recomendado.
+   - **WPA3:**
+     - Protección ante ataques de diccionario mediante SAE (Simultaneous Authentication of Equals).
+     - Cifrado robusto (192 bits en modo empresarial).
+     - Requiere nuevo hardware
+   - **802.1X y RADIUS:**
+     - Autenticación basada en un servidor externo (RADIUS).
+     - Proporciona mayor control y registro de accesos.
+
+--
+
+### Amenazas frecuentes en redes Wi-Fi
+
+1. **Rogue Access Points:**
+   - Puntos de acceso falsos que se hacen pasar por redes legítimas.
+2. **Ataques de desautenticación:**
+   - Uso de Deauth frames para expulsar usuarios y redirigirlos a APs maliciosos.
+3. **Sniffing y criptoataques:**
+   - Captura de tráfico y descifrado de contraseñas en caso de cifrado débil.
+
+--
+
+### Buenas prácticas de configuración
+
+- Deshabilitar WPS (Wi-Fi Protected Setup) en entornos corporativos.
+- Utilizar contraseñas robustas y actualizarlas periódicamente.
+- Configurar **cifrado WPA2/WPA3** únicamente (evitar WEP o WPA inicial).
+
+--
+
+### Ejemplo de ataque de fuerza bruta a red WiFi
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b5zQ6xTQGfY?si=ykW0MENtquL-NEfx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Retos específicos en entornos mixtos (LAN + WLAN)
+
+--
+
+### Integración de redes cableadas e inalámbricas
+
+- Mantener coherencia en políticas de seguridad.
+- Control de acceso unificado (802.1X tanto en cable como Wi-Fi).
+
+--
+
+### Auditorías y pruebas de penetración
+
+- Wi-Fi es un punto de entrada habitual para atacantes.
+- LAN segmentada reduce el impacto de una intrusión exitosa.
+
+
+
+                </textarea>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="../../reveal/dist/reveal.js"></script>
+    <script src="../../reveal/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal/plugin/highlight/highlight.js"></script>
+    <script src="../../reveal/plugin/notes/notes.js"></script>
+    <script src="../../reveal/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+                width: "80%",
+    //	    	width: 1280,
+    //		    height: 720,
+    //	    	margin: 0.05,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                hash: true,
+                navigationMode: 'linear',
+                slideNumber: true,
+                showSlideNumber: 'all',
+                slideNumber: 'c/t',
+                plugins: [RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
+
+
+

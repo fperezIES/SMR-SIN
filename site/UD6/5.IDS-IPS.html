@@ -1,0 +1,5561 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fperezies.github.com/SMR-SIN/UD6/5.IDS-IPS.html">
+      
+      
+        <link rel="prev" href="4.VPN.html">
+      
+      
+        <link rel="next" href="6.proxies.html">
+      
+      
+      <link rel="icon" href="../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Sistemas de detección y prevención de intrusiones (IDS/IPS) - 2SMR Seguridad Informática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sistemas-de-deteccion-y-prevencion-de-intrusiones-idsips" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-header__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2SMR Seguridad Informática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sistemas de detección y prevención de intrusiones (IDS/IPS)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-nav__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2SMR Seguridad Informática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Presentación del módulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../UD1/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/1.introduccion.seguridad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/2.vulnerabilidades.amenazas.exploits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades, Amenazas y Exploits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/3.SGSI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGSI y Análisis de Riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/4.cumplimiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cumplimiento legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/2.amenazas.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/3.auditorias.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis y gestión de riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/4.incidentes.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Gestión de Incidentes de Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Presentaciones/5.cumplimiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cumplimiento Legal en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/1.1.analisis.riesgos.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis de riesgos en 5 minutos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/2.1.amenazas.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Identificación y Análisis de Vulnerabilidades y Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/2.2.rss.seguridad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Análisis de Incidentes de Ciberseguridad con RSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/3.1.familiaiso27000.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Familiarización con normas ISO/IEC 27000
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/Tareas/4.1.Normativa.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"/></svg>
+  
+  <span class="md-ellipsis">
+    Caso Práctico: Soporte Informático y Normativa Legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/1.fisica_CPD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Física en Centros de Procesamiento de Datos (CPD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/2.almacenamiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Almacenamiento de la Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/3.backup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de Copias de Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/4.borradoyrecuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado Seguro de Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/borrado_recuperacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrado recuperacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Presentaciones/1.fisica_CPD.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    bicación equipos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Presentaciones/2.almacenamiento.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Unidades de almacenamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Presentaciones/3.backup.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Presentaciones/4.borradoyrecuperacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Borrado y recuperación de información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/RAID_almalinux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Guía paso a paso para configurar RAID 5 y RAID 6 en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/RAID_windows11.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    RAID windows11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/SMART.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación del estado SMART de las unidades de disco
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/TrueNAS_RAID5.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica de RAID 5 con TrueNAS, NAS y SAN usando VirtualBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/backup_duplicati.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Backup duplicati
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/backup_rsync.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Copias de seguridad con rsync
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/borrado_seguro.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica 5: Recuperación de Ficheros y Borrado Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/clonezilla.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Clonado de máquinas usando Clonezilla
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/especificaciones_fiabilidad.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Investigación de Especificaciones de Fiabilidad de Discos Duros y Unidades SSD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD2/Tareas/fiabilidadDiscosGoogle.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprensión de la Fiabilidad de los Discos Duros según el Estudio de Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/2.c_simetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/3.c_asimetrica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criptografía Asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/4.PKI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infraestructura de Clave Pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/5.c_aplicaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones de la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/6.c_cuantica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Criptografía Cuántica y Post-Cuántica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción a la Criptografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/2.c_simetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave simétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/3.c_asimetrica.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Criptografía de clave asimétrica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Presentaciones/4.PKI.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Infraestructura de clave pública (PKI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.gpg.asimetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado Asimétrico y firma con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Cifrado simétrico con GnuPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.hashfunctions.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Funciones Hash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/ej.ssllabs.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Comprobación de Vulnerabilidades en Sitios Web Seguros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/opt.gpg.simetrico.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Tarea: Envío de mensaje cifrado y firmado usando GPG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.XCA%201.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.PKI.openssl.XCA 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.XCA.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Creación de un Certificado SSL/TLS Multisitio en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.PKI.openssl.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Autoridad Certificadora con OpenSSL y Servidor Web Seguro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD3/Tareas/t.hash_pwd_jtr.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Fortaleza de contraseñas en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/1.seguridad_acceso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fortificación de Hosts: Autenticación, Arranque Seguro y Cifrado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/2.malware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/3.actualizacion_vulnerabilidades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/4.monitorizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Monitorización en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/1.seguridad_acceso.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en acceso a hosts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/2.malware.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Protección contra el malware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualización, Parches y Gestión de Vulnerabilidades en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Presentaciones/4.monitorizacion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Monitorización y Auditoría en Ciberseguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ELKstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ELKstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/Ideas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ideas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/OSSEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSSEC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P02_Bitlocker.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de disco en Windows 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P05_Debian_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de discos en Linux (LUKS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/U04-P13_Actualizaciones_debian.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Actualizaciones de software Debian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.Informe_mandiant2024.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Análisis del informe de ciberseguridad "M-Trends 2024"
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.cifrado_LUKS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Cifrado de Discos LUKS en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.politicas_de_contrasen%CC%83as_linux.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Establecimiento de Políticas de Contraseñas y Gestión de Permisos en AlmaLinux 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.resetPass.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    ej.resetPass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/ej.virustotal.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Ejercicio: Comprobación de ficheros y URLs con VirtusTotal.com
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/nessus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nessus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/openSCAP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openSCAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/opt.ssh_2step.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Autenticación de Doble Factor por SSH en AlmaLinux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.GVM.openVAS.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.lynis.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Auditoría de seguridad de servidores Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD4/Tareas/t.wazuh.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wazuh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/1.intro_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/2.redes_ha.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/cluster_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alta disponibilidad en Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/esquema.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esquema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/ha_red.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ha red
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Presentaciones/1.intro_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Introducción Alta Disponibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Presentaciones/2.redes_ha.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    HA en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/kubernetes.cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/kubernetes.wordpress.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Kubernetes.wordpress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/openstack.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Openstack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/pacemaker.corosync.mysql.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Pacemaker.corosync.mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.balanceador.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.balanceador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.proxmox.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Máquinas virtuales en alta disponibilidad con Proxmox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/t.vrrp.keepalived.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Puerta de enlace en alta disponibilidad (VRRP) con Keepalived
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD5/Tareas/wordpress_cluster.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Wordpress cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UD6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.WLAN-LAN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.firewalls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Seguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.VPN.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="5.IDS-IPS.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-diferencias-basicas-entre-ids-y-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Diferencias básicas entre IDS y IPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-por-que-son-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 ¿Por qué son importantes?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejemplos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Ejemplos de uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clasificacion-y-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Clasificación y funcionamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Clasificación y funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-clasificacion-segun-el-lugar-donde-operan" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Clasificación según el lugar donde operan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-clasificacion-segun-el-metodo-de-deteccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Clasificación según el método de detección
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-limitaciones-y-consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Limitaciones y consideraciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tecnicas-de-evasion-de-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Técnicas de evasión de IDS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Técnicas de evasión de IDS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-fragmentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Fragmentación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-inundacion-flooding" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Inundación (Flooding)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-ofuscacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Ofuscación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-cifrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Cifrado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-idsips-de-codigo-abierto" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 IDS/IPS de código abierto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 IDS/IPS de código abierto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-snort-idsips" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Snort (IDS/IPS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Snort (IDS/IPS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-historia-de-snort" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.1 Historia de Snort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-principales-caracteristicas-de-snort" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.2 Principales características de Snort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713-reglas-de-deteccion-talos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.3 Reglas de detección: Talos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#714-usos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.4 Usos comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#715-ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.5 Ventajas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#716-inconvenientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.6 Inconvenientes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-suricata-idsips" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Suricata (IDS/IPS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Suricata (IDS/IPS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-historia-de-suricata" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.1 Historia de Suricata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-principales-caracteristicas-de-suricata" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.2 Principales características de Suricata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-reglas-de-deteccion-emerging-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.3 Reglas de detección: Emerging Threats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724-usos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.4 Usos comunes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#725-ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.5 Ventajas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#726-inconvenientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.6 Inconvenientes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-comparativa-entre-snort-y-suricata" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Comparativa entre Snort y Suricata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Comparativa entre Snort y Suricata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-origen-y-respaldo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.1 Origen y respaldo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-rendimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.2 Rendimiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-reglas-de-deteccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.3 Reglas de detección
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-facilidad-de-uso-y-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Facilidad de uso y configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-adopcion-en-el-ambito-empresarial" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Adopción en el ámbito empresarial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-idsips-comerciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 IDS/IPS comerciales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 Bibliografía
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.proxies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.DDos-ZTA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.DDos ZTA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Presentaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_8">
+            <span class="md-nav__icon md-icon"></span>
+            Presentaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/1.introduccion.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    ntroducción a la seguridad en redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/2.WLAN-LAN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Seguridad en redes cableadas (LAN) e inalámbricas (WLAN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/3.firewalls.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    eguridad Perimetral (Firewalls)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/4.VPN.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Redes Privadas Virtuales (VPN)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/5.IDS-IPS.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Sistemas de detección y prevención de intrusiones (IDS/IPS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Presentaciones/6.proxies.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Proxies, WAF y seguridad en aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tareas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tareas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.IDS.IPS.snort.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    t.IDS.IPS.snort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.IDS.IPS.suricata.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Práctica: Instalación y Configuración de Suricata en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.pfsense_dmz.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Instalación y configuración de un cortafuegos perimetral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.proxy.directo.squid.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.proxy.directo.squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.vpn.ra.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.vpn.ra.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.ra.wireguard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.vpn.site2site.ipsec.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    T.vpn.site2site.ipsec
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.vpn.site2site.openvpn.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN Site-to-Site con OpenVPN y pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tareas/t.vpn.site2site.wireguard.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6zm7 1.5L18.5 9H13zm7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1z"/></svg>
+  
+  <span class="md-ellipsis">
+    Configuración de una VPN site to site con WireGuard en pfSense
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Incidentes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Incidentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/1988.gusano.morris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El gusano Morris
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2010.stuxnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Malware Stuxnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2016.botnet_mirai.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botnet Mirai
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2017.wannacry.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dossier sobre WannaCry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2018.spectre_meltdown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018.spectre meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2019.ramsomware.jerez.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque Ransomware al Ayuntamiento de Jerez en 2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2020.solarwinds.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de SolarWinds 2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2021.ransomware.colonial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque de Ransomware a Colonial Pipeline (2021)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2023.hack.LTT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023.hack.LTT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/2024.crowdstrike.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incidente de CrowdStrike 2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/buffer_overflow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buffer overflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/heartbleed.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Heartbleed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/ransomware.pago.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Empresas que han pagado rescates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/xss.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Xss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/zeroday.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Zero-Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_16">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/slides/2017.operation_cloud_hopper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017.operation cloud hopper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../incidentes/slides/2018.spectre_meltdown.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades Spectre y Meltdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sistemas-de-deteccion-y-prevencion-de-intrusiones-idsips">Sistemas de detección y prevención de intrusiones (IDS/IPS)<a class="headerlink" href="#sistemas-de-deteccion-y-prevencion-de-intrusiones-idsips" title="Permanent link">&para;</a></h1>
+<p>Los sistemas <strong>IDS</strong> (Intrusion Detection System) e <strong>IPS</strong> (Intrusion Prevention System) son herramientas fundamentales en cualquier estrategia de ciberseguridad. Un IDS desempeña la función de <strong>“mirar y avisar”</strong> cuando detecta actividad sospechosa o patrones de ataque, mientras que un IPS, además de detectar, puede <strong>“actuar”</strong> bloqueando o mitigando el peligro de manera automática.</p>
+<p>Los <strong>IDS</strong> e <strong>IPS</strong> constituyen un pilar esencial en la seguridad de redes y sistemas. Mientras el primero ofrece capacidad de detección y notificación, el segundo añade el componente de respuesta inmediata para cortar o bloquear amenazas al vuelo. Para maximizar su eficacia, es importante:</p>
+<ol>
+<li>Configurarlos de forma correcta según el entorno, ajustando reglas y políticas a la realidad de la organización.</li>
+<li>Mantener actualizadas las bases de datos de firmas y revisar periódicamente los perfiles de comportamiento para reducir falsos positivos.</li>
+<li>Integrarlos con el resto de mecanismos de seguridad (firewalls, SIEM, antivirus, etc.) para lograr una protección holística.</li>
+</ol>
+<p>La siguiente imagen ilustra la diferencia en el funcionamiento de un IPS, frente a un IDS. El IDS solamente observa el tráfico (Conectado a un puerto SPAN o TAP de red) mientras que el IPS se interpone entre la red y el router permitiendo actuar en caso de detección de amenazas.</p>
+<p><img alt="" class="center" src="img/idsips/ids-ips.png" style="width: 80%;" /></p>
+<p>Los puertos <strong>SPAN</strong> y los dispositivos <strong>TAP</strong> se usan para monitorizar redes, pero tienen diferencias clave: un <strong>TAP</strong> es un dispositivo físico que copia todo el tráfico sin pérdida ni impacto en el rendimiento de la red, ideal para entornos críticos, aunque más costoso y menos flexible. En cambio, un <strong>SPAN</strong> es una función del switch que duplica el tráfico de ciertos puertos o VLANs hacia otro puerto, siendo más económico y fácil de configurar, pero puede perder paquetes bajo alta carga y consumir recursos del switch. La elección depende de la precisión y los recursos necesarios</p>
+<h2 id="1-diferencias-basicas-entre-ids-y-ips">1 Diferencias básicas entre IDS y IPS<a class="headerlink" href="#1-diferencias-basicas-entre-ids-y-ips" title="Permanent link">&para;</a></h2>
+<p>La principal diferencia radica en la <strong>capacidad de intervención</strong>. Un <strong>IDS</strong> monitoriza el tráfico o los eventos del sistema y <strong>alerta</strong> ante comportamientos que coincidan con ataques conocidos o anomalías. No bloquea directamente el ataque, sino que delega la decisión al equipo de seguridad o a otros sistemas. Por el contrario, un <strong>IPS</strong> no solo detecta amenazas, sino que también <strong>toma medidas activas</strong>: corta conexiones, descarta paquetes sospechosos, bloquea direcciones IP maliciosas o modifica reglas de firewall, reduciendo al mínimo el tiempo de exposición al ataque.</p>
+<h2 id="2-por-que-son-importantes">2 ¿Por qué son importantes?<a class="headerlink" href="#2-por-que-son-importantes" title="Permanent link">&para;</a></h2>
+<p>Contar con soluciones de IDS e IPS permite a las organizaciones reforzar la seguridad de sus redes y sistemas críticos de varias maneras:</p>
+<ul>
+<li><strong>Protección continua</strong>: La detección (IDS) y, sobre todo, la prevención (IPS) pueden frenar ataques antes de que causen daños significativos.</li>
+<li><strong>Monitorización y registro</strong>: Facilitan la recopilación de datos sobre intentos de intrusión e incidentes de seguridad, valiosos para auditorías, investigación forense y mejora de las políticas de seguridad.</li>
+<li><strong>Adaptación a amenazas nuevas</strong>: Muchos IDS/IPS modernos incluyen módulos de aprendizaje automático o análisis de comportamiento que ayudan a descubrir amenazas desconocidas o variantes de ataques.</li>
+<li><strong>Cumplimiento normativo</strong>: Regulaciones como PCI-DSS o GDPR exigen, o al menos recomiendan, medidas de protección activa e inteligente de los datos.</li>
+</ul>
+<h2 id="3-ejemplos-de-uso">3 Ejemplos de uso<a class="headerlink" href="#3-ejemplos-de-uso" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>En redes corporativas</strong>: Para detectar intentos de acceso no autorizado y, en el caso de un IPS, bloquearlos de inmediato.</li>
+<li><strong>En servidores de aplicaciones web</strong>: Para prevenir inyecciones SQL, ataques de Cross-Site Scripting (XSS) o cualquier otra táctica dirigida a comprometer aplicaciones en producción.</li>
+<li><strong>Entornos de teletrabajo o BYOD</strong>: Para supervisar multitud de dispositivos conectados y controlar el perímetro corporativo de forma segura.</li>
+</ul>
+<h2 id="4-clasificacion-y-funcionamiento">4 Clasificación y funcionamiento<a class="headerlink" href="#4-clasificacion-y-funcionamiento" title="Permanent link">&para;</a></h2>
+<p>Tanto los IDS como los IPS se pueden clasificar en función de <strong>dónde</strong> operan y <strong>cómo</strong> detectan las amenazas. La gran diferencia es que el IDS se limita a alertar, mientras que el IPS añade un paso más y puede bloquear.</p>
+<h3 id="41-clasificacion-segun-el-lugar-donde-operan">4.1 Clasificación según el lugar donde operan<a class="headerlink" href="#41-clasificacion-segun-el-lugar-donde-operan" title="Permanent link">&para;</a></h3>
+<p><strong>a) Sistemas basados en red (NIDS/NIPS)</strong><br />
+Operan en puntos estratégicos de la red (enrutadores, conmutadores, firewalls) y analizan el tráfico en tiempo real.</p>
+<ul>
+<li>Un <strong>NIDS</strong> (Network-based IDS) detecta patrones maliciosos y alerta a los administradores cuando algo encaja con un ataque conocido o un comportamiento anómalo.</li>
+<li>Un <strong>NIPS</strong> (Network-based IPS) hace lo mismo, pero puede bloquear o filtrar paquetes sospechosos antes de que lleguen a su destino.</li>
+</ul>
+<p><strong>b) Sistemas basados en host (HIDS/HIPS)</strong><br />
+Se instalan directamente en un equipo (servidor, estación de trabajo) para monitorizar logs, procesos y la integridad de archivos.</p>
+<ul>
+<li>Un <strong>HIDS</strong> (Host-based IDS) se centra en la detección, avisando si se descubre actividad anómala en el propio sistema.</li>
+<li>Un <strong>HIPS</strong> (Host-based IPS) añade la capacidad de detener procesos o bloquear conexiones maliciosas de manera inmediata.</li>
+</ul>
+<p><strong>c) Sistemas inalámbricos (WIPS)</strong><br />
+Especializados en redes Wi-Fi, los <strong>Wireless IPS</strong> (WIPS) detectan y previenen intrusiones relacionadas con ataques a puntos de acceso, suplantaciones de identidad o vulnerabilidades específicas de entornos inalámbricos.</p>
+<p><strong>d) Enfoques híbridos o distribuidos</strong><br />
+Algunas soluciones combinan <strong>NIDS</strong> y <strong>HIDS</strong>, o bien <strong>NIPS</strong> y <strong>HIPS</strong>, gestionándose desde una consola central que correlaciona eventos de la red y de los hosts. Esto ofrece una visión global y una mayor capacidad de respuesta.</p>
+<h3 id="42-clasificacion-segun-el-metodo-de-deteccion">4.2 Clasificación según el método de detección<a class="headerlink" href="#42-clasificacion-segun-el-metodo-de-deteccion" title="Permanent link">&para;</a></h3>
+<p><strong>a) Basados en firmas (Signature-based)</strong><br />
+Comparan el tráfico o los eventos con una base de datos de patrones conocidos de ataques (similar a un antivirus). Son muy eficaces contra amenazas ya registradas, pero pueden pasar por alto variantes nuevas o desconocidas. Se requiere actualización constante de las firmas para no quedar obsoletos.</p>
+<p><strong>b) Basados en anomalías (Anomaly-based)</strong><br />
+Establecen un perfil de comportamiento “normal” y generan alertas cuando detectan desviaciones significativas. Tienen la ventaja de reconocer ataques novedosos, pero suelen producir más <strong>falsos positivos</strong> si la línea base no se define o ajusta correctamente.</p>
+<p><strong>c) Basados en políticas o reglas (Policy-based)</strong><br />
+Se configuran con reglas específicas dictadas por la organización. Cuando se incumple alguna norma de seguridad, el sistema alerta (IDS) o bloquea (IPS). Son muy flexibles pero requieren un mantenimiento constante para adaptar las políticas a las necesidades reales de la empresa.</p>
+<p><strong>d) Híbridos</strong><br />
+Combina varias técnicas (firmas, anomalías y/o políticas) para disminuir los falsos positivos y cubrir un mayor espectro de amenazas, incluyendo tanto ataques conocidos como desconocidos.</p>
+<h2 id="5-limitaciones-y-consideraciones">5 Limitaciones y consideraciones<a class="headerlink" href="#5-limitaciones-y-consideraciones" title="Permanent link">&para;</a></h2>
+<p>A pesar de su eficacia, los IDS/IPS tienen limitaciones que deben gestionarse adecuadamente:</p>
+<ul>
+<li><strong>Configuración y ajuste continuo</strong>: Cada entorno de red o servidor tiene características únicas. Un IDS/IPS mal configurado puede disparar alertas excesivas o, por el contrario, ignorar ataques.</li>
+<li><strong>Falsos positivos y falsos negativos</strong>:<ul>
+<li><strong>Falsos positivos</strong>: Alertas o bloqueos de tráfico legítimo, algo que provoca frustración en los usuarios y puede entorpecer la operativa.</li>
+<li><strong>Falsos negativos</strong>: Fallos en la detección de ataques reales, lo que puede derivar en incidentes graves de seguridad.</li>
+</ul>
+</li>
+<li><strong>Dependencia de las firmas o de un perfil “normal”</strong>: Si no se actualizan las bases de datos o no se corrige el modelo de anomalías, hay más riesgo de que ataques novedosos pasen desapercibidos.</li>
+<li><strong>Integración con otras soluciones</strong>: Resulta clave combinar IDS/IPS con cortafuegos, sistemas antimalware, soluciones SIEM (Security Information and Event Management) y procedimientos de respuesta a incidentes. Una estrategia de “defensa en profundidad” optimiza el alcance y la eficacia de cualquier IDS/IPS.</li>
+</ul>
+<h2 id="6-tecnicas-de-evasion-de-ids">6 Técnicas de evasión de IDS<a class="headerlink" href="#6-tecnicas-de-evasion-de-ids" title="Permanent link">&para;</a></h2>
+<p>Existen numerosas técnicas que los intrusos pueden emplear para evitar la detección por parte de los IDS (Sistemas de Detección de Intrusos). Estos métodos plantean desafíos para los IDS, ya que están diseñados para eludir los métodos de detección existentes:</p>
+<h3 id="61-fragmentacion">6.1 Fragmentación<a class="headerlink" href="#61-fragmentacion" title="Permanent link">&para;</a></h3>
+<p>La fragmentación divide un paquete en paquetes más pequeños y fragmentados. Esto permite que un intruso permanezca oculto, ya que no habrá una firma de ataque detectable.</p>
+<p>Los paquetes fragmentados son reconstruidos posteriormente por el nodo receptor en la capa IP y luego se reenvían a la capa de aplicación. Los ataques de fragmentación generan paquetes maliciosos reemplazando los datos en los paquetes fragmentados constituyentes con datos nuevos.</p>
+<h3 id="62-inundacion-flooding">6.2 Inundación (Flooding)<a class="headerlink" href="#62-inundacion-flooding" title="Permanent link">&para;</a></h3>
+<p>Este ataque está diseñado para saturar el detector, provocando el fallo del mecanismo de control. Cuando el detector falla, se permite el paso de todo el tráfico.</p>
+<p>Una forma común de causar inundación es suplantando el Protocolo de Datagrama de Usuario (UDP) y el Protocolo de Mensajes de Control de Internet (ICMP) legítimos. La inundación de tráfico se utiliza entonces para camuflar las actividades anómalas del atacante. Como resultado, el IDS tendría grandes dificultades para identificar paquetes maliciosos en un volumen abrumador de tráfico.</p>
+<h3 id="63-ofuscacion">6.3 Ofuscación<a class="headerlink" href="#63-ofuscacion" title="Permanent link">&para;</a></h3>
+<p>La ofuscación puede ser utilizada para evitar la detección al hacer que un mensaje sea difícil de entender, ocultando así un ataque. En términos generales, la ofuscación consiste en alterar el código de un programa de manera que mantenga su funcionalidad pero sea indistinguible.</p>
+<p>El objetivo es reducir la detectabilidad frente a procesos de ingeniería inversa o análisis estático, dificultando su interpretación y comprometiendo su legibilidad. Por ejemplo, ofuscar malware permite que este evada los IDS.</p>
+<h3 id="64-cifrado">6.4 Cifrado<a class="headerlink" href="#64-cifrado" title="Permanent link">&para;</a></h3>
+<p>El cifrado ofrece múltiples capacidades de seguridad, incluidas la confidencialidad, integridad y privacidad de los datos. Sin embargo, los creadores de malware utilizan estas características de seguridad para ocultar ataques y evadir la detección.</p>
+<p>Por ejemplo, un ataque en un protocolo cifrado no puede ser leído por un IDS. Cuando el IDS no puede asociar el tráfico cifrado con las firmas existentes en su base de datos, el tráfico cifrado no se detecta. Esto hace que sea extremadamente difícil para los detectores identificar los ataques.</p>
+<h2 id="7-idsips-de-codigo-abierto">7 IDS/IPS de código abierto<a class="headerlink" href="#7-idsips-de-codigo-abierto" title="Permanent link">&para;</a></h2>
+<h3 id="71-snort-idsips">7.1 <strong>Snort (IDS/IPS)</strong><a class="headerlink" href="#71-snort-idsips" title="Permanent link">&para;</a></h3>
+<p>Snort es una herramienta ampliamente utilizada en ciberseguridad como sistema de detección y prevención de intrusiones (IDS/IPS). Este software analiza en tiempo real el tráfico de red con el fin de identificar patrones sospechosos, ataques o actividades no autorizadas que puedan comprometer la seguridad de una infraestructura.</p>
+<p><img alt="" class="center" src="img/snort/snort_logo.png" style="width: 50%;" /></p>
+<p>Snort sigue siendo una de las herramientas más empleadas en el ámbito de la ciberseguridad gracias a su flexibilidad, al respaldo de Cisco y a una activa comunidad de usuarios y desarrolladores. Su capacidad para evolucionar mediante la actualización constante de reglas y su integración con otras soluciones de seguridad hacen de Snort una opción sólida en la protección de redes e infraestructuras de cualquier tamaño.</p>
+<h4 id="711-historia-de-snort">7.1.1 Historia de Snort<a class="headerlink" href="#711-historia-de-snort" title="Permanent link">&para;</a></h4>
+<p>Snort fue creado originalmente por Martin Roesch en 1998. Con el tiempo, se convirtió en una de las soluciones más populares para la detección de intrusiones gracias a su eficacia y a su modelo de código abierto.</p>
+<p>En el año 2013, Cisco adquirió la empresa Sourcefire, fundada por Roesch, incorporando a Snort en su cartera de productos de ciberseguridad. Desde entonces, Cisco ha integrado Snort en su ecosistema de seguridad, por ejemplo, en dispositivos <strong>Firepower</strong> y otros productos de red.</p>
+<h4 id="712-principales-caracteristicas-de-snort">7.1.2 Principales características de Snort<a class="headerlink" href="#712-principales-caracteristicas-de-snort" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Análisis de paquetes en profundidad</strong>: Inspecciona cada paquete de red para detectar actividades sospechosas o maliciosas.</li>
+<li><strong>Uso de reglas personalizables</strong>: Permite escribir y adaptar reglas específicas a las necesidades de cada entorno de red.</li>
+<li><strong>Capacidades IDS e IPS</strong>: Puede configurarse únicamente para detectar intrusiones (IDS) o para prevenirlas de forma proactiva, bloqueando el tráfico malicioso (IPS).</li>
+</ul>
+<h4 id="713-reglas-de-deteccion-talos">7.1.3 Reglas de detección: Talos<a class="headerlink" href="#713-reglas-de-deteccion-talos" title="Permanent link">&para;</a></h4>
+<p>Las capacidades de detección de Snort dependen en gran medida de las reglas que definen los patrones de tráfico malicioso. <strong>Cisco Talos</strong>, el equipo de inteligencia de amenazas de Cisco, ofrece un conjunto de reglas altamente optimizadas y actualizadas que permiten a Snort detectar las amenazas más recientes.</p>
+<ul>
+<li>Es posible suscribirse a las reglas de Talos mediante un servicio de suscripción que proporciona acceso prioritario a actualizaciones de reglas y soporte adicional, garantizando la protección frente a amenazas emergentes.</li>
+<li>Existe también la opción de utilizar un conjunto de reglas básicas de forma gratuita, aunque con actualizaciones menos frecuentes.</li>
+</ul>
+<h4 id="714-usos-comunes">7.1.4 Usos comunes<a class="headerlink" href="#714-usos-comunes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Protección de redes empresariales</strong> contra ataques conocidos.</li>
+<li><strong>Análisis y monitorización del tráfico</strong> en tiempo real.</li>
+<li><strong>Soporte en investigaciones forenses</strong> para entender el comportamiento de amenazas y reconstruir incidentes de seguridad.</li>
+</ul>
+<h4 id="715-ventajas">7.1.5 Ventajas<a class="headerlink" href="#715-ventajas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Amplia comunidad y soporte continuo</strong>: Su gran base de usuarios y desarrolladores, unida al respaldo de Cisco, facilita el intercambio de soluciones y la incorporación de mejoras constantes.</li>
+<li><strong>Altamente personalizable</strong>: Sus reglas se pueden adaptar de manera flexible a distintas necesidades y entornos de red.</li>
+<li><strong>Modelo de código abierto</strong>: Facilita la transparencia y la colaboración, siendo especialmente atractivo para entornos educativos y de investigación.</li>
+</ul>
+<h4 id="716-inconvenientes">7.1.6 Inconvenientes<a class="headerlink" href="#716-inconvenientes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Curva de aprendizaje</strong>: Su configuración y mantenimiento requieren conocimientos avanzados, lo que puede resultar complejo para personal sin experiencia previa.</li>
+<li><strong>Dependencia de reglas actualizadas</strong>: Para ser efectivo, Snort necesita reglas bien definidas y actualizadas; la suscripción a Talos mejora esta faceta, pero la versión gratuita recibe las actualizaciones con menor frecuencia.</li>
+<li><strong>Rendimiento en redes de gran volumen</strong>: La inspección en profundidad de un gran número de paquetes puede exigir hardware potente y ajustes de optimización para evitar retrasos en la red.</li>
+</ul>
+<h3 id="72-suricata-idsips">7.2 <strong>Suricata (IDS/IPS)</strong><a class="headerlink" href="#72-suricata-idsips" title="Permanent link">&para;</a></h3>
+<p>Suricata es una herramienta de ciberseguridad que, al igual que Snort, actúa como un sistema de detección y prevención de intrusiones (IDS/IPS). Fue desarrollada y mantenida por la <strong>Open Information Security Foundation (OISF)</strong> y se caracteriza por su capacidad de inspeccionar el tráfico de red en tiempo real para identificar y bloquear amenazas.</p>
+<p><img alt="" class="center" src="img/suricata/suricata_logo.jpg" style="width: 50%;" /></p>
+<p>Suricata se ha consolidado como una alternativa sólida y de alto rendimiento a otras herramientas de IDS/IPS. Su filosofía de código abierto, combinada con un enfoque multihilo y un conjunto de reglas robustas, lo convierten en un recurso fundamental para quienes buscan soluciones escalables de detección y prevención de intrusiones.</p>
+<h4 id="721-historia-de-suricata">7.2.1 Historia de Suricata<a class="headerlink" href="#721-historia-de-suricata" title="Permanent link">&para;</a></h4>
+<p>El proyecto Suricata comenzó en 2009 bajo el apoyo del Departamento de Seguridad Nacional de Estados Unidos (DHS), entre otros patrocinadores, con el objetivo de crear una alternativa de código abierto que fuera escalable y capaz de manejar grandes volúmenes de tráfico de red. Desde entonces, ha evolucionado rápidamente gracias a la participación activa de la comunidad y de la OISF, que publican actualizaciones frecuentes para mejorar su rendimiento y sus funcionalidades.</p>
+<h4 id="722-principales-caracteristicas-de-suricata">7.2.2 Principales características de Suricata<a class="headerlink" href="#722-principales-caracteristicas-de-suricata" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Motor multihilo y multiproceso</strong>: Suricata aprovecha al máximo los recursos de hardware (CPU y memoria), distribuyendo la carga de trabajo entre múltiples hilos y procesos para inspeccionar el tráfico con mayor eficiencia.</li>
+<li><strong>Análisis de paquetes en profundidad (Deep Packet Inspection)</strong>: Permite examinar no solo las cabeceras de los paquetes, sino también el contenido de las cargas útiles (payloads).</li>
+<li><strong>IDS/IPS y monitorización de flujos</strong>: Se puede configurar para solo detectar intrusiones o, además, bloquearlas de forma activa, y ofrece capacidades avanzadas de análisis de flujo de red.</li>
+<li><strong>Detección de malware y archivos</strong>: Suricata puede extraer archivos de flujos HTTP u otros protocolos para analizarlos con herramientas de antivirus o plataformas de análisis de malware.</li>
+</ul>
+<h4 id="723-reglas-de-deteccion-emerging-threats">7.2.3 Reglas de detección: Emerging Threats<a class="headerlink" href="#723-reglas-de-deteccion-emerging-threats" title="Permanent link">&para;</a></h4>
+<p>Al igual que Snort utiliza reglas de Talos, Suricata se basa en <strong>reglas compatibles con el formato de Snort</strong>, con la ventaja de que también cuenta con un amplio soporte de la comunidad. La <strong>comunidad Emerging Threats</strong> (ET) proporciona:</p>
+<ul>
+<li><strong>Reglas gratuitas</strong>: Un conjunto básico de reglas que se actualiza periódicamente y cubre amenazas comunes.</li>
+<li><strong>Suscripción avanzada</strong>: Acceso prioritario a un repositorio más amplio de reglas y actualizaciones frecuentes, lo que permite detectar amenazas emergentes con mayor rapidez.</li>
+</ul>
+<p>Además, Suricata es capaz de leer tanto reglas de Snort como reglas específicas optimizadas para su propio motor.</p>
+<h4 id="724-usos-comunes">7.2.4 Usos comunes<a class="headerlink" href="#724-usos-comunes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Protección de redes empresariales</strong> frente a ataques conocidos y amenazas emergentes.</li>
+<li><strong>Monitorización continua</strong> del tráfico para detectar comportamientos anómalos.</li>
+<li><strong>Análisis forense de incidentes de seguridad</strong>: Gracias a su capacidad para extraer y analizar archivos y flujos, facilita la investigación en profundidad.</li>
+<li><strong>Integración con otras herramientas de seguridad</strong>: Suricata se puede acoplar a sistemas SIEM (Security Information and Event Management) y otras plataformas de ciberseguridad.</li>
+</ul>
+<h4 id="725-ventajas">7.2.5 Ventajas<a class="headerlink" href="#725-ventajas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Elevado rendimiento en sistemas multinúcleo</strong>: Gracias a su arquitectura multihilo, puede procesar grandes volúmenes de tráfico sin afectar significativamente al rendimiento de la red.</li>
+<li><strong>Compatibilidad de reglas</strong>: Permite usar reglas de Snort y, al mismo tiempo, aprovechar reglas específicas de Suricata.</li>
+<li><strong>Comunidad activa y en crecimiento</strong>: La OISF y la comunidad de desarrolladores ofrecen actualizaciones y mejoras constantes, así como soporte a usuarios.</li>
+<li><strong>Mayor visibilidad del tráfico</strong>: Su capacidad para inspeccionar en profundidad, extraer archivos y analizar flujos lo hace muy interesante para entornos en los que se requiere un conocimiento exhaustivo de la actividad de la red.</li>
+</ul>
+<h4 id="726-inconvenientes">7.2.6 Inconvenientes<a class="headerlink" href="#726-inconvenientes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Configuración y mantenimiento avanzados</strong>: Exige ciertos conocimientos técnicos para aprovechar al máximo su potencial multihilo y afinar su rendimiento.</li>
+<li><strong>Requerimientos de hardware</strong>: Para grandes volúmenes de tráfico, se necesitan recursos significativos en cuanto a CPU y memoria.</li>
+<li><strong>Dependencia de reglas actualizadas</strong>: Como cualquier IDS/IPS basado en firmas, su eficacia depende de tener las reglas más recientes que cubran las últimas amenazas.</li>
+</ul>
+<h3 id="73-comparativa-entre-snort-y-suricata">7.3 <strong>Comparativa entre Snort y Suricata</strong><a class="headerlink" href="#73-comparativa-entre-snort-y-suricata" title="Permanent link">&para;</a></h3>
+<p>A la hora de implementar un sistema de detección y prevención de intrusiones (IDS/IPS), Snort y Suricata son dos de las opciones más populares en el ámbito de la ciberseguridad. Ambas herramientas ofrecen prestaciones similares, pero existen diferencias notables en términos de rendimiento, facilidad de uso y adopción empresarial.</p>
+<p>Si bien <strong>Snort</strong> continúa siendo el referente clásico y ampliamente adoptado en el sector empresarial —en gran parte gracias al respaldo de Cisco—, <strong>Suricata</strong> se posiciona como una alternativa muy robusta para quienes priorizan la escalabilidad y el rendimiento en redes de alto tráfico.</p>
+<p>Ambos sistemas ofrecen versiones de código abierto con comunidades activas y potentes conjuntos de reglas, por lo que la elección de uno u otro dependerá de las necesidades concretas de la organización, la infraestructura disponible y el nivel de conocimiento del equipo encargado de la seguridad.</p>
+<h4 id="731-origen-y-respaldo">7.3.1 Origen y respaldo<a class="headerlink" href="#731-origen-y-respaldo" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Snort</strong>:<ul>
+<li>Creado en 1998 por Martin Roesch.</li>
+<li>Adquirido en 2013 por Cisco, que ofrece soporte y lo integra en sus productos de seguridad (ej.: Cisco Firepower).</li>
+<li>Posee una amplia comunidad de desarrolladores y usuarios que contribuyen a mejorar el motor de Snort y su conjunto de reglas.</li>
+</ul>
+</li>
+<li><strong>Suricata</strong>:<ul>
+<li>Desarrollado a partir de 2009 por la Open Information Security Foundation (OISF).</li>
+<li>Respaldado por distintas organizaciones, incluidas agencias gubernamentales de Estados Unidos, y cuenta con el soporte de una comunidad activa.</li>
+<li>Nació con la idea de ser una alternativa más escalable y preparada para altos volúmenes de tráfico.</li>
+</ul>
+</li>
+</ul>
+<h4 id="732-rendimiento">7.3.2 Rendimiento<a class="headerlink" href="#732-rendimiento" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Snort</strong>:<ul>
+<li>Su arquitectura monohilo (en versiones anteriores a Snort 3) puede presentar limitaciones a la hora de procesar un gran volumen de paquetes en redes de alto rendimiento.</li>
+<li>Snort 3 introduce mejoras sustanciales de eficiencia y modularidad, pero su adopción está en evolución.</li>
+</ul>
+</li>
+<li><strong>Suricata</strong>:<ul>
+<li>Diseñado con una arquitectura multihilo desde el principio, lo que le permite repartir la carga de trabajo entre múltiples núcleos del procesador.</li>
+<li>Suele mostrar ventajas en entornos con gran volumen de tráfico gracias a su capacidad de paralelizar la inspección.</li>
+</ul>
+</li>
+</ul>
+<h4 id="733-reglas-de-deteccion">7.3.3 Reglas de detección<a class="headerlink" href="#733-reglas-de-deteccion" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Snort</strong>:<ul>
+<li>Utiliza principalmente reglas de <strong>Cisco Talos</strong>.</li>
+<li>Dispone de un repositorio gratuito con actualizaciones, aunque para tener las más recientes y soporte prioritario se ofrece un servicio de suscripción.</li>
+<li>Es posible crear o modificar reglas de manera personalizada, lo que aporta flexibilidad.</li>
+</ul>
+</li>
+<li><strong>Suricata</strong>:<ul>
+<li>Puede trabajar con reglas en formato Snort, lo que facilita la migración de un sistema al otro.</li>
+<li>Existen también reglas específicas de Suricata optimizadas para su motor.</li>
+<li><strong>Emerging Threats</strong> (ET) es la fuente más popular de reglas para Suricata (y también para Snort). Ofrece tanto versiones gratuitas como de suscripción.</li>
+</ul>
+</li>
+</ul>
+<h3 id="74-facilidad-de-uso-y-configuracion">7.4 Facilidad de uso y configuración<a class="headerlink" href="#74-facilidad-de-uso-y-configuracion" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Snort</strong>:<ul>
+<li>Al ser más veterano, existe mucha documentación, foros y tutoriales para su configuración.</li>
+<li>La curva de aprendizaje puede ser moderada, ya que requiere un manejo cuidadoso de archivos de configuración y reglas.</li>
+</ul>
+</li>
+<li><strong>Suricata</strong>:<ul>
+<li>Su configuración multihilo puede ser algo más compleja al principio, pues hay que ajustar adecuadamente los hilos de procesamiento según el hardware disponible.</li>
+<li>No obstante, ofrece características muy potentes de inspección de archivos y flujos que pueden resultar muy útiles en entornos corporativos.</li>
+</ul>
+</li>
+</ul>
+<h3 id="75-adopcion-en-el-ambito-empresarial">7.5 Adopción en el ámbito empresarial<a class="headerlink" href="#75-adopcion-en-el-ambito-empresarial" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Snort</strong>:<ul>
+<li>Es uno de los IDS/IPS más utilizados a nivel mundial.</li>
+<li>La adquisición por parte de Cisco supuso una gran difusión y presencia en grandes empresas.</li>
+<li>Se integra de forma nativa en muchos productos comerciales de Cisco, lo que facilita su adopción en entornos corporativos que ya utilizan esta marca.</li>
+</ul>
+</li>
+<li><strong>Suricata</strong>:<ul>
+<li>Ha ido ganando presencia en entornos empresariales gracias a su rendimiento en redes de gran tamaño.</li>
+<li>Es muy valorado por su enfoque multihilo, permitiéndole gestionar altos volúmenes de tráfico sin comprometer tanto el rendimiento.</li>
+<li>Muchas organizaciones y proveedores de seguridad han comenzado a incluir Suricata dentro de sus soluciones, sobre todo en entornos donde la capacidad de escala es prioritaria.</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-idsips-comerciales">8 IDS/IPS comerciales<a class="headerlink" href="#8-idsips-comerciales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://www.checkpoint.com/quantum/intrusion-prevention-system-ips/"><strong>Check Point Quantum IPS:</strong></a> Un sistema IPS comercial que ofrece una protección completa contra amenazas conocidas y desconocidas. Check Point Quantum IPS utiliza una combinación de tecnologías de seguridad, como la inspección profunda de paquetes, el análisis de comportamiento y la inteligencia de amenazas, para detectar y bloquear una amplia gama de amenazas .  </p>
+</li>
+<li>
+<p><a href="https://www.cisco.com/c/en_ca/products/security/ngips/index.html"><strong>Cisco NGIPS:</strong></a> Un sistema IPS comercial que se integra con otras soluciones de seguridad de Cisco para proporcionar una protección completa. Cisco NGIPS ofrece una prevención de intrusiones de próxima generación con funciones avanzadas como la prevención de exploits y el filtrado de URL .  </p>
+</li>
+<li>
+<p><a href="https://www.paloaltonetworks.es/network-security"><strong>Palo Alto Networks:</strong></a> Un sistema IPS comercial que ofrece una prevención de intrusiones de próxima generación con funciones avanzadas como la prevención de exploits y el filtrado de URL. Palo Alto Networks utiliza una combinación de tecnologías de seguridad, como la inspección profunda de paquetes, el análisis de comportamiento y la inteligencia de amenazas, para detectar y bloquear una amplia gama de amenazas .  </p>
+</li>
+<li>
+<p><a href="https://www.trellix.com/es-es/products/network-security/"><strong>Trellix Network Security:</strong></a> es una solución avanzada de ciberseguridad diseñada para detectar, bloquear y responder a amenazas sofisticadas, incluyendo ataques dirigidos y técnicas evasivas. Utiliza una combinación de aprendizaje automático, inteligencia artificial y motores de correlación para identificar y mitigar amenazas en tiempo real </p>
+</li>
+<li>
+<p><a href="https://www.zscaler.com/es/products-and-solutions/cloud-ips"><strong>Zscaler Cloud IPS:</strong></a> Un sistema IPS basado en la nube que proporciona una protección completa contra amenazas para empresas de todos los tamaños. <strong>Zscaler Cloud IPS</strong> ofrece prevención de intrusiones siempre activa y entregada desde la nube para garantizar la seguridad empresarial. Zscaler realiza una inspección completa de TLS/SSL sin afectar al rendimiento. Esto permite llevar a cabo detección basada en firmas, detección basada en políticas y detección basada en anomalías.</p>
+</li>
+</ul>
+<h2 id="9-bibliografia">9 Bibliografía<a class="headerlink" href="#9-bibliografia" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.netgate.com/blog/suricata-vs-snort">Snort vs Suricata</a></li>
+<li><a href="https://www.snort.org/">Snort</a></li>
+<li><a href="https://suricata.io/">Suricata</a></li>
+<li><a href="https://rules.emergingthreats.net/">Emerging Threads Rules</a></li>
+</ul>
+<!--
+https://www.palentino.es/blog/comparacion-y-relacion-entre-ids-ips-siem-y-otras-soluciones-de-ciberseguridad/
+
+https://expertinsights.com/insights/top-intrusion-prevention-systems/
+
+
+- [Palo Alto: Qué es un IDS/IPS](https://www.paloaltonetworks.lat/cyberpedia/what-is-an-intrusion-detection-system-ids)
+
+https://www.paloaltonetworks.lat/cyberpedia/what-is-an-intrusion-prevention-system-ips
+
+-->
+
+<!--
+
+Existen varios fabricantes reputados de TAPs de red que ofrecen soluciones de alta calidad para la monitorización y seguridad de redes. A continuación, se presentan algunos de ellos:
+
+- **Keysight Technologies**: Ofrece una amplia gama de TAPs de red, incluyendo opciones para cobre y fibra óptica, diseñadas para proporcionar visibilidad completa del tráfico de red y mantener un rendimiento y seguridad óptimos.
+
+    [Keysight](https://www.keysight.com/us/en/products/network-visibility/network-taps.html?utm_source=chatgpt.com)
+
+- **Garland Technology**: Especializada en TAPs de red que garantizan una captura de datos del 100% en tiempo real, proporcionando visibilidad continua y sin interrupciones del tráfico de red.
+
+    [Garland Network](https://www.garlandtechnology.com/network-tap?utm_source=chatgpt.com)
+
+- **USRobotics**: Ofrece una variedad de TAPs de red, incluyendo TAPs de cobre y fibra, que son totalmente pasivos, no intrusivos e invisibles para la red, ideales para la monitorización en tiempo real del tráfico entre dispositivos críticos.
+
+    [USR EMEA](https://www.usr-emea.com/products/p-taps-menu.asp?loc=span&utm_source=chatgpt.com)
+
+- **NETSCOUT**: Proporciona TAPs que ofrecen acceso completo al tráfico de red para dispositivos de monitorización, con múltiples opciones para diversos tipos de enlaces y velocidades, diseñados para una monitorización continua y completa.
+
+    [NetScout](https://www.netscout.com/product/packet-flow-switches-and-taps/netscout-taps?utm_source=chatgpt.com)
+
+- **Network Critical**: Ofrece soluciones flexibles y completamente modulares de Network Packet Brokers y TAPs de red, adaptadas para satisfacer las necesidades de acceso y visibilidad de su red.
+
+    [Network Critical](https://www.networkcritical.com/packet-brokers-product-list?lang=es&utm_source=chatgpt.com)
+
+
+Estos fabricantes son reconocidos por la calidad y fiabilidad de sus productos en el ámbito de la monitorización y seguridad de redes.
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026-2027 Francisco Pérez Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.annotate", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

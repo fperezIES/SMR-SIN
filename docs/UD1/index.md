@@ -6,7 +6,7 @@
 1. [Introducción a la seguridad informática](1.introduccion.seguridad.md)
 2. [Vulnerabilidades,  Amenazas y Exploits](2.vulnerabilidades.amenazas.exploits.md)
 3. [Sistemas de Gestión de la Seguridad de la Información (SGSI) y Análisis de Riesgos](3.SGSI.md)
-4. [Cumplimiento Legal en Ciberseguridad](drafts/4.cumplimiento-v1_draft.md)
+4. [Cumplimiento Legal en Ciberseguridad](4.cumplimiento)
 
 ---
 
