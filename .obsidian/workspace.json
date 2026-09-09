@@ -254,6 +254,8 @@
   },
   "active": "fa7008b08b4a61ce",
   "lastOpenFiles": [
+    "mkdocs-serve.yml",
+    "serve.sh",
     "docs/UD1/1.introduccion.seguridad.md",
     "docs/UD1/Tareas/4.1.Normativa.md",
     "docs/UD1/Tareas/3.1.familiaiso27000.md",
@@ -273,7 +275,6 @@
     "site/incidentes/xss.html",
     "site/incidentes/ransomware.pago.html",
     "site/incidentes/heartbleed.html",
-    "site/incidentes/buffer_overflow.html",
     "site/assets/images/favicon.png",
     "site/incidentes/img/stuxnet.jpeg",
     "site/incidentes/img/solarwinds.png",
