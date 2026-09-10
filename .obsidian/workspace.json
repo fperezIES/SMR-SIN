@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/UD1/2.vulnerabilidades.amenazas.exploits.md",
+                "file": "docs/UD1/Presentaciones/1.introduccion.slides.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "2.vulnerabilidades.amenazas.exploits"
+              "title": "1.introduccion.slides"
             }
           },
           {
@@ -27,71 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/UD1/Tareas/2.2.rss.seguridad.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2.2.rss.seguridad"
-            }
-          },
-          {
-            "id": "7388d37296b932fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/UD1/Tareas/2.2.rss.seguridad.md",
+                "file": "docs/UD1/Tareas/1.1.analisis.riesgos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2.2.rss.seguridad"
-            }
-          },
-          {
-            "id": "0c360a85456e60d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/UD1/Tareas/2.1.amenazas.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2.1.amenazas"
-            }
-          },
-          {
-            "id": "a7d185ea3179dbbb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/UD1/2.vulnerabilidades.amenazas.exploits.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2.vulnerabilidades.amenazas.exploits"
-            }
-          },
-          {
-            "id": "2c353f3394d03866",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/UD1/1.introduccion.seguridad.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.introduccion.seguridad"
+              "title": "1.1.analisis.riesgos"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -214,13 +159,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/UD1/4.cumplimiento.md",
+                "file": "docs/UD1/Tareas/1.1.analisis.riesgos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 4.cumplimiento"
+              "title": "Outline"
             }
           },
           {
@@ -234,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -252,20 +197,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fa7008b08b4a61ce",
+  "active": "429d642221435058",
   "lastOpenFiles": [
-    "mkdocs-serve.yml",
-    "serve.sh",
-    "docs/UD1/1.introduccion.seguridad.md",
-    "docs/UD1/Tareas/4.1.Normativa.md",
-    "docs/UD1/Tareas/3.1.familiaiso27000.md",
-    "docs/UD1/Tareas/2.2.rss.seguridad.md",
-    "docs/UD1/Tareas/2.1.amenazas.solucion_draft.md",
-    "docs/UD1/Tareas/2.1.amenazas.md",
-    "docs/UD1/Tareas/1.1.analisis.riesgos.md",
-    "docs/UD1/drafts/3.auditorias_v1_draft.md",
-    "docs/UD1/4.cumplimiento.md",
-    "docs/UD1/index.md",
+    "site/UD1/2.vulnerabilidades.amenazas.exploits.html",
     "site/search/search_index.json",
     "site/search",
     "site/incidentes/slides/2018.spectre_meltdown.slides.html",
@@ -275,6 +209,7 @@
     "site/incidentes/xss.html",
     "site/incidentes/ransomware.pago.html",
     "site/incidentes/heartbleed.html",
+    "site/incidentes/buffer_overflow.html",
     "site/assets/images/favicon.png",
     "site/incidentes/img/stuxnet.jpeg",
     "site/incidentes/img/solarwinds.png",
@@ -285,20 +220,30 @@
     "site/img/logo.png",
     "site/img/logo.jpeg",
     "site/UD6/img/vpn/vpn_site2site_intro.png",
-    "docs/UD1/3.SGSI.md",
-    "docs/UD1/2.vulnerabilidades.amenazas.exploits.md",
-    "docs/index.md",
-    "docs/UD1/Tareas/drafts/1.2.almalinux_draft.md",
-    "docs/UD1/drafts/4.cumplimiento-v1_draft.md",
-    "docs/drafts/Contenido-prog-IES.md",
-    "docs/UD1/Tareas/2.2.rsss.eguridad.diseño.md",
     "docs/index.slides.md",
-    "docs/UD1/drafts/equipos seguridad.md",
-    "docs/UD1/4.incidentes.md",
-    "docs/UD00_draft/0.demo-diapositivas-embebidas-md.md",
-    "docs/UD00_draft/0.demo-diapositivas-md.md",
-    "docs/UD00_draft/1.Introduccion.md",
-    "docs/UD00_draft/2.Section with spaces.md",
-    "docs/UD00_draft/3.Work_in_progress_draft.md"
+    "docs/index.md",
+    "docs/UD1/index.md",
+    "docs/UD1/4.cumplimiento.md",
+    "docs/UD1/3.SGSI.md",
+    "docs/UD1/2.conceptos.fundamentales.md",
+    "docs/UD1/1.introduccion.seguridad.md",
+    "docs/UD1/Tareas/2.1.amenazas.md",
+    "docs/UD1/Tareas/1.1.analisis.riesgos.md",
+    "docs/UD1/Presentaciones/1.introduccion.slides.md",
+    "docs/UD1/Presentaciones/2.amenazas.slides.md",
+    "docs/UD1/Tareas/2.1.amenazas.solucion_draft.md",
+    "docs/UD1/Tareas/2.2.rss.seguridad.md",
+    "docs/UD1/Tareas/3.1.familiaiso27000.md",
+    "docs/UD1/Tareas/4.1.Normativa.md",
+    "docs/UD0_draft/ideas.proyecto.md",
+    "docs/UD0_draft/comandos.almalinux.md",
+    "docs/UD5/Presentaciones/1.intro_ha.slides.md",
+    "docs/drafts/Contenido-prog-IES.md",
+    "docs/UD4/Presentaciones/4.monitorizacion.slides.md",
+    "docs/UD4/Presentaciones/3.actualizacion_vulnerabilidades.slides.md",
+    "docs/UD4/Presentaciones/2.malware.slides.md",
+    "docs/UD4/Presentaciones/1.seguridad_acceso.slides.md",
+    "docs/drafts/Contenidos Gemini.md",
+    "docs/UD1/drafts/3.auditorias_v1_draft.md"
   ]
 }

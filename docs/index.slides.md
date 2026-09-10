@@ -24,25 +24,31 @@ icon: material/presentation
 - Duración: **133** horas
 	- 4 horas por semana
 	- **22 semanas** (**2 trimestres**) => 22semanas x 4h/semana = **88** horas
+	- 2 semanas de exámenes
 	- Resto 133-88 = 45 horas: **Formación en empresa.**
 
 
 --
 
-
-
 ## Unidades didácticas
 
-- Primer trimestre:
-	- UD1 - Introducción a la seguridad informática (10h)
-	- UD2 - Seguridad pasiva (10h)
-	- UD3 - Criptografía (15h)
-	- UD4 - Fortificación hosts (15h)
+| Tarea             | Porcentaje | Requisito |
+| ----------------- | ---------- | --------- |
+| Primer trimestre  | 50%        | >=5       |
+| Segundo trimestre | 50%        | >=5       |
 
-- Segundo Trimestre
-	- UD5 - Alta disponibilidad (15h)
-	- UD6 - Seguridad en redes (20h)
-	- UD 7 - Seguridad perimetral  (15h)
+
+
+| **Unidad de Trabajo (UT)** | **Título**                                | **Semanas** | **Horas** | **RA asociados** |
+| -------------------------- | ----------------------------------------- | ----------- | --------- | ---------------- |
+| **UT 1**                   | Introducción a la Seguridad y Marco Legal | 2           | 8 h       | RA 5             |
+| **UT 2**                   | Seguridad pasiva y almacenamiento         | 3           | 12 h      | RA 1             |
+| **UT 3**                   | Criptografía                              | 5           | 20 h      | RA 2             |
+| **UT 4**                   | Fortificación de Hosts                    | 4           | 16 h      | RA 3             |
+| **UT 5**                   | Seguridad en Redes                        | 6           | 24 h      | RA 4             |
+| **TOTAL**                  |                                           | **20**      | **80 h**  |                  |
+
+
 
 --
 
@@ -57,7 +63,7 @@ icon: material/presentation
  - Fortificación de Redes.
  - Acceso remoto seguro.
  - Seguridad perimetral.
- - Técnicas de alta disponibilidad.
+
 
 ---
 
@@ -69,12 +75,11 @@ icon: material/presentation
 ## Metodología
 
 - Los contenidos y la planificación se publicará en la Clase Virtual (Aules)
-- En semipresencial se guiará sobre los puntos más importantes del temario y los ejercicios que se deberán ir haciendo cada semana. 
 - Se tendrán que entregar algunos ejercicios obligatorios cada trimestre.
 - Adicionalmente puede haber ejercicios opcionales.
 - Habrá ejercicios de clase que no serán corregidos con puntuación
-	-  Se publicarán soluciones de ejemplo
-	- Su contenido entre para el examen
+	- Se publicarán soluciones de ejemplo
+	- **Su contenido entre para el examen**
 
 --
 ## Ejercicios

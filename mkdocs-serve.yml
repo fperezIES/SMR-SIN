@@ -82,6 +82,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
 # captions https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/          
 # images https://squidfunk.github.io/mkdocs-material/reference/images/
 # captions https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/caption/
