@@ -410,30 +410,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⁠1.2. Seguridad absoluta">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-imposibilidad-de-predecir-todas-las-amenazas" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⁠1.2.1. Imposibilidad de predecir todas las amenazas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#122-confianza-en-la-criptografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⁠1.2.2. Confianza en la criptografía
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -751,46 +727,54 @@
 <h2 id="11-importancia-de-la-seguridad-informatica">⁠1.1. Importancia de la seguridad informática<a class="headerlink" href="#11-importancia-de-la-seguridad-informatica" title="Permanent link">&para;</a></h2>
 <p>El espectacular auge de Internet y de los servicios telemáticos ha convertido los equipos informáticos y las redes de comunicación de datos en elementos cotidianos en nuestras vidas.</p>
 <p>Los sistemas de información son esenciales para el funcionamiento de la mayoría de las empresas. El uso de tecnologías de la información ha permitido a las organizaciones gestionar de manera eficiente su <strong>información</strong> y prestar <strong>servicios</strong> a través de Internet. Estos servicios pueden servir como soporte operacional para la empresa o ser el producto final que se vende a los clientes.</p>
+<div class="admonition quote inline end">
+<p class="admonition-title">Antigua máxima en seguridad</p>
+<p><strong>"Cuando no ocurre nada, nos quejamos de lo mucho que gastamos en seguridad. Cuando ocurre algo, nos quejamos de lo poco que gastamos en seguridad."</strong></p>
+<p><em><a href="https://es.wikipedia.org/wiki/Bruce_Schneier">Bruce Schneier</a></em>, un reconocido experto en criptografía y ciberseguridad.</p>
+</div>
 <p>Sin embargo, en muchos casos, la <strong>seguridad informática</strong> es ignorada hasta que ocurre un incidente. Existe una falsa sensación de seguridad cuando no se ha sufrido un ataque visible, lo que lleva a las empresas a postergar las inversiones en medidas de protección. A menudo, estas decisiones reactivas no se toman hasta que se produce un incidente grave que impacta las operaciones y genera pérdidas considerables.</p>
 <p>¿Por qué es crucial gestionar el <strong>riesgo</strong> de estos sistemas de información? Si las empresas dependen de ellos para su funcionamiento, deben evaluar hasta qué punto pueden confiar en sus sistemas, identificar lo que podría fallar y estar preparadas para restaurar la operatividad en un tiempo y costo aceptables en caso de un incidente.</p>
 <p>El primer paso en la gestión del riesgo consiste en valorar la situación actual de la empresa mediante un <strong>análisis de riesgos</strong>. Este proceso determina los posibles problemas que podrían surgir, identificando los activos de la empresa, sus vulnerabilidades, las amenazas a las que están expuestos y el riesgo asociado. En otras palabras, se debe calcular el daño económico potencial que un incidente de seguridad podría causar, así como la probabilidad de que ocurra.</p>
 <p>Una vez realizada esta evaluación, el siguiente paso es determinar si la situación es aceptable o si es necesario <strong>tratar los riesgos</strong> mediante la implementación de medidas o controles que mitiguen los efectos de las amenazas. Aunque no es posible eliminar todos los riesgos, es fundamental tomar las medidas razonables para que los daños potenciales sean asumibles por la organización. El objetivo es alcanzar un <strong>equilibrio entre el costo de la protección y el valor del activo protegido</strong>. No tiene sentido gastar más de lo que vale el activo, pero tampoco se puede dejar un activo desprotegido y exponerse a los daños por no haber invertido lo suficiente en su protección.</p>
-<p>Además, las amenazas son dinámicas: tanto la empresa como su entorno cambian constantemente. Esto hace que el proceso de gestión de riesgos deba realizarse de forma continua, siguiendo un <strong>ciclo de mejora constante</strong>. Dado que los sistemas de información y las amenazas evolucionan, la gestión del riesgo debe adaptarse continuamente a estos cambios para garantizar una protección adecuada y efectiva.</p>
+<p>Además, las amenazas son dinámicas: tanto la empresa como su entorno cambian constantemente. Esto hace que el proceso de gestión de riesgos deba realizarse de forma continua, siguiendo un <strong>ciclo de mejora constante</strong>. Dado que los sistemas de información y las amenazas evolucionan, la gestión del riesgo debe adaptarse continuamente a estos cambios para garantizar una protección adecuada y efectiva.+</p>
+<figure>
+<p><img alt="" src="img/Fundamentos-Seguridad.png" /></p>
+<figcaption></figcaption>
+</figure>
 <h2 id="12-seguridad-absoluta">⁠1.2. Seguridad absoluta<a class="headerlink" href="#12-seguridad-absoluta" title="Permanent link">&para;</a></h2>
+<div class="admonition quote inline end">
+<p class="admonition-title">La seguridad absoluta no es posible</p>
+<p><em>"The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards - and even then I have my doubts.”</em>  </p>
+<p>El único sistema verdaderamente seguro es uno que está apagado, guardado dentro de un bloque de hormigón y sellado en una habitación revestida de plomo llena de guardias armados - y aún así tengo mis dudas.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/Gene_Spafford">Gene Spafford</a></em></p>
+</div>
 <p>No es posible lograr una <strong>seguridad informática total</strong> debido a varios factores inherentes a la naturaleza de los sistemas, las amenazas y las limitaciones humanas. A continuación se exponen algunas de las principales razones:</p>
-<ol>
-<li><strong>Complejidad de los sistemas</strong></li>
-</ol>
+<p><strong>Complejidad de los sistemas</strong></p>
 <p>Los sistemas informáticos modernos son extremadamente complejos y están formados por una gran cantidad de componentes (software, hardware, redes, usuarios). Esta complejidad aumenta la posibilidad de que existan vulnerabilidades no detectadas, configuraciones incorrectas o errores humanos que puedan ser explotados por atacantes.</p>
-<ol>
-<li><strong>Evolución constante de las amenazas</strong></li>
-</ol>
+<p><strong>Evolución constante de las amenazas</strong></p>
 <p>Las ciberamenazas están en constante evolución. Los atacantes desarrollan continuamente nuevas técnicas para explotar vulnerabilidades, lo que significa que las medidas de seguridad actuales pueden quedar obsoletas rápidamente. Siempre existe la posibilidad de que se descubran nuevos tipos de ataques para los cuales no se han desarrollado contramedidas.</p>
-<ol>
-<li><strong>Factores humanos</strong></li>
-</ol>
+<p><strong>Factores humanos</strong></p>
 <p>Los seres humanos son a menudo el eslabón más débil en la cadena de seguridad. Los errores humanos, como el uso de contraseñas débiles, la falta de capacitación adecuada o el caer en trampas de ingeniería social (phishing, por ejemplo), son difíciles de prevenir completamente. Además, los empleados malintencionados o con acceso privilegiado pueden representar amenazas internas difíciles de mitigar.</p>
-<ol>
-<li><strong>Recursos limitados</strong></li>
-</ol>
+<p><strong>Recursos limitados</strong></p>
 <p>Las organizaciones tienen recursos limitados, tanto en términos de tiempo como de presupuesto, para implementar y mantener las medidas de seguridad necesarias. El equilibrio entre costos y seguridad lleva a compromisos que pueden dejar ciertos aspectos menos protegidos.</p>
-<ol>
-<li><strong>Nuevas vulnerabilidades</strong></li>
-</ol>
+<p><strong>Nuevas vulnerabilidades</strong></p>
 <p>Los desarrolladores de software y hardware cometen errores, y continuamente se descubren nuevas vulnerabilidades (zero-day). Estas fallas pueden ser explotadas antes de que se publiquen parches o soluciones, lo que deja a los sistemas temporalmente expuestos.</p>
-<ol>
-<li><strong>Equilibrio entre usabilidad y seguridad</strong></li>
-</ol>
+<p><strong>Equilibrio entre usabilidad y seguridad</strong></p>
 <p>A menudo, aumentar la seguridad reduce la usabilidad de un sistema, lo que lleva a una menor eficiencia o una experiencia de usuario más frustrante. Las organizaciones tienden a buscar un equilibrio, lo que puede dejar brechas en la seguridad para mejorar la funcionalidad y la accesibilidad de los sistemas.</p>
-<ol>
-<li><strong>Dependencia de terceros</strong></li>
-</ol>
-<p>Las organizaciones a menudo dependen de servicios o productos de terceros (como proveedores de software, infraestructura en la nube, etc.). Si alguno de estos terceros tiene una vulnerabilidad o falla en sus medidas de seguridad, esto puede comprometer la seguridad de toda la organización.</p>
-<h3 id="121-imposibilidad-de-predecir-todas-las-amenazas">⁠1.2.1. <strong>Imposibilidad de predecir todas las amenazas</strong><a class="headerlink" href="#121-imposibilidad-de-predecir-todas-las-amenazas" title="Permanent link">&para;</a></h3>
-<p>No es posible prever todas las formas en que los atacantes intentarán comprometer los sistemas, especialmente en un entorno tan dinámico como el digital. La seguridad debe adaptarse constantemente, pero siempre habrá nuevas amenazas desconocidas que no pueden preverse con antelación.</p>
-<h3 id="122-confianza-en-la-criptografia">⁠1.2.2. <strong>Confianza en la criptografía</strong><a class="headerlink" href="#122-confianza-en-la-criptografia" title="Permanent link">&para;</a></h3>
+<p><strong>Dependencia de terceros</strong></p>
+<p>Las organizaciones a menudo dependen de <strong>servicios o productos de terceros</strong> (como proveedores de software, infraestructura en la nube, etc.). Si alguno de estos terceros tiene una <strong>vulnerabilidad</strong> o falla en sus medidas de seguridad, esto puede comprometer la seguridad de toda la organización.</p>
+<p><strong>Imposibilidad de predecir todas las amenazas</strong></p>
+<p>No es posible prever todas las formas en que los atacantes intentarán comprometer los sistemas, especialmente en un entorno tan dinámico como el digital. La seguridad debe adaptarse constantemente, pero siempre habrá nuevas <strong>amenazas desconocidas</strong> que no pueden preverse con antelación.</p>
+<p><strong>Confianza en la criptografía</strong></p>
 <p>Muchos aspectos de la seguridad dependen de la criptografía, pero <strong>ningún sistema criptográfico es completamente invulnerable</strong>. Con el avance de la tecnología, como la computación cuántica, es posible que se desarrollen nuevas formas de romper cifrados que hoy consideramos seguros.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>En resumen, la <strong>seguridad total no es alcanzable</strong> debido a la naturaleza dinámica y compleja del entorno tecnológico y a las limitaciones humanas. Sin embargo, la seguridad se puede gestionar y mejorar continuamente para minimizar los riesgos y responder eficazmente a las amenazas emergentes.</p>
+</div>
+<figure>
+<p><img alt="" src="img/Seguridad-Absoluta.png" /></p>
+<figcaption></figcaption>
+</figure>
 <h2 id="13-definicion-de-seguridad-de-la-informacion">⁠1.3. Definición de Seguridad de la información<a class="headerlink" href="#13-definicion-de-seguridad-de-la-informacion" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Definiciones de Seguridad Informática</p>
@@ -864,13 +848,17 @@
 <li><strong>Software antivirus y antimalware</strong>: Protege los sistemas contra virus, spyware, ransomware, y otros tipos de software malicioso.</li>
 <li><strong>Políticas de seguridad y gestión de parches</strong>: Definen las reglas para el uso seguro de los sistemas y aseguran que todos los componentes de software estén actualizados para prevenir vulnerabilidades.</li>
 </ul>
+<figure>
+<p><img alt="" src="img/Seguridad-Fiscia-Logica.png" /></p>
+<figcaption></figcaption>
+</figure>
 <h3 id="153-complementariedad-entre-seguridad-fisica-y-logica">⁠1.5.3. Complementariedad entre Seguridad Física y Lógica<a class="headerlink" href="#153-complementariedad-entre-seguridad-fisica-y-logica" title="Permanent link">&para;</a></h3>
 <p>La seguridad física y la seguridad lógica deben trabajar en conjunto para proporcionar una protección integral de la información. Por ejemplo, aunque un servidor pueda estar protegido por cifrado (seguridad lógica), si un intruso puede acceder físicamente al dispositivo, podría extraer los datos directamente. Del mismo modo, si un centro de datos tiene controles de acceso físicos estrictos, pero carece de seguridad lógica adecuada, un atacante podría explotar vulnerabilidades de software para acceder a la información.</p>
 <p>Por lo tanto, para garantizar la seguridad de la información de manera efectiva, es crucial que las organizaciones adopten un enfoque holístico que combine tanto medidas de seguridad física como lógica. La siguiente figura ilustra la relación entre los diferentes elementos a proteger:</p>
 <figure>
 <p><img alt="" class="center" src="img/01/defensa_profundiad.png" /></p>
 <figcaption>
-<p>Elementos a proteger</p>
+<p>Capas de protección de la Información</p>
 </figcaption>
 </figure>
 <h2 id="16-seguridad-activa-y-seguridad-pasiva">⁠1.6. Seguridad Activa y Seguridad Pasiva<a class="headerlink" href="#16-seguridad-activa-y-seguridad-pasiva" title="Permanent link">&para;</a></h2>
@@ -898,6 +886,10 @@
 <h3 id="163-complementariedad-entre-seguridad-activa-y-pasiva">⁠1.6.3. Complementariedad entre Seguridad Activa y Pasiva<a class="headerlink" href="#163-complementariedad-entre-seguridad-activa-y-pasiva" title="Permanent link">&para;</a></h3>
 <p>Ambas formas de seguridad son necesarias para una protección integral. La <strong>seguridad activa</strong> permite responder rápidamente a las amenazas y detener los ataques en curso, mientras que la <strong>seguridad pasiva</strong> asegura que, en caso de que una amenaza pase desapercibida o no pueda ser detenida, los daños sean mínimos y se pueda garantizar la continuidad del servicio y la recuperación de los datos.</p>
 <p>Por ejemplo, un sistema que combina <strong>cifrado de datos</strong> (seguridad pasiva) con un <strong>IDS/IPS</strong> (seguridad activa) está mejor protegido contra una gama más amplia de amenazas que uno que solo utiliza una de estas estrategias. De este modo, se logra un enfoque más robusto y resiliente frente a los diversos riesgos que enfrenta la organización en el entorno digital actual.</p>
+<figure>
+<p><img alt="" src="img/Seguridad-Activa-Pasiva.png" /></p>
+<figcaption></figcaption>
+</figure>
 <h2 id="17-alta-disponibilidad">⁠1.7. Alta Disponibilidad<a class="headerlink" href="#17-alta-disponibilidad" title="Permanent link">&para;</a></h2>
 <p>La <strong>alta disponibilidad</strong> es un enfoque estratégico en la arquitectura de sistemas que garantiza que un servicio o sistema esté operativo y accesible la mayor parte del tiempo, <strong>minimizando las interrupciones y el tiempo de inactividad</strong>. Esto es especialmente crítico para aplicaciones y servicios que requieren funcionamiento continuo, como plataformas de comercio electrónico, sistemas financieros o infraestructuras críticas.</p>
 <p>Para lograr alta disponibilidad, se utilizan diversas técnicas, como la redundancia de hardware y software, la replicación de datos, el uso de balanceadores de carga, y la implementación de mecanismos de failover que aseguren que, en caso de fallo de uno de los componentes, otro pueda tomar su lugar sin interrumpir el servicio.</p>
