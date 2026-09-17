@@ -442,6 +442,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="⁠2.3. Clasificación de las Vulnerabilidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-vulnerabilidades-tecnologicas-logicas-y-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⁠2.3.1. Vulnerabilidades Tecnológicas (Lógicas y de Red)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-vulnerabilidades-fisicas-y-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⁠2.3.2. Vulnerabilidades Físicas y de Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-vulnerabilidades-del-factor-humano-y-organizativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⁠2.3.3. Vulnerabilidades del Factor Humano y Organizativo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -459,6 +492,21 @@
       ⁠2.5. Gestión de Incidentes y Análisis Forense
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="⁠2.5. Gestión de Incidentes y Análisis Forense">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-fases-del-analisis-forense" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⁠2.5.1. Fases del Análisis Forense
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -598,72 +646,239 @@
 </figcaption>
 </figure>
 <h2 id="22-amenazas-comunes-y-medidas-de-proteccion">⁠2.2. Amenazas Comunes y Medidas de Protección<a class="headerlink" href="#22-amenazas-comunes-y-medidas-de-proteccion" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TD
+    %% Definición de estilos con fondos claros para no pelear con el tema de MkDocs
+    classDef root fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    classDef category fill:#f3f4f6,stroke:#4b5563,stroke-width:2px
+    classDef threat fill:#ffffff,stroke:#9ca3af,stroke-width:2px
+
+    %% Nodos principales
+    A[AMENAZAS COMUNES]:::root --&gt; B(Lógicas / Digitales):::category
+    A --&gt; C(Físicas y Ambientales):::category
+
+    %% Subcategorías Lógicas
+    B --&gt; B1{Centradas en &lt;br&gt;el Usuario}:::category
+    B --&gt; B2{Centradas en &lt;br&gt;el Sistema}:::category
+    B --&gt; B3{Centradas en &lt;br&gt;la Red}:::category
+
+    %% Amenazas
+    B1 --&gt; B1a[Ingeniería Social]:::threat
+    B1a -. Subtipo .-&gt; B1b[Phishing]:::threat
+
+    B2 --&gt; B2a[Malware / Ransomware]:::threat
+    B2 --&gt; B2b[Fuerza Bruta]:::threat
+
+    B3 --&gt; B3a[DoS / DDoS]:::threat
+
+    C --&gt; C1[Apagones eléctricos]:::threat
+    C --&gt; C2[Incendios / Desastres]:::threat
+    C --&gt; C3[Robo de hardware]:::threat
+</code></pre>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Tipo de Amenaza</th>
-<th style="text-align: left;">¿En qué consiste?</th>
-<th style="text-align: left;">Medida Básica de Protección</th>
+<th>Tipo de Amenaza</th>
+<th>¿En qué consiste?</th>
+<th>Medida Básica de Protección</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Malware</strong></td>
-<td style="text-align: left;">Software malicioso (virus, troyanos). Destaca el <strong>ransomware</strong>, que cifra datos y pide un rescate.</td>
-<td style="text-align: left;">Antivirus actualizado y copias de seguridad aisladas.</td>
+<td>Malware</td>
+<td>Software malicioso (virus, troyanos). Destaca el ransomware, que cifra datos y pide un rescate.</td>
+<td>Antivirus actualizado, protección EDR y copias de seguridad aisladas.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Phishing</strong></td>
-<td style="text-align: left;">Engaño vía email o SMS suplantando identidad para robar credenciales bancarias o de acceso.</td>
-<td style="text-align: left;">Concienciación del usuario y filtros antispam.</td>
+<td>Ingeniería Social</td>
+<td>Manipulación psicológica del usuario para que revele información confidencial o permita el acceso.</td>
+<td>Políticas claras de seguridad, principio de desconfianza y verificación de identidades.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>DoS / DDoS</strong></td>
-<td style="text-align: left;">Ataques de Denegación de Servicio / Denegación Distribuida de Servicio. Sobrecarga de un sistema o red con tráfico masivo hasta dejarlo inaccesible.</td>
-<td style="text-align: left;">Firewalls avanzados y servicios de mitigación en la nube.</td>
+<td>Phishing</td>
+<td>(Subtipo de Ingeniería Social). Engaño vía email o SMS suplantando identidad para robar credenciales.</td>
+<td>Concienciación del usuario, simulacros y filtros antispam/antiphishing.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Fuerza Bruta</strong></td>
-<td style="text-align: left;">Intento de acceso a un sistema probando sistemáticamente combinaciones masivas de contraseñas.</td>
-<td style="text-align: left;">Autenticación Multifactor (MFA) y bloqueo de cuenta tras intentos fallidos.</td>
+<td>Fuerza Bruta</td>
+<td>Intento de acceso a un sistema probando sistemáticamente combinaciones masivas de contraseñas.</td>
+<td>Autenticación Multifactor (MFA), contraseñas robustas y bloqueo tras intentos fallidos.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Ingeniería Social</strong></td>
-<td style="text-align: left;">Manipulación psicológica del usuario para que revele información confidencial o dé acceso a un atacante.</td>
-<td style="text-align: left;">Políticas claras de seguridad y verificación de identidades.</td>
+<td>DoS / DDoS</td>
+<td>Ataques de Denegación de Servicio. Sobrecarga de un sistema con tráfico masivo hasta dejarlo inaccesible.</td>
+<td>Firewalls avanzados y servicios de mitigación perimetral en la nube.</td>
+</tr>
+<tr>
+<td>Físicas y Ambientales</td>
+<td>Amenazas no intencionadas o físicas, como incendios, apagones eléctricos, robo de equipos o rotura de hardware.</td>
+<td>Sistemas de Alimentación Ininterrumpida (SAI/UPS), control de acceso físico y redundancia de hardware.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="23-clasificacion-de-las-vulnerabilidades">⁠2.3. Clasificación de las Vulnerabilidades<a class="headerlink" href="#23-clasificacion-de-las-vulnerabilidades" title="Permanent link">&para;</a></h2>
-<p>Las vulnerabilidades pueden surgir en diferentes puntos de la infraestructura y por diversos motivos:</p>
-<ul>
-<li><strong>De Software:</strong> Errores de programación (ej. <em>Buffer Overflow</em> o inyección SQL). Si el fabricante no tiene parche aún, se denomina vulnerabilidad <a href="../incidentes/zeroday.html"><strong>Zero-Day</strong></a>.</li>
-<li><strong>De Configuración:</strong> Dejar valores por defecto (ej. <em>admin/admin</em>) o servicios innecesarios expuestos a internet (ej. <a href="../incidentes/2016.botnet_mirai.html"><strong>Botnet Mirai</strong></a>).</li>
-<li><strong>Físicas:</strong> Falta de control de acceso a los servidores, robo de equipos o redes Wi-Fi sin cifrar.</li>
-<li><strong>De Red:</strong> Tráfico sin cifrar que permite interceptar y modificar comunicaciones (Ataques <em>Man-in-the-Middle</em>).</li>
-<li><strong>De Hardware:</strong> Deficiencias en el diseño físico, como los fallos en microprocesadores (ej. <a href="../incidentes/2018.spectre_meltdown.html"><strong>Spectre y Meltdown</strong></a>).</li>
-<li><strong>Humanas:</strong> Errores del personal por falta de formación, uso de contraseñas débiles o caer en trampas de phishing.</li>
-<li><strong>De Terceros (Cadena de Suministro):</strong> Proveedores de software legítimo que son hackeados y distribuyen actualizaciones infectadas (ej. <a href="../incidentes/2020.solarwinds.html"><strong>Incidente SolarWinds</strong></a>).</li>
-</ul>
+<p>Las vulnerabilidades pueden surgir en diferentes puntos de la infraestructura. Para entenderlas mejor, las dividiremos en tres grandes grupos: tecnológicas, físicas y humanas/organizativas.</p>
+<pre class="mermaid"><code>graph LR
+    %% Estilos
+    classDef root fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef category fill:#e5e7eb,stroke:#9ca3af,stroke-width:2px,color:#1f2937,font-weight:bold
+    classDef node fill:#ffffff,stroke:#d1d5db,stroke-width:1px,color:#374151
+
+    %% Nodos
+    V[VULNERABILIDADES]:::root
+
+    T(Tecnológicas):::category
+    F(Físicas y Hardware):::category
+    H(Humanas y Organizativas):::category
+
+    V --&gt; T
+    V --&gt; F
+    V --&gt; H
+
+    T --&gt; T1[De Software]:::node
+    T --&gt; T2[De Configuración]:::node
+    T --&gt; T3[De Red]:::node
+
+    F --&gt; F1[De Hardware]:::node
+    F --&gt; F2[Físicas]:::node
+
+    H --&gt; H1[Humanas]:::node
+    H --&gt; H2[De Terceros / Cadena de Suministro]:::node</code></pre>
+<h3 id="231-vulnerabilidades-tecnologicas-logicas-y-de-red">⁠2.3.1. Vulnerabilidades Tecnológicas (Lógicas y de Red)<a class="headerlink" href="#231-vulnerabilidades-tecnologicas-logicas-y-de-red" title="Permanent link">&para;</a></h3>
+<p>Son aquellas que residen en el código, en la configuración de los sistemas o en la transmisión de los datos.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo / Incidente Relevante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>De Software</strong></td>
+<td style="text-align: left;">Errores de programación en aplicaciones o sistemas operativos (ej. <em>Buffer Overflow</em> o inyección SQL).</td>
+<td style="text-align: left;">Si el fabricante no tiene parche aún, se denomina vulnerabilidad <a href="../incidentes/zeroday.html"><strong>Zero-Day</strong></a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>De Configuración</strong></td>
+<td style="text-align: left;">Dejar valores por defecto (ej. <em>admin/admin</em>), puertos abiertos o servicios innecesarios expuestos a internet.</td>
+<td style="text-align: left;">El caso de la <a href="../incidentes/2016.botnet_mirai.html"><strong>Botnet Mirai</strong></a>, que infectó miles de dispositivos IoT mal configurados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>De Red</strong></td>
+<td style="text-align: left;">Transmitir tráfico sin cifrar, lo que permite a un atacante interceptar y modificar comunicaciones.</td>
+<td style="text-align: left;">Ataques <em>Man-in-the-Middle</em> (MitM) en redes Wi-Fi públicas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="232-vulnerabilidades-fisicas-y-de-hardware">⁠2.3.2. Vulnerabilidades Físicas y de Hardware<a class="headerlink" href="#232-vulnerabilidades-fisicas-y-de-hardware" title="Permanent link">&para;</a></h3>
+<p>Afectan a la infraestructura tangible y a los componentes electrónicos.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo / Incidente Relevante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>De Hardware</strong></td>
+<td style="text-align: left;">Deficiencias en el diseño físico o electrónico de los componentes, como los microprocesadores.</td>
+<td style="text-align: left;">Los fallos de diseño <a href="../incidentes/2018.spectre_meltdown.html"><strong>Spectre y Meltdown</strong></a> en procesadores modernos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Físicas</strong></td>
+<td style="text-align: left;">Falta de control de acceso a las instalaciones, centros de datos o cuadros eléctricos.</td>
+<td style="text-align: left;">Robo directo de servidores, portátiles sin cifrar o manipulación de cableado.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="233-vulnerabilidades-del-factor-humano-y-organizativo">⁠2.3.3. Vulnerabilidades del Factor Humano y Organizativo<a class="headerlink" href="#233-vulnerabilidades-del-factor-humano-y-organizativo" title="Permanent link">&para;</a></h3>
+<p>Relacionadas con las personas que operan los sistemas o con la cadena de proveedores.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo / Incidente Relevante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Humanas</strong></td>
+<td style="text-align: left;">Errores del personal por falta de formación, negligencia o manipulación psicológica.</td>
+<td style="text-align: left;">Uso de contraseñas débiles, compartir credenciales o caer en trampas de phishing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>De Terceros (Cadena de Suministro)</strong></td>
+<td style="text-align: left;">Fallos de seguridad en empresas proveedoras de software o servicios legítimos en los que confiamos.</td>
+<td style="text-align: left;">El hackeo a <a href="../incidentes/2020.solarwinds.html"><strong>SolarWinds</strong></a>, que distribuyó actualizaciones infectadas a miles de empresas.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="24-el-sistema-cve-y-cvss">⁠2.4. El Sistema CVE y CVSS<a class="headerlink" href="#24-el-sistema-cve-y-cvss" title="Permanent link">&para;</a></h2>
 <p>Para que los técnicos de todo el mundo hablen el mismo idioma al descubrir fallos, existe el estándar <strong>CVE (Common Vulnerabilities and Exposures)</strong>, gestionado por MITRE. </p>
 <ul>
-<li><strong>¿Qué es un CVE?</strong> Es un identificador único asignado a cada vulnerabilidad pública descubierta (Ej: <a href="https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2017-0144">CVE-2017-0144</a>, responsable del ataque WannaCry).</li>
-<li><strong>¿Qué es el CVSS?</strong> Es el sistema que puntúa la gravedad de esa vulnerabilidad en una escala del 0 al 10 (donde 10 es crítico).</li>
+<li><strong>¿Qué es un CVE?</strong> Es un identificador único asignado a cada vulnerabilidad pública descubierta. </li>
+<li><strong>¿Qué es el CVSS?</strong> Es el sistema que puntúa la gravedad de esa vulnerabilidad en una escala del 0 al 10.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Cómo leer un código CVE</p>
+<p>El formato siempre sigue la estructura <code>CVE-[Año]-[Número]</code>. Por ejemplo, el <a href="https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2017-0144">CVE-2017-0144</a> (responsable del ataque WannaCry) nos indica que fue la vulnerabilidad número 144 registrada en el año 2017.</p>
+</div>
+<p><strong>Escala de Severidad CVSS v3.x:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Severidad</th>
+<th style="text-align: center;">Puntuación</th>
+<th style="text-align: left;">Impacto en la empresa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Baja / Ninguna</strong></td>
+<td style="text-align: center;">0.0 - 3.9</td>
+<td style="text-align: left;">Asumible. Se monitoriza y se parchea en mantenimientos rutinarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Media</strong></td>
+<td style="text-align: center;">4.0 - 6.9</td>
+<td style="text-align: left;">Requiere planificación para aplicar actualizaciones a corto plazo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alta</strong></td>
+<td style="text-align: center;">7.0 - 8.9</td>
+<td style="text-align: left;">Prioridad alta. Parcheo urgente para evitar compromisos graves.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Crítica</strong></td>
+<td style="text-align: center;">9.0 - 10.0</td>
+<td style="text-align: left;"><strong>Alerta máxima.</strong> Requiere aislar sistemas o aplicar parches de emergencia inmediatamente.</td>
+</tr>
+</tbody>
+</table>
 <p>Estar suscrito a bases de datos de vulnerabilidades como el <strong>NVD del NIST</strong>, el <strong>INCIBE</strong> o el <strong>CCN-CERT</strong> es vital para aplicar parches antes de que los atacantes utilicen <em>exploits</em> conocidos contra nuestros sistemas.</p>
 <h2 id="25-gestion-de-incidentes-y-analisis-forense">⁠2.5. Gestión de Incidentes y Análisis Forense<a class="headerlink" href="#25-gestion-de-incidentes-y-analisis-forense" title="Permanent link">&para;</a></h2>
-<p>Un <strong>incidente de ciberseguridad</strong> es cualquier evento que comprometa la confidencialidad, integridad o disponibilidad de un sistema de información. Cuando una organización no puede gestionar un incidente por sí misma, debe contactar con los <strong>CERTs</strong> (Equipos de Respuesta ante Emergencias Informáticas):</p>
+<p>Un <strong>incidente de ciberseguridad</strong> es cualquier evento que comprometa los tres pilares fundamentales de la información (conocidos como la <strong>Tríada CID</strong>):</p>
+<ul>
+<li><strong>Confidencialidad:</strong> Evitar que personas no autorizadas accedan a los datos (ej. un robo de base de datos).</li>
+<li><strong>Integridad:</strong> Garantizar que la información no sea modificada ni destruida (ej. un ransomware que cifra archivos).</li>
+<li><strong>Disponibilidad:</strong> Asegurar que los sistemas funcionen cuando se necesitan (ej. un ataque DoS que tumba una web).</li>
+</ul>
+<p>Cuando una organización no puede gestionar un incidente por sí misma, debe contactar con los <strong>CERTs</strong> (Equipos de Respuesta ante Emergencias Informáticas):</p>
 <ul>
 <li><strong>INCIBE-CERT:</strong> Se encarga de proteger al sector privado, ciudadanos y empresas.</li>
 <li><strong>CCN-CERT:</strong> Está enfocado en proteger a las Administraciones Públicas.</li>
 </ul>
-<p>Cuando ocurre un incidente grave, se realiza un <strong>análisis forense</strong> para investigar cómo ocurrió el ataque, quién es el responsable y aportar pruebas válidas en un procedimiento judicial. Sus fases fundamentales son:</p>
+<h3 id="251-fases-del-analisis-forense">⁠2.5.1. Fases del Análisis Forense<a class="headerlink" href="#251-fases-del-analisis-forense" title="Permanent link">&para;</a></h3>
+<p>Cuando ocurre un incidente grave, se realiza un análisis forense para investigar cómo ocurrió, quién es el responsable y aportar pruebas válidas en un procedimiento judicial. Sus fases fundamentales son:</p>
 <ol>
-<li><strong>Adquisición de datos:</strong> Hacer una copia exacta (bit a bit) de los discos sin alterar los datos originales.</li>
-<li><strong>Preservación:</strong> Custodiar la evidencia garantizando que no se modifique accidentalmente (usando bloqueadores de escritura).</li>
-<li><strong>Análisis:</strong> Buscar rastros del ataque en los registros (logs), archivos modificados y memoria RAM para reconstruir los hechos.</li>
-<li><strong>Documentación y Presentación:</strong> Elaborar un informe detallado con validez legal que explique lo sucedido de forma comprensible.</li>
+<li><strong>Adquisición de datos:</strong> Hacer una copia exacta (clonado bit a bit) de los discos sin encender el sistema original para no alterar los datos.</li>
+<li><strong>Preservación (Cadena de Custodia):</strong> Custodiar la evidencia y documentar quién la ha tocado en todo momento, usando bloqueadores de escritura mecánicos para garantizar que no se modifique ni un solo byte de la prueba original.</li>
+<li><strong>Análisis:</strong> Buscar rastros del ataque en los registros (logs), archivos modificados y memoria RAM para reconstruir la línea temporal de los hechos.</li>
+<li><strong>Documentación y Presentación:</strong> Elaborar un informe pericial detallado con validez legal que explique lo sucedido de forma comprensible para un juez.</li>
 </ol>
 <hr />
 <h1 id="ejercicios">Ejercicios <!-- skip --><a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h1>
@@ -674,8 +889,9 @@
 <hr />
 <h1 id="bibliografia">Bibliografía <!-- skip --><a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h1>
 <ul>
-<li><a href="https://cve.mitre.org/">Vulnerabilidades CVE (Mitre Corporation)</a></li>
+<li><a href="https://www.cve.org/">Vulnerabilidades CVE (Mitre Corporation)</a></li>
 <li><a href="https://nvd.nist.gov/" title="Abrir nueva ventana en la web NVD NIST">NIST National Vulnerability Database (NVD)</a></li>
+<li><a href="https://www.first.org/cvss/calculator/4.0">CVSS Calculator</a></li>
 <li>Centro criptológico nacional (CCN): <a href="https://www.ccn-cert.cni.es/">https://www.ccn-cert.cni.es/</a><ul>
 <li><a href="https://www.ccn-cert.cni.es/es/gestion-de-incidentes.html">CCN-CERT</a></li>
 <li><a href="https://www.incibe.es/incibe-cert">INCIBE-CERT</a></li>
