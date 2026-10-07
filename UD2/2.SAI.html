@@ -1,0 +1,985 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fperezies.github.com/SMR-SIN/UD2/2.SAI.html">
+      
+      
+      
+      
+      <link rel="icon" href="../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>2. Sistemas de Alimentación Ininterrumpida (SAI) - 2SMR Seguridad Informática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-sistemas-de-alimentacion-ininterrumpida-sai" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-header__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2SMR Seguridad Informática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Sistemas de Alimentación Ininterrumpida (SAI)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="2SMR Seguridad Informática" class="md-nav__button md-logo" aria-label="2SMR Seguridad Informática" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    2SMR Seguridad Informática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad Informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.slides.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg>
+  
+  <span class="md-ellipsis">
+    Presentación del módulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../UD1/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/1.introduccion.seguridad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⁠1. Introducción a la seguridad informática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/2.conceptos.fundamentales.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⁠2. Conceptos Fundamentales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/3.SGSI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. SGSI y Análisis de Riesgos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1/4.cumplimiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⁠4. Cumplimiento Legal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-sistemas-de-alimentacion-ininterrumpida-sai">2. Sistemas de Alimentación Ininterrumpida (SAI)<a class="headerlink" href="#2-sistemas-de-alimentacion-ininterrumpida-sai" title="Permanent link">&para;</a></h1>
+<h2 id="21-que-es-un-sai">2.1. Qué es un SAI<a class="headerlink" href="#21-que-es-un-sai" title="Permanent link">&para;</a></h2>
+<p>En el <a href="1.fisica_CPD.html">apartado 1</a> vimos que el suministro eléctrico es una de las bases del CPD. Ahora estudiamos su principal protección.</p>
+<p>Un <strong>SAI</strong> (Sistema de Alimentación Ininterrumpida, en inglés <strong>UPS</strong>, <em>Uninterruptible Power Supply</em>) es un equipo que se coloca entre la red eléctrica y los dispositivos que queremos proteger. Tiene baterías que dan energía cuando falla la red y, además, filtra los problemas de la corriente.</p>
+<p>Un SAI <strong>no</strong> está pensado para trabajar horas sin red. Su función es doble:</p>
+<ul>
+<li>Aguantar cortes cortos (segundos o pocos minutos) sin que los equipos se enteren.</li>
+<li>En cortes largos, dar tiempo para <strong>apagar los equipos de forma ordenada</strong> o para que arranque un generador.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Por qué importa un apagado ordenado?</p>
+<p>Si un servidor se apaga de golpe, se pueden perder los datos que estaban en memoria, corromper el sistema de ficheros o una base de datos, y dañar los discos. Un apagado ordenado cierra los servicios y escribe todo en disco antes de apagar.</p>
+</div>
+<h2 id="22-anomalias-electricas">2.2. Anomalías eléctricas<a class="headerlink" href="#22-anomalias-electricas" title="Permanent link">&para;</a></h2>
+<p>La corriente que llega de la red no siempre es perfecta. En España la red es de <strong>230 V</strong> y <strong>50 Hz</strong>. Estas son las anomalías más habituales:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anomalía</th>
+<th style="text-align: left;">Qué ocurre</th>
+<th style="text-align: left;">Efecto en los equipos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Corte (apagón)</strong></td>
+<td style="text-align: left;">Desaparece la tensión durante segundos u horas.</td>
+<td style="text-align: left;">Apagado brusco, pérdida de datos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Microcorte</strong></td>
+<td style="text-align: left;">Corte de milisegundos.</td>
+<td style="text-align: left;">Reinicios inesperados, bloqueos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Subtensión o caída de tensión</strong></td>
+<td style="text-align: left;">La tensión baja por debajo de lo normal (p. ej. 190 V) durante un tiempo.</td>
+<td style="text-align: left;">Fuentes de alimentación forzadas, reinicios.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sobretensión</strong></td>
+<td style="text-align: left;">La tensión sube por encima de lo normal (p. ej. 260 V) durante un tiempo.</td>
+<td style="text-align: left;">Calentamiento y desgaste de componentes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pico o transitorio</strong></td>
+<td style="text-align: left;">Subida de tensión muy alta y muy corta (rayos, arranque de motores).</td>
+<td style="text-align: left;">Componentes quemados al instante.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ruido eléctrico</strong></td>
+<td style="text-align: left;">Interferencias de alta frecuencia en la línea (motores, fluorescentes).</td>
+<td style="text-align: left;">Errores en datos, fallos aleatorios.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Variación de frecuencia</strong></td>
+<td style="text-align: left;">La frecuencia se aleja de 50 Hz (habitual con generadores).</td>
+<td style="text-align: left;">Funcionamiento inestable de algunos equipos.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Caso real: British Airways (2017)</p>
+<p>El 27 de mayo de 2017, un técnico desconectó la alimentación de un CPD de British Airways cerca del aeropuerto de Heathrow (Londres). Al volver a conectarla de forma descontrolada, se produjo una <strong>sobretensión</strong> que dañó físicamente servidores y cuadros eléctricos. Los sistemas de respaldo no evitaron la caída.</p>
+<ul>
+<li>Se cancelaron 479 vuelos el primer día (el 59 % de la programación) y 193 el segundo.</li>
+<li>Unos 75 000 pasajeros se quedaron en tierra durante tres días.</li>
+<li>El coste se estimó en unos 100 millones de euros.</li>
+</ul>
+<p>El técnico tenía autorización para estar en la sala, pero no para hacer esa maniobra. Lección: las operaciones eléctricas en un CPD deben seguir <strong>procedimientos escritos</strong> y la instalación no debe depender de una sola persona ni de un solo punto de fallo. Más información: <a href="https://www.datacenterknowledge.com/archives/2017/06/06/british-airways-says-engineer-disconnected-data-center-power-supply">Data Center Knowledge</a>.</p>
+</div>
+<h2 id="23-componentes-y-funcionamiento">2.3. Componentes y funcionamiento<a class="headerlink" href="#23-componentes-y-funcionamiento" title="Permanent link">&para;</a></h2>
+<p>Un SAI tiene, como mínimo, estos elementos:</p>
+<ul>
+<li><strong>Rectificador / cargador</strong>: convierte la corriente alterna (AC) de la red en continua (DC) para cargar las baterías.</li>
+<li><strong>Baterías</strong>: almacenan la energía. Normalmente son de plomo-ácido selladas (VRLA); en modelos modernos, de ion-litio.</li>
+<li><strong>Inversor</strong>: convierte la corriente continua de las baterías en alterna para alimentar los equipos.</li>
+<li><strong>Conmutador (<em>transfer switch</em>)</strong>: cambia la alimentación de los equipos entre la red y el inversor.</li>
+<li><strong>Filtros y protección contra picos</strong>: eliminan ruido y transitorios.</li>
+</ul>
+<p>En la parte trasera de un SAI de sobremesa encontramos las conexiones:</p>
+<figure>
+<p><img alt="Parte trasera de un SAI" class="center" src="img/02/SAI_UPS.png" width="60%" /></p>
+<figcaption>
+<p>Conexiones traseras de un SAI de sobremesa</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Entrada de red</strong>: se conecta al enchufe de la pared.</li>
+<li><strong>Salidas protegidas</strong>: tomas para los equipos. En muchos modelos hay dos grupos: unas con batería y protección, y otras solo con protección contra picos (sin batería).</li>
+<li><strong>Puerto de comunicación</strong> (USB, RS-232 o tarjeta de red): permite que un ordenador supervise el SAI y se apague solo cuando la batería se agota.</li>
+<li><strong>Protección de línea telefónica / de datos</strong> (RJ-11, RJ-45): protege contra picos que entran por el cable de comunicaciones.</li>
+</ul>
+<h2 id="24-tipos-de-sai">2.4. Tipos de SAI<a class="headerlink" href="#24-tipos-de-sai" title="Permanent link">&para;</a></h2>
+<p>Hay tres tipos principales. Se diferencian en cómo llega la energía a los equipos cuando la red funciona bien.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Offline (Standby)</label><label for="__tabbed_1_2">Line-interactive</label><label for="__tabbed_1_3">Online (doble conversión)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Los equipos se alimentan <strong>directamente de la red</strong>. Si la red falla, el conmutador pasa a batería.</p>
+<pre class="mermaid"><code>flowchart LR
+    R[Red eléctrica] --&gt; F[Filtro] --&gt; C{Conmutador}
+    C --&gt; E[Equipos]
+    R --&gt; RC[Cargador] --&gt; B[(Baterías)] --&gt; I[Inversor] -.-&gt;|solo si falla la red| C</code></pre>
+<ul>
+<li><strong>Tiempo de transferencia</strong>: entre 2 y 10 ms (en algunos modelos más).</li>
+<li><strong>Protege de</strong>: cortes, picos y algo de ruido. No corrige subtensiones ni sobretensiones; si ocurren, pasa a batería.</li>
+<li><strong>Uso</strong>: equipos domésticos y puestos de trabajo poco críticos. Es el más barato.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Como el offline, pero con un <strong>regulador automático de tensión</strong> (<strong>AVR</strong>, <em>Automatic Voltage Regulator</em>). El AVR sube o baja la tensión sin gastar batería.</p>
+<pre class="mermaid"><code>flowchart LR
+    R[Red eléctrica] --&gt; F[Filtro] --&gt; AVR[AVR&lt;br&gt;regulador] --&gt; C{Conmutador}
+    C --&gt; E[Equipos]
+    R --&gt; RC[Cargador] --&gt; B[(Baterías)] --&gt; I[Inversor] -.-&gt;|solo si falla la red| C</code></pre>
+<ul>
+<li><strong>Tiempo de transferencia</strong>: entre 2 y 4 ms.</li>
+<li><strong>Protege de</strong>: lo mismo que el offline y, además, subtensiones y sobretensiones moderadas.</li>
+<li><strong>Uso</strong>: pequeñas oficinas, armarios de red, servidores pequeños. Es el más habitual.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>La energía <strong>siempre pasa por las baterías y el inversor</strong>: la red se convierte a continua y luego otra vez a alterna. Los equipos nunca reciben la corriente de la red directamente.</p>
+<pre class="mermaid"><code>flowchart LR
+    R[Red eléctrica] --&gt; RC[Rectificador] --&gt; B[(Baterías)] --&gt; I[Inversor] --&gt; E[Equipos]
+    R -. bypass si falla el SAI .-&gt; E</code></pre>
+<ul>
+<li><strong>Tiempo de transferencia</strong>: 0 ms. No hay conmutación.</li>
+<li><strong>Protege de</strong>: todas las anomalías, incluidas las variaciones de frecuencia. La salida es una onda limpia y estable.</li>
+<li><strong>Uso</strong>: CPD, servidores críticos, equipos médicos. Es el más caro, consume más y hace más ruido.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">¿Por qué los ordenadores aguantan el tiempo de transferencia?</p>
+<p>Las fuentes de alimentación de los ordenadores tienen condensadores que mantienen la tensión unos 16-20 ms tras un corte (<em>hold-up time</em>). Por eso un corte de 2-10 ms no apaga el equipo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Onda senoidal pura o simulada</p>
+<p>La red eléctrica genera una onda <strong>senoidal</strong> (suave). Muchos SAI offline y line-interactive baratos generan, en batería, una onda <strong>simulada</strong> (escalonada). Algunas fuentes modernas con <strong>PFC activo</strong> (corrección del factor de potencia) pueden apagarse o hacer ruido con onda simulada. Para servidores, compra SAI de <strong>onda senoidal pura</strong>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Offline</th>
+<th style="text-align: center;">Line-interactive</th>
+<th style="text-align: center;">Online</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tiempo de transferencia</td>
+<td style="text-align: center;">2-10 ms</td>
+<td style="text-align: center;">2-4 ms</td>
+<td style="text-align: center;">0 ms</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corrige sub/sobretensiones</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (moderadas)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corrige frecuencia y ruido</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Coste</td>
+<td style="text-align: center;">Bajo</td>
+<td style="text-align: center;">Medio</td>
+<td style="text-align: center;">Alto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Uso típico</td>
+<td style="text-align: center;">Hogar, puesto de trabajo</td>
+<td style="text-align: center;">Oficina, rack pequeño</td>
+<td style="text-align: center;">CPD, sistemas críticos</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio 1: Elegir el tipo de SAI</p>
+<p>Indica qué tipo de SAI (offline, line-interactive u online) recomendarías en cada caso y por qué:</p>
+<ol>
+<li>El ordenador de casa de un estudiante.</li>
+<li>Una gestoría con 8 empleados, un servidor de ficheros y un router, en un polígono donde la tensión baja a menudo cuando arrancan las máquinas de las naves vecinas.</li>
+<li>Los servidores de historias clínicas de un hospital.</li>
+</ol>
+</div>
+<details class="success">
+<summary>Solución: Ejercicio 1</summary>
+<ol>
+<li><strong>Offline</strong>. Es barato y suficiente para cortes puntuales en un equipo no crítico.</li>
+<li><strong>Line-interactive</strong>. Su AVR corrige las caídas de tensión frecuentes sin gastar batería. Un offline pasaría a batería continuamente y las desgastaría.</li>
+<li><strong>Online (doble conversión)</strong>. Son sistemas críticos: no se admite ningún tiempo de transferencia y se necesita una alimentación limpia frente a cualquier anomalía. Además, deberían tener doble fuente conectada a dos SAI distintos y un generador.</li>
+</ol>
+</details>
+<h2 id="25-caracteristicas-tecnicas">2.5. Características técnicas<a class="headerlink" href="#25-caracteristicas-tecnicas" title="Permanent link">&para;</a></h2>
+<p>Al leer la ficha técnica de un SAI, fíjate en estos datos:</p>
+<ul>
+<li><strong>Potencia aparente (VA)</strong>: voltioamperios. Es la cifra grande que aparece en el nombre del modelo (p. ej. "SAI 1500 VA").</li>
+<li><strong>Potencia real o activa (W)</strong>: vatios. Es la energía que realmente consumen los equipos.</li>
+<li><strong>Factor de potencia (FP)</strong>: relación entre ambas: <strong>W = VA × FP</strong>. En SAI de sobremesa suele estar entre 0,6 y 0,7; en SAI profesionales, entre 0,9 y 1.</li>
+<li><strong>Autonomía</strong>: tiempo que aguanta con batería. Depende de la carga: a media carga dura bastante más que a plena carga. Los fabricantes dan una <strong>tabla o curva de autonomía</strong>.</li>
+<li><strong>Número y tipo de tomas</strong>: Schuko (enchufe doméstico) o IEC C13/C19 (las habituales en servidores y racks).</li>
+<li><strong>Formato</strong>: torre o rack (se mide en U, unidades de altura de un rack: 1U = 4,45 cm).</li>
+<li><strong>Comunicaciones</strong>: USB, RS-232 o tarjeta de red con <strong>SNMP</strong> (protocolo para gestionar equipos por red).</li>
+<li><strong>Baterías intercambiables en caliente (<em>hot-swap</em>)</strong>: se cambian sin apagar el SAI.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Error típico: fijarse solo en los VA</p>
+<p>Un SAI de 1000 VA con FP 0,6 solo da <strong>600 W</strong>. Si conectas equipos que consumen 800 W, el SAI se sobrecarga aunque "1000" parezca suficiente. Comprueba <strong>siempre los VA y los W</strong>.</p>
+</div>
+<h2 id="26-dimensionamiento-de-un-sai">2.6. Dimensionamiento de un SAI<a class="headerlink" href="#26-dimensionamiento-de-un-sai" title="Permanent link">&para;</a></h2>
+<p>Dimensionar es calcular qué SAI necesitamos. El proceso tiene cinco pasos:</p>
+<ol>
+<li><strong>Lista los equipos</strong> que se van a conectar y su consumo real en vatios.</li>
+<li><strong>Suma</strong> los consumos.</li>
+<li><strong>Añade un margen</strong> del 20-30 % para crecimiento futuro y para no trabajar al límite.</li>
+<li><strong>Convierte a VA</strong> dividiendo por el factor de potencia del SAI: <strong>VA = W / FP</strong>.</li>
+<li><strong>Comprueba la autonomía</strong> en la tabla del fabricante para esa carga.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Consumo real, no potencia de la fuente</p>
+<p>Una fuente de 750 W no significa que el equipo consuma 750 W: ese es su <strong>máximo</strong>. El consumo real suele ser mucho menor. Para medirlo usa un <strong>vatímetro</strong> de enchufe, los datos del fabricante o la información de consumo del servidor (iDRAC, iLO, IPMI).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo: SAI para un rack pequeño</p>
+<p>Una empresa quiere proteger su rack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Equipo</th>
+<th style="text-align: right;">Consumo real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2 servidores (300 W cada uno)</td>
+<td style="text-align: right;">600 W</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAS</td>
+<td style="text-align: right;">90 W</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch</td>
+<td style="text-align: right;">45 W</td>
+</tr>
+<tr>
+<td style="text-align: left;">Router + cortafuegos</td>
+<td style="text-align: right;">35 W</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>770 W</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Con margen del 25 %: 770 × 1,25 ≈ <strong>963 W</strong>.</li>
+<li>El SAI elegido tiene FP 0,9: 963 / 0,9 ≈ <strong>1070 VA</strong>.</li>
+<li>Elegimos un modelo comercial superior: <strong>1500 VA / 1350 W</strong>, line-interactive u online, formato rack.</li>
+</ul>
+<p>La carga real será 770 / 1350 ≈ 57 % de su capacidad. Según la tabla del fabricante, a esa carga la autonomía será de unos minutos: suficiente para un apagado ordenado, no para seguir trabajando.</p>
+</div>
+<p>Si no tenemos la tabla del fabricante, podemos hacer una <strong>estimación aproximada</strong> de la autonomía:</p>
+<blockquote>
+<p><strong>Autonomía (horas) ≈ (Voltaje batería × Capacidad en Ah × nº baterías × 0,85) / Consumo (W)</strong></p>
+</blockquote>
+<p>El 0,85 representa las pérdidas del inversor. Por ejemplo, con 2 baterías de 12 V y 9 Ah y un consumo de 770 W: (12 × 9 × 2 × 0,85) / 770 ≈ 0,24 h ≈ <strong>14 minutos</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">La estimación es optimista</p>
+<p>Con cargas altas las baterías rinden menos de lo que indica su capacidad nominal, y pierden capacidad con los años. Usa esta fórmula solo como orientación y confirma siempre con la tabla del fabricante.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio 2: Revisar las cifras de un SAI</p>
+<p>Un compañero quiere conectar a un SAI de <strong>1000 VA con FP 0,6</strong> dos servidores que consumen 350 W cada uno. Dice que "700 es menos que 1000, así que vale". ¿Tiene razón? ¿Qué SAI mínimo necesitaría con un margen del 25 % y el mismo FP?</p>
+</div>
+<details class="success">
+<summary>Solución: Ejercicio 2</summary>
+<p>No tiene razón. Compara vatios con voltioamperios. El SAI solo da 1000 × 0,6 = <strong>600 W</strong>, menos que los 700 W de los servidores: se sobrecargaría.</p>
+<p>Con margen: 700 × 1,25 = 875 W → 875 / 0,6 ≈ <strong>1458 VA</strong>. Necesitaría un SAI de al menos <strong>1500 VA</strong> (900 W) o, mejor, un modelo profesional con FP 0,9.</p>
+</details>
+<h2 id="27-puntos-de-aplicacion">2.7. Puntos de aplicación<a class="headerlink" href="#27-puntos-de-aplicacion" title="Permanent link">&para;</a></h2>
+<p>Los <strong>puntos de aplicación</strong> son los lugares de la instalación donde colocamos SAI. No todo necesita SAI: hay que priorizar según lo crítico que sea cada equipo.</p>
+<p><strong>Qué proteger (por orden de prioridad):</strong></p>
+<ol>
+<li><strong>Servidores y almacenamiento</strong> (NAS, cabinas): un apagado brusco puede corromper datos.</li>
+<li><strong>Electrónica de red</strong>: router, cortafuegos, switches principales. Si caen, nadie trabaja aunque los servidores sigan encendidos.</li>
+<li><strong>Sistemas de seguridad</strong>: cámaras, control de acceso, alarmas.</li>
+<li><strong>Puestos de trabajo críticos</strong>: centralita, recepción, equipos de producción o de facturación.</li>
+</ol>
+<p><strong>Qué no conectar al SAI:</strong></p>
+<ul>
+<li>Impresoras láser, calefactores, cafeteras o aires acondicionados domésticos. Tienen picos de consumo muy altos al arrancar y pueden sobrecargar el SAI.</li>
+<li>Regletas encadenadas: añaden riesgo y dificultan saber qué está conectado.</li>
+</ul>
+<p>Según el tamaño de la instalación, hay distintos enfoques:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Enfoque</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>SAI individual</strong></td>
+<td style="text-align: left;">Un SAI pequeño por equipo.</td>
+<td style="text-align: left;">Puesto de trabajo, servidor aislado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SAI por rack</strong></td>
+<td style="text-align: left;">Un SAI en rack que alimenta todo el armario.</td>
+<td style="text-align: left;">Oficinas, pequeños CPD.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SAI centralizado</strong></td>
+<td style="text-align: left;">Uno o varios SAI grandes que alimentan toda la sala a través de <strong>PDU</strong> (regletas de rack gestionables).</td>
+<td style="text-align: left;">CPD medianos y grandes.</td>
+</tr>
+</tbody>
+</table>
+<p>En un CPD, el SAI forma parte de una cadena con el generador:</p>
+<pre class="mermaid"><code>flowchart LR
+    R[Red eléctrica] --&gt; ATS{ATS&lt;br&gt;conmutador&lt;br&gt;automático}
+    G[Generador&lt;br&gt;diésel] --&gt; ATS
+    ATS --&gt; SA[SAI A] --&gt; PA[PDU A]
+    ATS --&gt; SB[SAI B] --&gt; PB[PDU B]
+    PA --&gt; S1[Servidor&lt;br&gt;fuente 1]
+    PB --&gt; S2[Servidor&lt;br&gt;fuente 2]</code></pre>
+<ul>
+<li>Si falla la red, el SAI mantiene los equipos mientras arranca el generador (suele tardar entre 10 y 30 segundos).</li>
+<li>El <strong>ATS</strong> (<em>Automatic Transfer Switch</em>) cambia la alimentación de la red al generador.</li>
+<li>Los servidores tienen <strong>dos fuentes de alimentación</strong>, cada una conectada a una línea distinta (A y B). Si falla un SAI o una PDU, el servidor sigue funcionando con la otra.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">No conectes las dos fuentes al mismo SAI</p>
+<p>Si un servidor tiene fuente redundante pero ambas van a la misma regleta o al mismo SAI, la redundancia no sirve de nada: hay un <strong>punto único de fallo</strong>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio 3: Puntos de aplicación y dimensionamiento en un aula</p>
+<p>Un aula de informática tiene:</p>
+<ul>
+<li>20 ordenadores de alumnos (90 W cada uno, monitor incluido).</li>
+<li>1 servidor del aula (150 W).</li>
+<li>1 switch (30 W), 1 router (15 W) y 1 punto de acceso Wi-Fi (10 W), en un armario de red.</li>
+<li>1 impresora láser.</li>
+</ul>
+<p>El presupuesto es limitado.</p>
+<ol>
+<li>¿Qué equipos conectarías al SAI? Justifica tu respuesta.</li>
+<li>Calcula la potencia necesaria con un margen del 25 % y los VA, si el SAI tiene un factor de potencia de 0,6.</li>
+<li>¿Qué modelo comercial elegirías: 650 VA, 1000 VA o 1500 VA?</li>
+</ol>
+</div>
+<details class="success">
+<summary>Solución: Ejercicio 3</summary>
+<ol>
+<li>Se protegen el <strong>servidor y la electrónica de red</strong> (switch, router y punto de acceso). Son los equipos de los que depende toda el aula y el servidor puede perder datos con un apagado brusco. Los 20 ordenadores de alumnos suman 1800 W: protegerlos multiplicaría el coste y su pérdida es menor (trabajo no guardado; se mitiga con autoguardado o guardando en el servidor). La <strong>impresora láser nunca</strong> se conecta al SAI por sus picos de consumo.</li>
+<li>Consumo: 150 + 30 + 15 + 10 = <strong>205 W</strong>. Con margen: 205 × 1,25 ≈ <strong>256 W</strong>. En VA: 256 / 0,6 ≈ <strong>427 VA</strong>.</li>
+<li><strong>650 VA</strong> (650 × 0,6 = 390 W ≥ 256 W). El de 1000 VA daría más autonomía si el presupuesto lo permite. Además, conviene conectar el servidor al SAI por USB para que se apague solo.</li>
+</ol>
+</details>
+<h2 id="28-verificacion-y-mantenimiento">2.8. Verificación y mantenimiento<a class="headerlink" href="#28-verificacion-y-mantenimiento" title="Permanent link">&para;</a></h2>
+<p>Un SAI que no se revisa puede fallar justo cuando se necesita. Las baterías son la pieza que más falla.</p>
+<p><strong>Comprobaciones periódicas:</strong></p>
+<ul>
+<li><strong>Autotest</strong>: casi todos los SAI tienen un botón o comando de autotest que pasa a batería unos segundos. Hazlo cada mes o programa que se haga solo.</li>
+<li><strong>Indicadores y alarmas</strong>: revisa los LED o la pantalla (carga, estado de la batería, sobrecarga) y no ignores los pitidos.</li>
+<li><strong>Prueba de corte controlada</strong>: con equipos no críticos, desconecta la entrada de red y comprueba que los equipos siguen funcionando y que el software de apagado actúa. Hazlo en una ventana de mantenimiento planificada.</li>
+<li><strong>Registro de eventos</strong>: el software del SAI guarda un historial de cortes y transferencias. Sirve para detectar problemas en la red eléctrica.</li>
+<li><strong>Carga</strong>: comprueba que no supera el 80 % de la capacidad.</li>
+</ul>
+<p><strong>Baterías:</strong></p>
+<ul>
+<li>Duran normalmente entre <strong>3 y 5 años</strong> (plomo-ácido).</li>
+<li>El calor las degrada: por cada 10 °C por encima de 25 °C, su vida útil se reduce aproximadamente a la mitad. Por eso el SAI también necesita una sala climatizada.</li>
+<li>Anota la fecha de instalación y planifica su sustitución. Las baterías usadas son residuos peligrosos: se llevan a un punto de reciclaje.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">El SAI que nadie revisó</p>
+<p>Un error muy común es instalar un SAI y olvidarse de él. Años después llega un corte, las baterías están agotadas y el SAI apaga los equipos al instante. El resultado es el mismo que no tener SAI.</p>
+</div>
+<h2 id="29-monitorizacion-y-apagado-automatico">2.9. Monitorización y apagado automático<a class="headerlink" href="#29-monitorizacion-y-apagado-automatico" title="Permanent link">&para;</a></h2>
+<p>Para que el apagado ordenado funcione sin nadie delante, el SAI se conecta a un equipo por USB, serie o red. Un <strong>software de monitorización</strong> vigila el estado y, cuando la batería baja de un nivel, apaga los equipos.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux</label><label for="__tabbed_2_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>En Linux se usa <strong>NUT</strong> (<em>Network UPS Tools</em>), compatible con cientos de modelos. Un servidor conectado al SAI por USB puede, además, avisar por red a otros equipos para que también se apaguen.</p>
+<div class="language-bash highlight"><span class="filename">Instalación en Debian/Ubuntu</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nut
+</span></code></pre></div>
+<div class="language-ini highlight"><span class="filename">/etc/nut/nut.conf</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">MODE</span><span class="o">=</span><span class="s">standalone</span>
+</span></code></pre></div>
+<div class="language-ini highlight"><span class="filename">/etc/nut/ups.conf</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[sai]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="na">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">usbhid-ups</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="na">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SAI del rack&quot;</span>
+</span></code></pre></div>
+<div class="language-ini highlight"><span class="filename">/etc/nut/upsd.users</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[monuser]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secreto</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="na">upsmon primary</span>
+</span></code></pre></div>
+<div class="language-ini highlight"><span class="filename">/etc/nut/upsmon.conf</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="na">MONITOR sai@localhost 1 monuser secreto primary</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">SHUTDOWNCMD &quot;/sbin/shutdown -h now&quot;</span>
+</span></code></pre></div>
+<p>Tras reiniciar los servicios (<code>sudo systemctl restart nut-server nut-monitor</code>), consultamos el estado:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>upsc<span class="w"> </span>sai@localhost
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">Salida (resumida)</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>battery.charge: 100
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>battery.runtime: 1260
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ups.load: 34
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>ups.status: OL
+</span></code></pre></div>
+<p>El campo <code>ups.status</code> indica el estado: <strong>OL</strong> (<em>online</em>, con red), <strong>OB</strong> (<em>on battery</em>, en batería) y <strong>LB</strong> (<em>low battery</em>, batería baja). Cuando el SAI está en <code>OB LB</code>, <code>upsmon</code> apaga el equipo. <code>battery.runtime</code> es la autonomía estimada en segundos.</p>
+</div>
+<div class="tabbed-block">
+<p>Si el SAI se conecta por USB, Windows lo reconoce como una <strong>batería</strong>, igual que en un portátil. Se configura en <em>Panel de control → Opciones de energía → Cambiar la configuración del plan → Cambiar la configuración avanzada de energía → Batería</em>:</p>
+<ul>
+<li><strong>Nivel de batería crítica</strong>: porcentaje en el que actúa (p. ej. 20 %).</li>
+<li><strong>Acción de batería crítica</strong>: <em>Apagar</em> o <em>Hibernar</em>.</li>
+</ul>
+<p>Para más opciones (apagar varios equipos, notificaciones por correo, registro de eventos) se usa el software del fabricante: <strong>PowerChute</strong> (APC), <strong>Intelligent Power Manager</strong> (Eaton), etc. En entornos con varios servidores se suele usar una tarjeta de red en el SAI con <strong>SNMP</strong>.</p>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Uso profesional</p>
+<p>En un CPD, los SAI se integran con el sistema de monitorización (Zabbix, PRTG, Nagios…) por SNMP. Así, un corte de luz o una batería defectuosa genera una alerta en el móvil del técnico de guardia.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio 4: Interpretar el estado de un SAI</p>
+<p>Un servidor con NUT muestra esta salida durante un corte de luz:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>battery.charge: 18
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>battery.runtime: 150
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ups.load: 62
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ups.status: OB LB
+</span></code></pre></div>
+<ol>
+<li>¿Qué significa cada línea?</li>
+<li>¿Qué va a ocurrir a continuación?</li>
+<li>El SAI se instaló hace 6 años y la autonomía estimada con carga completa era de 15 minutos; hoy se ha agotado en 3. ¿Qué crees que pasa y qué harías?</li>
+</ol>
+</div>
+<details class="success">
+<summary>Solución: Ejercicio 4</summary>
+<ol>
+<li>Batería al 18 %, autonomía estimada de 150 segundos (2,5 min), carga del SAI al 62 % y estado <strong>en batería</strong> (OB) con <strong>batería baja</strong> (LB).</li>
+<li><code>upsmon</code> detecta el estado <code>OB LB</code> y ejecuta el <code>SHUTDOWNCMD</code>: el servidor se apaga de forma ordenada antes de que se agote la batería.</li>
+<li>Las baterías han llegado al final de su vida útil (3-5 años) y han perdido capacidad. Hay que <strong>sustituirlas</strong>, hacer un autotest y una prueba de corte controlada, anotar la fecha de cambio y llevar las usadas a reciclar.</li>
+</ol>
+</details>
+<h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Sistema_de_alimentación_ininterrumpida">Sistema de alimentación ininterrumpida</a> (Wikipedia).</li>
+<li><a href="https://en.wikipedia.org/wiki/Uninterruptible_power_supply">Uninterruptible power supply</a> (Wikipedia, en inglés, más completa).</li>
+<li><a href="https://networkupstools.org/docs/user-manual.chunked/index.html">Network UPS Tools: manual de usuario</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026-2027 Francisco Pérez Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.annotate", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
