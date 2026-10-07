@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" font-family="Roboto, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="Paridad XOR en RAID 5">
+<title>Paridad XOR en RAID 5</title>
+<rect x="1" y="1" width="758" height="378" rx="14" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+<text x="380.0" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#263238">Paridad XOR en RAID 5</text>
+<text x="40" y="80" font-size="16" font-weight="500" fill="#263238">1. Al escribir, se calcula la paridad</text>
+<rect x="40" y="94" width="140" height="48" rx="6" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+<text x="110" y="126" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#01579b">1011</text>
+<text x="110" y="162" text-anchor="middle" font-size="13" fill="#546e7a">Disco 0</text>
+<rect x="210" y="94" width="140" height="48" rx="6" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+<text x="280" y="126" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#01579b">0110</text>
+<text x="280" y="162" text-anchor="middle" font-size="13" fill="#546e7a">Disco 1</text>
+<rect x="380" y="94" width="140" height="48" rx="6" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+<text x="450" y="126" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#01579b">1100</text>
+<text x="450" y="162" text-anchor="middle" font-size="13" fill="#546e7a">Disco 2</text>
+<rect x="550" y="94" width="140" height="48" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+<text x="620" y="126" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#e65100">0001</text>
+<text x="620" y="162" text-anchor="middle" font-size="13" fill="#546e7a">Disco 3 (paridad)</text>
+<text x="40" y="192" font-size="15" fill="#263238">Paridad = 1011 ⊕ 0110 ⊕ 1100 = <tspan font-weight="700" fill="#e65100">0001</tspan></text>
+<text x="40" y="240" font-size="16" font-weight="500" fill="#263238">2. Si falla un disco, sus datos se recalculan con los demás</text>
+<rect x="40" y="254" width="140" height="48" rx="6" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+<text x="110" y="286" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#01579b">1011</text>
+<text x="110" y="322" text-anchor="middle" font-size="13" fill="#546e7a">Disco 0</text>
+<rect x="210" y="254" width="140" height="48" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="280" y="286" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#c62828">????</text>
+<text x="280" y="322" text-anchor="middle" font-size="13" fill="#546e7a">Disco 1 — averiado</text>
+<rect x="380" y="254" width="140" height="48" rx="6" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+<text x="450" y="286" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#01579b">1100</text>
+<text x="450" y="322" text-anchor="middle" font-size="13" fill="#546e7a">Disco 2</text>
+<rect x="550" y="254" width="140" height="48" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+<text x="620" y="286" text-anchor="middle" font-size="22" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="600" letter-spacing="3" fill="#e65100">0001</text>
+<text x="620" y="322" text-anchor="middle" font-size="13" fill="#546e7a">Disco 3 (paridad)</text>
+<text x="40" y="352" font-size="15" fill="#263238">Disco 1 = 1011 ⊕ 1100 ⊕ 0001 = <tspan font-weight="700" fill="#01579b">0110</tspan>  ✔ coincide con el original</text>
+</svg>

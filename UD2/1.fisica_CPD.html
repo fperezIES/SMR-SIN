@@ -465,7 +465,6 @@
 <li><strong>Personal más eficiente</strong>: los técnicos trabajan en un solo sitio, sin desplazamientos.</li>
 </ul>
 <p>La contrapartida es que el CPD se convierte en un objetivo crítico: si falla, falla todo. Por eso hay que protegerlo especialmente.</p>
-<p><img alt="CPD" class="center" src="img/02/CPD_DataCenter.jpg" /></p>
 <h3 id="plan-de-recuperacion-ante-desastres">Plan de Recuperación ante Desastres<a class="headerlink" href="#plan-de-recuperacion-ante-desastres" title="Permanent link">&para;</a></h3>
 <p>Un <strong>plan de recuperación ante desastres</strong> (<strong>DRP</strong>, <em>Disaster Recovery Plan</em>) es un documento escrito con antelación que indica qué hacer si el CPD sufre un problema grave. En plena crisis no hay tiempo para pensar: hay que seguir pasos ya decididos.</p>
 <p>El plan debe recoger, como mínimo:</p>
@@ -560,7 +559,7 @@
 <li>El <strong>pasillo caliente</strong> recoge el aire caliente que sale por detrás de los equipos y lo devuelve a la climatización.</li>
 <li>Así el aire frío y el caliente no se mezclan y la refrigeración es más eficiente.</li>
 </ul>
-<p><img alt="Pasillos calientes y fríos" class="center" src="img/02/CPD_pasillos.png" /></p>
+<p><img alt="Pasillos fríos y calientes" class="center" src="img/02/cpd_pasillos.svg" style="width: 90%;" /></p>
 <h2 id="15-suministro-electrico">1.5. Suministro Eléctrico<a class="headerlink" href="#15-suministro-electrico" title="Permanent link">&para;</a></h2>
 <p>Sin electricidad no hay CPD. Las medidas básicas son:</p>
 <ul>
@@ -570,6 +569,82 @@
 <li><strong>SAI</strong> para cortes cortos y anomalías de la corriente. Se estudian en detalle en el <a href="2.SAI.html">apartado 2</a>.</li>
 <li><strong>Generador</strong> (normalmente diésel) para cortes largos.</li>
 </ul>
+<p>El siguiente esquema muestra el camino de la electricidad hasta el servidor. Si falla cualquier elemento, siempre hay otro camino:</p>
+<pre class="mermaid"><code>flowchart LR
+    A1["Acometida 1"] --&gt; CT["Conmutador de&lt;br&gt;transferencia"]
+    A2["Acometida 2"] --&gt; CT
+    GE["Generador&lt;br&gt;diésel"] -.-&gt;|"si fallan&lt;br&gt;las acometidas"| CT
+    CT --&gt; SAI1["SAI A"]
+    CT --&gt; SAI2["SAI B"]
+    SAI1 --&gt; PDU1["PDU A"]
+    SAI2 --&gt; PDU2["PDU B"]
+    PDU1 --&gt;|"fuente 1"| SRV["Servidor"]
+    PDU2 --&gt;|"fuente 2"| SRV</code></pre>
+<ul>
+<li>El <strong>conmutador de transferencia</strong> (<em>transfer switch</em>) elige automáticamente la línea que tiene corriente y arranca el generador si fallan las dos acometidas.</li>
+<li>El <strong>SAI</strong> mantiene la corriente durante los segundos que tarda el generador en arrancar.</li>
+<li>La <strong>PDU</strong> (<em>Power Distribution Unit</em>) es la regleta del rack que reparte la corriente entre los equipos.</li>
+</ul>
+<p>En un CPD real todos estos elementos ocupan bastante espacio. Esta ilustración muestra cómo se reparten: arriba, la sala de servidores con los racks y los climatizadores; abajo, la sala eléctrica con el transformador, el cuadro general, el generador, el SAI y sus baterías.</p>
+<p><img alt="Instalación eléctrica y climatización de un CPD" class="center" src="img/02/CPD_DataCenter.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término en la imagen</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>Computer room air conditioner</em></td>
+<td style="text-align: left;">Climatizador de la sala (en inglés se abrevia CRAC).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Data servers</em></td>
+<td style="text-align: left;">Racks de servidores.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Power distribution module</em></td>
+<td style="text-align: left;">Cuadro que reparte la corriente a los racks (PDU).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Transformer</em></td>
+<td style="text-align: left;">Transformador: adapta la tensión de la red eléctrica.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Main switchboard</em></td>
+<td style="text-align: left;">Cuadro eléctrico general.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Generator</em></td>
+<td style="text-align: left;">Generador diésel.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Generator transfer switch</em></td>
+<td style="text-align: left;">Conmutador de transferencia entre la red y el generador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>UPS</em> / <em>UPS in</em> / <em>UPS out</em></td>
+<td style="text-align: left;">SAI y sus líneas de entrada y salida.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Battery rack</em></td>
+<td style="text-align: left;">Estantería de baterías del SAI.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Maintenance bypass</em></td>
+<td style="text-align: left;">Puente que permite revisar el SAI sin cortar la corriente a los equipos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Surge suppressor</em></td>
+<td style="text-align: left;">Protector contra sobretensiones (picos de tensión).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Air flow</em></td>
+<td style="text-align: left;">Flujo de aire.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="16-comunicaciones">1.6. Comunicaciones<a class="headerlink" href="#16-comunicaciones" title="Permanent link">&para;</a></h2>
 <p>Para asegurar la continuidad de las comunicaciones, es recomendable contratar servicios con dos proveedores de Internet distintos. El segundo proveedor debe ofrecer una tecnología diferente para minimizar la posibilidad de fallos simultáneos. Además, es importante que las rutas de comunicación sean independientes y que las entradas al edificio estén en diferentes puntos. Considerar una tercera opción inalámbrica puede proporcionar cobertura adicional en caso de problemas físicos en la infraestructura.</p>
 <h2 id="17-control-de-acceso-y-seguridad">1.7. Control de Acceso y Seguridad<a class="headerlink" href="#17-control-de-acceso-y-seguridad" title="Permanent link">&para;</a></h2>
@@ -595,7 +670,17 @@
 <p>Es fundamental prever la posibilidad de que una catástrofe destruya el CPD principal, ya sea por inundación, terremoto o sabotaje. La empresa no debe depender de un solo punto de fallo, por lo que es necesario contar con un centro de respaldo.</p>
 <h3 id="implementacion-del-cr">Implementación del CR<a class="headerlink" href="#implementacion-del-cr" title="Permanent link">&para;</a></h3>
 <p>Si el presupuesto lo permite, se debe instalar un segundo CPD que funcione como centro de respaldo y ofrezca los mismos servicios que el CPD principal. Si la inversión es elevada, se puede optar por limitarse a los servicios principales o ofrecer los mismos servicios con menores prestaciones. Es crucial que el CR esté ubicado físicamente alejado del CP para evitar que una misma catástrofe afecte a ambos.</p>
-<p><img alt="CPD respaldo" class="center" src="img/02/CPD_respaldo.png" /></p>
+<pre class="mermaid"><code>flowchart LR
+    U(["Usuarios y clientes"])
+    subgraph CP["Centro principal (CP)"]
+        S1["Servidores"] --- D1[("Datos")]
+    end
+    subgraph CR["Centro de respaldo (CR)&lt;br&gt;a cientos de km"]
+        S2["Servidores&lt;br&gt;en espera"] --- D2[("Copia de&lt;br&gt;los datos")]
+    end
+    U --&gt;|"funcionamiento normal"| CP
+    U -.-&gt;|"solo si falla el CP"| CR
+    D1 ==&gt;|"réplica en tiempo real"| D2</code></pre>
 <h3 id="operacion-del-cr">Operación del CR<a class="headerlink" href="#operacion-del-cr" title="Permanent link">&para;</a></h3>
 <p>El centro de respaldo está en espera (stand-by) para sustituir al CP en caso de fallo. Los usuarios no deben notar el cambio al CR. Para lograrlo, es necesario implementar mecanismos de replicación de información en tiempo real, prestando especial atención a las bases de datos. Esto requiere excelentes comunicaciones entre el CP y el CR. Además, se deben tener procedimientos de conmutación documentados y probados regularmente, incluyendo la recuperación posterior del CP. Realizar pruebas anuales de cambio al CR asegura que tanto los documentos como el personal estén preparados para una eventual emergencia.</p>
 <h2 id="19-entornos-de-produccion-y-preproduccion">1.9. Entornos de Producción y Preproducción<a class="headerlink" href="#19-entornos-de-produccion-y-preproduccion" title="Permanent link">&para;</a></h2>

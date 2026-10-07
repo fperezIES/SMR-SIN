@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 396" width="530" height="396" font-family="Roboto, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="RAID 5 (paridad distribuida)">
+<title>RAID 5 (paridad distribuida)</title>
+<rect x="1" y="1" width="528" height="394" rx="14" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+<text x="265.0" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#263238">RAID 5 (paridad distribuida)</text>
+<g transform="translate(0,0)">
+<rect x="40" y="72" width="90" height="194" rx="10" fill="#f5f7f8" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="85.0" cy="84" rx="35.0" ry="5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<rect x="50" y="98" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="85.0" y="121.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">A1</text>
+<rect x="50" y="138" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="85.0" y="161.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">B1</text>
+<rect x="50" y="178" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="85.0" y="201.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">C1</text>
+<rect x="50" y="218" width="70" height="34" rx="4" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+<text x="85.0" y="241.0" text-anchor="middle" font-size="17" font-weight="500" fill="#e65100">Dp</text>
+<text x="85.0" y="286" text-anchor="middle" font-size="13" fill="#546e7a">Disco 0</text>
+<rect x="160" y="72" width="90" height="194" rx="10" fill="#f5f7f8" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="205.0" cy="84" rx="35.0" ry="5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<rect x="170" y="98" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="205.0" y="121.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">A2</text>
+<rect x="170" y="138" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="205.0" y="161.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">B2</text>
+<rect x="170" y="178" width="70" height="34" rx="4" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+<text x="205.0" y="201.0" text-anchor="middle" font-size="17" font-weight="500" fill="#e65100">Cp</text>
+<rect x="170" y="218" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="205.0" y="241.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">D1</text>
+<text x="205.0" y="286" text-anchor="middle" font-size="13" fill="#546e7a">Disco 1</text>
+<rect x="280" y="72" width="90" height="194" rx="10" fill="#f5f7f8" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="325.0" cy="84" rx="35.0" ry="5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<rect x="290" y="98" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="325.0" y="121.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">A3</text>
+<rect x="290" y="138" width="70" height="34" rx="4" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+<text x="325.0" y="161.0" text-anchor="middle" font-size="17" font-weight="500" fill="#e65100">Bp</text>
+<rect x="290" y="178" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="325.0" y="201.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">C2</text>
+<rect x="290" y="218" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="325.0" y="241.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">D2</text>
+<text x="325.0" y="286" text-anchor="middle" font-size="13" fill="#546e7a">Disco 2</text>
+<rect x="400" y="72" width="90" height="194" rx="10" fill="#f5f7f8" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="445.0" cy="84" rx="35.0" ry="5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<rect x="410" y="98" width="70" height="34" rx="4" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+<text x="445.0" y="121.0" text-anchor="middle" font-size="17" font-weight="500" fill="#e65100">Ap</text>
+<rect x="410" y="138" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="445.0" y="161.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">B3</text>
+<rect x="410" y="178" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="445.0" y="201.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">C3</text>
+<rect x="410" y="218" width="70" height="34" rx="4" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="445.0" y="241.0" text-anchor="middle" font-size="17" font-weight="500" fill="#01579b">D3</text>
+<text x="445.0" y="286" text-anchor="middle" font-size="13" fill="#546e7a">Disco 3</text>
+<rect x="40" y="305" width="18" height="18" rx="3" fill="#e1f5fe" stroke="#0288d1" stroke-width="1.5"/>
+<text x="66" y="319" font-size="14" fill="#263238">Datos</text>
+<rect x="120" y="305" width="18" height="18" rx="3" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+<text x="146" y="319" font-size="14" fill="#263238">Paridad</text>
+<text x="40" y="346" font-size="14" fill="#546e7a">Capacidad útil: (n − 1) discos → 75 % con 4</text>
+<text x="40" y="368" font-size="14" fill="#546e7a">Tolera: 1 fallo</text>
+</g>
+</svg>
