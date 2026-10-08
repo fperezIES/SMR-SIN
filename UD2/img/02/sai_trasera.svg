@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" font-family="Roboto, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="Parte trasera de un SAI de sobremesa">
+<title>Parte trasera de un SAI de sobremesa</title>
+<rect x="1" y="1" width="758" height="518" rx="14" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+<text x="380" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#263238">Parte trasera de un SAI de sobremesa</text>
+<rect x="250" y="64" width="260" height="436" rx="12" fill="#eceff1" stroke="#546e7a" stroke-width="2"/>
+<path d="M290,98 H350 L344,124 H296 Z" fill="#263238"/>
+<circle cx="300" cy="106" r="2" fill="#b0bec5"/>
+<circle cx="310" cy="106" r="2" fill="#b0bec5"/>
+<circle cx="320" cy="106" r="2" fill="#b0bec5"/>
+<circle cx="330" cy="106" r="2" fill="#b0bec5"/>
+<circle cx="340" cy="106" r="2" fill="#b0bec5"/>
+<circle cx="305" cy="116" r="2" fill="#b0bec5"/>
+<circle cx="315" cy="116" r="2" fill="#b0bec5"/>
+<circle cx="325" cy="116" r="2" fill="#b0bec5"/>
+<circle cx="335" cy="116" r="2" fill="#b0bec5"/>
+<rect x="372" y="98" width="28" height="26" rx="2" fill="#263238"/><path d="M378,104 H394 V114 L390,118 H382 L378,114 Z" fill="#b0bec5"/>
+<text x="320" y="140" text-anchor="middle" font-size="10" fill="#546e7a">RS-232</text><text x="386" y="140" text-anchor="middle" font-size="10" fill="#546e7a">USB</text>
+<rect x="280" y="88" width="132" height="60" rx="6" fill="none" stroke="#546e7a" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="540" y1="118" x2="412" y2="118" stroke="#546e7a" stroke-width="1.5"/><circle cx="412" cy="118" r="3" fill="#546e7a"/>
+<text x="550" y="114" text-anchor="start" font-size="15" font-weight="500" fill="#263238">Puerto de comunicación</text>
+<text x="550" y="132" text-anchor="start" font-size="15" font-weight="400" fill="#263238">(USB, RS-232)</text>
+<circle cx="420" cy="215" r="42" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+<circle cx="420" cy="215" r="32" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<circle cx="420" cy="215" r="22" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<circle cx="420" cy="215" r="12" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="378" y1="215" x2="462" y2="215" stroke="#546e7a" stroke-width="1.5"/><line x1="420" y1="173" x2="420" y2="257" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="540" y1="215" x2="462" y2="215" stroke="#546e7a" stroke-width="1.5"/><circle cx="462" cy="215" r="3" fill="#546e7a"/>
+<text x="550" y="220" text-anchor="start" font-size="15" font-weight="500" fill="#546e7a">Ventilador</text>
+<rect x="272" y="178" width="30" height="28" rx="2" fill="#263238"/><path d="M278,184 H296 V196 H291 V200 H283 V196 H278 Z" fill="#546e7a"/>
+<text x="308" y="197" font-size="11" font-weight="700" fill="#546e7a">IN</text>
+<rect x="272" y="220" width="30" height="28" rx="2" fill="#263238"/><path d="M278,226 H296 V238 H291 V242 H283 V238 H278 Z" fill="#546e7a"/>
+<text x="308" y="239" font-size="11" font-weight="700" fill="#546e7a">OUT</text>
+<rect x="264" y="168" width="78" height="90" rx="6" fill="none" stroke="#546e7a" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="220" y1="213" x2="264" y2="213" stroke="#546e7a" stroke-width="1.5"/><circle cx="264" cy="213" r="3" fill="#546e7a"/>
+<text x="212" y="209" text-anchor="end" font-size="15" font-weight="500" fill="#263238">Protección de línea</text>
+<text x="212" y="227" text-anchor="end" font-size="15" font-weight="400" fill="#263238">de datos (RJ-45)</text>
+<circle cx="300" cy="330" r="17" fill="#263238"/><circle cx="300" cy="330" r="9" fill="#90a4ae"/>
+<rect x="276" y="306" width="48" height="48" rx="6" fill="none" stroke="#546e7a" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="220" y1="330" x2="276" y2="330" stroke="#546e7a" stroke-width="1.5"/><circle cx="276" cy="330" r="3" fill="#546e7a"/>
+<text x="212" y="326" text-anchor="end" font-size="15" font-weight="500" fill="#263238">Protector de sobrecarga</text>
+<text x="212" y="344" text-anchor="end" font-size="15" font-weight="400" fill="#263238">(botón de rearme)</text>
+<path d="M282,425 H322 L332,435 V465 H272 V435 Z" fill="#263238"/>
+<path d="M285,430 H319 L327,438 V460 H277 V438 Z" fill="#546e7a"/>
+<rect x="287" y="444" width="5" height="12" fill="#eceff1"/><rect x="312" y="444" width="5" height="12" fill="#eceff1"/><rect x="300" y="434" width="4" height="10" fill="#eceff1"/>
+<rect x="264" y="415" width="76" height="60" rx="6" fill="none" stroke="#546e7a" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="220" y1="445" x2="264" y2="445" stroke="#546e7a" stroke-width="1.5"/><circle cx="264" cy="445" r="3" fill="#546e7a"/>
+<text x="212" y="441" text-anchor="end" font-size="15" font-weight="500" fill="#263238">Entrada de red</text>
+<text x="212" y="459" text-anchor="end" font-size="15" font-weight="400" fill="#263238">(al enchufe de la pared)</text>
+<path d="M430,282 H470 L480,292 V318 H420 V292 Z" fill="#263238"/>
+<rect x="435" y="300" width="5" height="11" fill="#b0bec5"/><rect x="460" y="300" width="5" height="11" fill="#b0bec5"/><rect x="448" y="289" width="4" height="9" fill="#b0bec5"/>
+<path d="M430,326 H470 L480,336 V362 H420 V336 Z" fill="#263238"/>
+<rect x="435" y="344" width="5" height="11" fill="#b0bec5"/><rect x="460" y="344" width="5" height="11" fill="#b0bec5"/><rect x="448" y="333" width="4" height="9" fill="#b0bec5"/>
+<path d="M430,392 H470 L480,402 V428 H420 V402 Z" fill="#263238"/>
+<rect x="435" y="410" width="5" height="11" fill="#b0bec5"/><rect x="460" y="410" width="5" height="11" fill="#b0bec5"/><rect x="448" y="399" width="4" height="9" fill="#b0bec5"/>
+<path d="M430,436 H470 L480,446 V472 H420 V446 Z" fill="#263238"/>
+<rect x="435" y="454" width="5" height="11" fill="#b0bec5"/><rect x="460" y="454" width="5" height="11" fill="#b0bec5"/><rect x="448" y="443" width="4" height="9" fill="#b0bec5"/>
+<text x="450" y="276" text-anchor="middle" font-size="10" font-weight="700" fill="#01579b">BATTERY BACKUP</text>
+<text x="450" y="386" text-anchor="middle" font-size="10" font-weight="700" fill="#e65100">SURGE ONLY</text>
+<rect x="400" y="262" width="100" height="108" rx="6" fill="none" stroke="#0288d1" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="540" y1="318" x2="500" y2="318" stroke="#546e7a" stroke-width="1.5"/><circle cx="500" cy="318" r="3" fill="#546e7a"/>
+<text x="550" y="314" text-anchor="start" font-size="15" font-weight="500" fill="#01579b">Salidas con batería</text>
+<text x="550" y="332" text-anchor="start" font-size="15" font-weight="400" fill="#01579b">y protección</text>
+<rect x="400" y="376" width="100" height="108" rx="6" fill="none" stroke="#ef6c00" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="540" y1="428" x2="500" y2="428" stroke="#546e7a" stroke-width="1.5"/><circle cx="500" cy="428" r="3" fill="#546e7a"/>
+<text x="550" y="424" text-anchor="start" font-size="15" font-weight="500" fill="#e65100">Salidas solo con</text>
+<text x="550" y="442" text-anchor="start" font-size="15" font-weight="400" fill="#e65100">protección contra picos</text>
+</svg>

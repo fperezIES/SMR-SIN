@@ -451,6 +451,12 @@
 <h2 id="21-que-es-un-sai">2.1. Qué es un SAI<a class="headerlink" href="#21-que-es-un-sai" title="Permanent link">&para;</a></h2>
 <p>En el <a href="1.fisica_CPD.html">apartado 1</a> vimos que el suministro eléctrico es una de las bases del CPD. Ahora estudiamos su principal protección.</p>
 <p>Un <strong>SAI</strong> (Sistema de Alimentación Ininterrumpida, en inglés <strong>UPS</strong>, <em>Uninterruptible Power Supply</em>) es un equipo que se coloca entre la red eléctrica y los dispositivos que queremos proteger. Tiene baterías que dan energía cuando falla la red y, además, filtra los problemas de la corriente.</p>
+<figure>
+<p><img alt="SAI de sobremesa" class="center" src="img/02/foto_sai_sobremesa.jpg" style="width: 50%;" /></p>
+<figcaption>
+<p>SAI de sobremesa (APC Back-UPS ES 525) con tomas tipo Schuko para los equipos. Foto: MSDN.WhiteKnight (<a href="https://commons.wikimedia.org/wiki/File:APC_Back-UPS_ES525.jpg">Wikimedia Commons</a>), <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</p>
+</figcaption>
+</figure>
 <p>Un SAI <strong>no</strong> está pensado para trabajar horas sin red. Su función es doble:</p>
 <ul>
 <li>Aguantar cortes cortos (segundos o pocos minutos) sin que los equipos se enteren.</li>
@@ -529,16 +535,17 @@
 </ul>
 <p>En la parte trasera de un SAI de sobremesa encontramos las conexiones:</p>
 <figure>
-<p><img alt="Parte trasera de un SAI" class="center" src="img/02/SAI_UPS.png" width="60%" /></p>
+<p><img alt="Parte trasera de un SAI" class="center" src="img/02/sai_trasera.svg" style="width: 80%;" /></p>
 <figcaption>
 <p>Conexiones traseras de un SAI de sobremesa</p>
 </figcaption>
 </figure>
 <ul>
 <li><strong>Entrada de red</strong>: se conecta al enchufe de la pared.</li>
-<li><strong>Salidas protegidas</strong>: tomas para los equipos. En muchos modelos hay dos grupos: unas con batería y protección, y otras solo con protección contra picos (sin batería).</li>
+<li><strong>Salidas protegidas</strong>: tomas para los equipos. En muchos modelos hay dos grupos: unas con batería y protección (<em>Battery backup</em>), y otras solo con protección contra picos y sin batería (<em>Surge only</em>). Allí se conectan equipos que no necesitan seguir encendidos durante un corte, como una impresora.</li>
 <li><strong>Puerto de comunicación</strong> (USB, RS-232 o tarjeta de red): permite que un ordenador supervise el SAI y se apague solo cuando la batería se agota.</li>
-<li><strong>Protección de línea telefónica / de datos</strong> (RJ-11, RJ-45): protege contra picos que entran por el cable de comunicaciones.</li>
+<li><strong>Protección de línea telefónica / de datos</strong> (RJ-11, RJ-45): protege contra picos que entran por el cable de comunicaciones. El cable que viene de la red se conecta a <em>IN</em> y el equipo, a <em>OUT</em>.</li>
+<li><strong>Protector de sobrecarga</strong>: corta la corriente si los equipos conectados consumen más de lo que el SAI soporta. Tras quitar la carga sobrante, se rearma pulsando el botón.</li>
 </ul>
 <h2 id="24-tipos-de-sai">2.4. Tipos de SAI<a class="headerlink" href="#24-tipos-de-sai" title="Permanent link">&para;</a></h2>
 <p>Hay tres tipos principales. Se diferencian en cómo llega la energía a los equipos cuando la red funciona bien.</p>

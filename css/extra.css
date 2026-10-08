@@ -81,3 +81,38 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Centrar las imágenes que van solas en un párrafo (sin necesidad de ///caption) */
+.md-typeset p > img:only-child {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Centrar los vídeos incrustados y evitar que se salgan de la pantalla en móvil */
+.md-typeset iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* Centrar los diagramas Mermaid. Material dibuja el SVG dentro de un shadow DOM,
+   así que se centra desde el contenedor */
+.md-typeset .mermaid {
+    display: flex;
+    justify-content: center;
+}
+
+/* Centrar las tablas. Material envuelve cada tabla en un bloque inline-block
+   (.md-typeset__table) dentro de .md-typeset__scrollwrap, así que se centra
+   desde el contenedor y se devuelve la alineación a la izquierda al contenido.
+   Si la tabla es más ancha que la página, se alinea a la izquierda y mantiene
+   el scroll horizontal */
+.md-typeset__scrollwrap {
+    text-align: center;
+}
+
+.md-typeset__table {
+    text-align: left;
+}
